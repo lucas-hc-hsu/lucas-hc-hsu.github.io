@@ -22,7 +22,7 @@
     padding: 1em 1em 1em;
     font-family: $sans-serif-narrow;
 
-    @include breakpoint($x-large) {
+    @include breakpoint($large) {
       max-width: $x-large;
     }
 

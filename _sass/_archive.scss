@@ -42,6 +42,8 @@
 .archive__item-title {
   margin-bottom: 0.25em;
   font-family: $sans-serif-narrow;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   a + a {
     opacity: 0.5;
@@ -81,6 +83,23 @@
 
   .archive__item-title {
     text-decoration: underline;
+  }
+}
+
+/* Responsive layout for publication items with images */
+@include breakpoint($medium) {
+  .archive__item {
+    &[style*="display: flex"] {
+      @media (max-width: 900px) {
+        flex-direction: column !important;
+        
+        .archive__item-image {
+          flex: none !important;
+          align-self: center;
+          margin-bottom: 1em;
+        }
+      }
+    }
   }
 }
 
