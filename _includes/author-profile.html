@@ -21,7 +21,39 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
+    <div class="author__contact-buttons" style="margin-bottom: 10px;">
+      {% if author.email %}
+        <a href="mailto:{{ author.email }}" class="btn btn--inverse" style="margin-right: 5px; margin-bottom: 5px;">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      {% endif %}
+      {% if author.github %}
+        <a href="https://github.com/{{ author.github }}" class="btn btn--dark" target="_blank" style="margin-right: 5px; margin-bottom: 5px;">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      {% endif %}
+      {% if author.linkedin %}
+        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="btn btn--info" target="_blank" style="margin-bottom: 5px;">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      {% endif %}
+    </div>
+
+    <style>
+      /* Hide contact buttons when sidebar is on the left (wide viewports) */
+      @media (min-width: 925px) {
+        .author__contact-buttons {
+          display: none !important;
+        }
+      }
+      
+      /* Show contact buttons when sidebar is on top (narrow viewports) */
+      @media (max-width: 924px) {
+        .author__contact-buttons {
+          display: block !important;
+        }
+      }
+    </style>
     <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
