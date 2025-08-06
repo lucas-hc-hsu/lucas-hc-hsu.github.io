@@ -1,11 +1,28 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+## Biography
+
+I am Hung-Chun Hsu (Lucas), a Research Assistant at Academia Sinica in Taiwan. My research focuses on graph neural networks, generative adversarial networks, and their applications in addressing challenges such as imbalanced node classification in heterogeneous graphs.
+
+I am particularly interested in developing novel frameworks that leverage deep learning techniques to solve real-world problems in network analysis and machine learning. My work includes developing innovative approaches like FincGAN for imbalanced node classification and FlashGAN for localized node augmentation in heterogeneous graphs.
+
+Currently based in Taipei, Taiwan, I am passionate about advancing the field of artificial intelligence through rigorous research and practical applications.
+
+## News
+
+- **Nov 2024**: Our paper "FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network" is available on arXiv.
+- **Feb 2024**: Our paper "FincGAN: A Gan Framework of Imbalanced Node Classification on Heterogeneous Graph Neural Network" has been accepted at IEEE ICASSP 2024.
+
+---
+
+## About This Website
 
 This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
 
