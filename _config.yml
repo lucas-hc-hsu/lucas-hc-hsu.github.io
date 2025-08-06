@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Hung-Chun Hsu (Lucas)"
+title                    : "Hung-Chun Hsu"
 title_separator          : "-"
 name                     : &name "Hung-Chun Hsu" #"Your Name"
 description              : &description "Research Assistant at Academia Sinica, Taiwan" #"personal description"
@@ -21,10 +21,10 @@ repository               : "LucasHsu2024/LucasHsu2024.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "4942-3.jpg"
   name             : "Hung-Chun Hsu (Lcuas)" #"Your Sidebar Name"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Building AI that serves, not replaces" #"Building AI technology that help humanity" # "Short biography for the left-hand sidebar"
   location         : "Taipei, Taiwan"
   employer         : "Academia Sinica"
   uri              : # URL
@@ -44,7 +44,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : # "academicpages"
+  github           : "LucasHsu2024"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -78,10 +78,12 @@ author:
 publication_category:
   books:
     title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
+  # manuscripts:
+  #   title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  preprints:
+    title: 'Preprints'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
