@@ -52,15 +52,43 @@ layout: default
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Paper Link</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
+          <div style="margin-top: 10px;">
+            <a href="{{ page.paperurl }}" class="btn btn--inverse" style="margin-right: 5px; margin-bottom: 5px;" target="_blank">
+              <i class="fas fa-external-link-alt"></i> paper link
+            </a>
+            <a href="{{ page.slidesurl }}" class="btn btn--info" style="margin-bottom: 5px;" target="_blank">
+              <i class="fas fa-presentation-screen"></i> Slides
+            </a>
+          </div>
         {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Paper Link</a></p>
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
+          <div style="margin-top: 10px;">
+            <a href="{{ page.paperurl }}" class="btn btn--inverse" style="margin-bottom: 5px;" target="_blank">
+              <i class="fas fa-external-link-alt"></i> paper link
+            </a>
+          </div>
         {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
+          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
+          <div style="margin-top: 10px;">
+            <a href="{{ page.slidesurl }}" class="btn btn--info" style="margin-bottom: 5px;" target="_blank">
+              <i class="fas fa-presentation-screen"></i> Slides
+            </a>
+          </div>
         {% elsif page.citation %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
+        {% elsif page.paperurl %}
+          <div style="margin-top: 10px;">
+            <a href="{{ page.paperurl }}" class="btn btn--inverse" style="margin-bottom: 5px;" target="_blank">
+              <i class="fas fa-external-link-alt"></i> paper link
+            </a>
+          </div>
         {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
+          <div style="margin-top: 10px;">
+            <a href="{{ page.slidesurl }}" class="btn btn--info" style="margin-bottom: 5px;" target="_blank">
+              <i class="fas fa-presentation-screen"></i> Slides
+            </a>
+          </div>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
@@ -73,7 +101,7 @@ layout: default
         {% include page__taxonomy.html %}
       </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
+      {% comment %}{% if page.share %}{% include social-share.html %}{% endif %}{% endcomment %}
 
       {% include post_pagination.html %}
     </div>
