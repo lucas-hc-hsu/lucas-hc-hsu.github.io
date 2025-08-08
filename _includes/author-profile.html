@@ -32,9 +32,16 @@
           <i class="fab fa-github"></i> GitHub
         </a>
       {% endif %}
+      {% comment %}
       {% if author.linkedin %}
-        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="btn btn--info" target="_blank" style="margin-bottom: 5px;">
+        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="btn btn--info" target="_blank" style="margin-right: 5px; margin-bottom: 5px;">
           <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      {% endif %}
+      {% endcomment %}
+      {% if author.googlescholar %}
+        <a href="{{ author.googlescholar }}" class="btn btn--info" target="_blank" style="margin-bottom: 5px;">
+          <i class="ai ai-google-scholar"></i> Google Scholar
         </a>
       {% endif %}
     </div>
@@ -60,7 +67,7 @@
         <li class="author__desktop"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
       {% endif %}
       {% if author.employer %}
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</li>
+        <li class="author__desktop"><a href="https://cfda.csie.org/"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</a></li>
       {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
