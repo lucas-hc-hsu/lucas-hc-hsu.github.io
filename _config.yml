@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Hung-Chun Hsu"
 title_separator          : "-"
 name                     : &name "Hung-Chun Hsu" #"Your Name"
-description              : &description "Research Assistant at Academia Sinica, Taiwan" #"personal description"
+description              : &description "Research Assistant at CFDA Lab, CITI, Academia Sinica, Taiwan" #"personal description"
 url                      : https://lucashsu2024.github.io #https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "LucasHsu2024/LucasHsu2024.github.io"
@@ -22,17 +22,17 @@ repository               : "LucasHsu2024/LucasHsu2024.github.io"
 author:
   # Biographic information
   avatar           : "4942-3.jpg"
-  name             : "Hung-Chun Hsu (Lcuas)" #"Your Sidebar Name"
+  name             : "Hung-Chun Hsu (Lucas)" #"Your Sidebar Name"
   pronouns         : # example: "she/her"  
   bio              : "Building AI that serves, not replaces" #"Building AI technology that help humanity" # "Short biography for the left-hand sidebar"
   location         : "Taipei, Taiwan"
-  employer         : "Academia Sinica"
+  employer         : "CFDA Lab, CITI, Academia Sinica"
   uri              : # URL
   email            : "r10946017@citi.sinica.edu.tw" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : # "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?hl=en&user=dOcuZ20AAAAJ&view_op=list_works&authuser=1&gmla=AH8HC4xL4Oi3Mh4AfEfmrlEjl7-sfYM0n0EKuqRZocVETG3No3phMJza2tbpO2-6aXio3tadi49WdCzRLkqNpYB6"
   impactstory      : # URL
   orcid            : # "http://orcid.org/yourorcidurl"
   semantic         : # URL
