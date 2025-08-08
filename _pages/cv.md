@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
@@ -11,26 +11,14 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S. in Data Science, National Taiwan University, 2023
+* B.S. in Engineering and System Science, National Tsing Hua University, 2021
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* **Research Assistant, CFDA Lab, CITI, Academia Sinica, Taiwan** <span style="float: right; font-style: italic; font-size: 0.9em;">April 2024 - Present</span>
+  * Led the Dense Retrieval Project in collaboration with NVIDIA Research Taiwan, developing an LLM-based Conversational Product Search (CPS) system that not only accepts multimodal data input but also interacts with users through multimodal data
+  * Supervisors: Dr. Chuan-Ju Wang and Dr. Ming-Feng Tsai
   
 Skills
 ======
