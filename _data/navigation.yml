@@ -17,10 +17,13 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
         
-  - title: "Blog Posts"
+  - title: "Fresh Ideas"
     url: /year-archive/
     
-  - title: "CV"
+  - title: "Memorial Moments"
+    url: /memorial-moments/
+    
+  - title: "Curriculum Vitae (CV)"
     url: /cv/
     
   - title: "Guide"
