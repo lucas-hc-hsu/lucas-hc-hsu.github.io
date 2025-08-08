@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+# title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
@@ -9,7 +9,7 @@ redirect_from:
 
 ## Biography
 
-I am Hung-Chun Hsu (Lucas), a Research Assistant at Academia Sinica in Taiwan. My research focuses on graph neural networks, generative adversarial networks, and their applications in addressing challenges such as imbalanced node classification in heterogeneous graphs.
+I am Hung-Chun Hsu (Lucas), a Research Assistant at CFDA Lab, CITI, Academia Sinica in Taiwan. My research focuses on graph neural networks, generative adversarial networks, and their applications in addressing challenges such as imbalanced node classification in heterogeneous graphs.
 
 I am particularly interested in developing novel frameworks that leverage deep learning techniques to solve real-world problems in network analysis and machine learning. My work includes developing innovative approaches like FincGAN for imbalanced node classification and FlashGAN for localized node augmentation in heterogeneous graphs.
 
@@ -17,8 +17,10 @@ Currently based in Taipei, Taiwan, I am passionate about advancing the field of 
 
 ## News
 
-- **Nov 2024**: Our paper "FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network" is available on arXiv.
-- **Feb 2024**: Our paper "FincGAN: A Gan Framework of Imbalanced Node Classification on Heterogeneous Graph Neural Network" has been accepted at IEEE ICASSP 2024.
+- **Nov 2024**: Our paper "[FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network](https://arxiv.org/pdf/2312.06519)" is available on arXiv.
+- **Feb 2024**: Our paper "[FincGAN: A Gan Framework of Imbalanced Node Classification on Heterogeneous Graph Neural Network](https://ieeexplore.ieee.org/document/10448064)" has been accepted at IEEE ICASSP 2024.
+- **Aug 2023**: I graduated top of my class from National Taiwan University's Data Science Master program.
+- **Jul 2023**: I successfully defended my master's thesis titled "A Framework of Imbalanced Node Classification On Heterogeneous Graph Neural Network - Using GAN for Localized Sampling and Node Embedding".
 
 ---
 
