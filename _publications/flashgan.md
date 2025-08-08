@@ -3,20 +3,25 @@ title: "FlashGAN: Framework of Localized Node Augmentation via Semi-supervised L
 collection: publications
 category: preprints
 permalink: /publication/flashgan
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'This paper addresses the challenge of localized node augmentation in heterogeneous graphs through semi-supervised learning with generative adversarial networks.'
 date: 2024-11-23
-venue: 'arXiv preprint arXiv:2312.06519,'
+venue: 'arXiv preprint arXiv:2312.06519'
 authors: 'Hung-Chun Hsu, Bo-Jun Wu, Ming-Yi Hong, Che Lin, Chih-Yu Wang'
 image: 'flashgan_framework_illustration.png'
-slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
+# slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'https://arxiv.org/pdf/2312.06519'
 # citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
 <div style="text-align: center; margin-bottom: 20px;">
   <img src="/images/flashgan_framework_illustration.png" alt="FlashGAN Framework Illustration" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
-  <h2>FlashGAN Framework</h2>
-  <p>Our proposed FlashGAN framework addresses the challenge of localized node augmentation in heterogeneous graphs through semi-supervised learning with generative adversarial networks.</p>
 </div>
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+<h2 style="text-align: left;">TL;DR</h2>
+
+<div style="text-align: left; margin-bottom: 20px;">
+  <p>FlashGAN is a node generation framework designed to address the issue of node class imbalance, aiming to prevent Graph Neural Network (GNN) models trained on such imbalanced graph data from exhibiting a bias toward predicting the majority class in node classification tasks.</p>
+  
+  <p>Building upon our previous work, FincGAN, FlashGAN not only generates synthetic nodes but also determines their placement within the heterogeneous graph during the generation process. This design substantially reduces the need for an additional step of constructing edges for synthetic nodes, which was required in prior approaches that focused solely on node generation.</p>
+</div>
+
