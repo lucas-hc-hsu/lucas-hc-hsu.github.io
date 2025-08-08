@@ -12,6 +12,7 @@ paperurl: 'https://ieeexplore.ieee.org/document/10448064'
 # citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
 ---
 
+<!-- Image for individual page -->
 <div style="text-align: center; margin-bottom: 20px;">
   <img src="/images/fincgan_framework_illustration.png" alt="FincGAN Framework Illustration" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
 </div>
