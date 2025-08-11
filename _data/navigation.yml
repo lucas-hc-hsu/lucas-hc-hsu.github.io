@@ -17,14 +17,14 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
         
-  - title: "Fresh Ideas"
-    url: /year-archive/
+  - title: "CV"
+    url: /cv/
+    
+  # - title: "Fresh Ideas"
+  #   url: /year-archive/
     
   - title: "Memorable Moments"
     url: /memorable-moments/
     
-  - title: "Curriculum Vitae (CV)"
-    url: /cv/
-    
-  - title: "Guide"
-    url: /markdown/
+  # - title: "Guide"
+  #   url: /markdown/

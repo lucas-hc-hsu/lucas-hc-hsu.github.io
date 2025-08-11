@@ -7,21 +7,48 @@ redirect_from:
   - /about.html
 ---
 
-## Biography
+## About Me
 
-I am Hung-Chun Hsu (Lucas), a Research Assistant at CFDA Lab, CITI, Academia Sinica in Taiwan. My research focuses on graph neural networks, generative adversarial networks, and their applications in addressing challenges such as imbalanced node classification in heterogeneous graphs.
-
-I am particularly interested in developing novel frameworks that leverage deep learning techniques to solve real-world problems in network analysis and machine learning. My work includes developing innovative approaches like FincGAN for imbalanced node classification and FlashGAN for localized node augmentation in heterogeneous graphs.
-
-Currently based in Taipei, Taiwan, I am passionate about advancing the field of artificial intelligence through rigorous research and practical applications.
+Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from National Taiwan University in Taiwan in 2023. Currently, I am a Research Assistant at Academia Sinica, a leading national research institution in Taiwan, with a strong focus on information retrieval, conversational search, and graph neural networks. My ongoing research centers on developing multimodal language models to facilitate deeper human‐AI interaction through diverse data modalities (images, video, audio) and to generate personalized responses based on multimodal human feedback. I am actively seeking Ph.D. opportunities in the United States to advance my research contributions.
 
 ## News
 
+- **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
 - **Nov 2024**: Our paper "[FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network](https://arxiv.org/pdf/2312.06519)" is available on arXiv.
+- **Apr 2024**: I completed my Data Scientist R&D Intern position at Cathay Financial Holdings, where I gained valuable experience in building Traditional Chinese RAG pipelines using AWS platform and LangChain framework.
 - **Feb 2024**: Our paper "[FincGAN: A Gan Framework of Imbalanced Node Classification on Heterogeneous Graph Neural Network](https://ieeexplore.ieee.org/document/10448064)" has been accepted at IEEE ICASSP 2024.
 - **Aug 2023**: I graduated top of my class from National Taiwan University's Data Science Master program.
 - **Jul 2023**: I successfully defended my master's thesis titled "A Framework of Imbalanced Node Classification On Heterogeneous Graph Neural Network - Using GAN for Localized Sampling and Node Embedding".
 
+## Publications
+
+{% include base_path %}
+
+{% assign recent_publications = site.publications | sort: 'date' | slice: 0, 3 %}
+
+{% for post in recent_publications %}
+<div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+  <div style="flex: 0 0 200px; min-width: 150px;">
+    {% if post.image %}
+      <img src="/images/{{ post.image }}" alt="{{ post.title }}" style="width: 100%; height: auto; border-radius: 5px;">
+    {% endif %}
+  </div>
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
+      {{ post.title }}
+    </p>
+    {% if post.authors %}
+      {% assign authors_with_underline = post.authors | replace: "Hung Chun Hsu", "<u>Hung Chun Hsu</u>" | replace: "Hung-Chun Hsu", "<u>Hung-Chun Hsu</u>" %}
+      <p style="font-size: 0.85em; margin-bottom: 3px;">{{ authors_with_underline }}</p>
+    {% endif %}
+    <p style="font-size: 0.85em; margin-bottom: 0;"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+  </div>
+</div>
+{% endfor %}
+
+<p style="margin-top: 10px;"><a href="/publications/">View all publications →</a></p>
+
+{% comment %}
 ---
 
 ## About This Website
@@ -66,3 +93,4 @@ Example: editing a markdown file for a talk
 For more info
 ------
 More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+{% endcomment %}
