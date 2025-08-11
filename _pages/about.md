@@ -1,5 +1,7 @@
 ---
 permalink: /
+title: "About Me"
+seo_title: "Hung-Chun Hsu"
 author_profile: true
 redirect_from: 
   - /about/
