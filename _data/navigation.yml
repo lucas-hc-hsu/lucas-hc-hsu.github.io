@@ -20,8 +20,11 @@ main:
   - title: "CV"
     url: /cv/
     
-  # - title: "Fresh Ideas"
-  #   url: /year-archive/
+  - title: "Research"
+    url: /research/
+    
+  - title: "Fresh Ideas"
+    url: /fresh-ideas/
     
   - title: "Memorable Moments"
     url: /memorable-moments/
