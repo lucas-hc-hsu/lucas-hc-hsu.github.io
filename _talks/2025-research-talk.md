@@ -6,7 +6,7 @@ permalink: /talks/2025-research-talk
 venue: "CFDA, CLIP & LKT Labs Joint Laboratory Seminar"
 date: 2025-08-15
 date_display: "August 15 & September 5, 2025"
-slides_embed: "https://docs.google.com/presentation/d/1GJyv0MIrxGockK6iZTjoNSUsBOpTJItajX_kmuemk6w/embed?start=true&loop=true&delayms=2000"
+slides_embed: "https://docs.google.com/presentation/d/1GJyv0MIrxGockK6iZTjoNSUsBOpTJItajX_kmuemk6w/embed?start=true&loop=true&delayms=1000"
 slides_url: "https://docs.google.com/presentation/d/1GJyv0MIrxGockK6iZTjoNSUsBOpTJItajX_kmuemk6w/edit?usp=sharing"
 paper_url: "https://www.arxiv.org/abs/2508.18132"
 excerpt: ""
