@@ -18,6 +18,12 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 .news-section a {
   text-decoration: none !important;
 }
+.news-section ul {
+  margin-bottom: 0;
+}
+.news-section li {
+  margin-bottom: 0.3em;
+}
 </style>
 
 <div class="news-section" markdown="1">
