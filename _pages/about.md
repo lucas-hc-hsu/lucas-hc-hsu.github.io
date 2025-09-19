@@ -10,7 +10,7 @@ redirect_from:
 
 Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from National Taiwan University in Taiwan in 2023. Currently, I am a Research Assistant at Academia Sinica, a leading national research institution in Taiwan, with a strong focus on information retrieval, conversational search, and graph neural networks. My ongoing research centers on developing multimodal language models to facilitate deeper human‐AI interaction through diverse data modalities (images, video, audio) and to generate personalized responses based on multimodal human feedback. I am actively seeking Ph.D. opportunities in the United States to advance my research contributions.
 
-<small>My name is Hung-Chun, which is 許鴻君 in Traditional Chinese. I'm from Taiwan. I also go by Lucas.</small>
+<small>My name is Hung-Chun Hsu, which is 許鴻君 in Traditional Chinese. I'm from Taiwan. I also go by Lucas.</small>
 
 ## News
 
