@@ -10,6 +10,8 @@ redirect_from:
 
 Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from National Taiwan University in Taiwan in 2023. Currently, I am a Research Assistant at Academia Sinica, a leading national research institution in Taiwan, with a strong focus on information retrieval, conversational search, and graph neural networks. My ongoing research centers on developing multimodal language models to facilitate deeper human‐AI interaction through diverse data modalities (images, video, audio) and to generate personalized responses based on multimodal human feedback. I am actively seeking Ph.D. opportunities in the United States to advance my research contributions.
 
+<small>My first name is Hung-Chun. 許鴻君 is my name in Traditional Chinese. I'm from Taiwan.</small>
+
 ## News
 
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
