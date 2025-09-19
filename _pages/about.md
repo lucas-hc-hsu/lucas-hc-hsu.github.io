@@ -14,6 +14,12 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 
 ## News
 
+<style>
+#news + ul li {
+  margin-bottom: 0.3em;
+}
+</style>
+
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
 - **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
 - **Nov 2024**: Our paper "[FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network](https://arxiv.org/pdf/2312.06519)" is available on arXiv.
