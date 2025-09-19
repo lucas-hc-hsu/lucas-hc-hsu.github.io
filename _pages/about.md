@@ -20,7 +20,7 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 }
 </style>
 
-<div class="news-section">
+<div class="news-section" markdown="1">
 
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
 - **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
