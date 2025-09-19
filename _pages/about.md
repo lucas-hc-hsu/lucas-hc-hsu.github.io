@@ -16,7 +16,7 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 
 <style>
 #news + ul li {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.1em;
 }
 </style>
 
