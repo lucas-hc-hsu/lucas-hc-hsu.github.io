@@ -48,7 +48,11 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 </div>
 {% endfor %}
 
-<p style="margin-top: 10px;"><a href="/publications/">View all publications →</a></p>
+<div style="margin-top: 15px; text-align: center;">
+  <a href="/publications/" style="font-size: 0.9em; padding: 8px 16px; background-color: white; color: black; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; display: inline-block; transition: background-color 0.3s;">
+    <i class="fas fa-external-link-alt"></i> View all publications
+  </a>
+</div>
 
 {% comment %}
 ---
