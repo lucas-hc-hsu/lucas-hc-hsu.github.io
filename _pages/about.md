@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "Lucas Hung-Chun Hsu"
-seo_title: "Lucas Hung-Chun Hsu"
+title: "Hung-Chun Hsu"
+seo_title: "Hung-Chun Hsu"
 author_profile: true
 redirect_from: 
   - /about/
