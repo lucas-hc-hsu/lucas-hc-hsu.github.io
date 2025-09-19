@@ -14,6 +14,14 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 
 ## News
 
+<style>
+.news-section a {
+  text-decoration: none !important;
+}
+</style>
+
+<div class="news-section">
+
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
 - **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
 - **Nov 2024**: Our paper "[FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network](https://arxiv.org/pdf/2312.06519)" is available on arXiv.
@@ -21,6 +29,8 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 - **Feb 2024**: Our paper "[FincGAN: A Gan Framework of Imbalanced Node Classification on Heterogeneous Graph Neural Network](https://ieeexplore.ieee.org/document/10448064)" has been accepted at IEEE ICASSP 2024.
 - **Aug 2023**: I graduated top of my class from National Taiwan University's Data Science Master program.
 - **Jul 2023**: I successfully defended my master's thesis titled "A Framework of Imbalanced Node Classification On Heterogeneous Graph Neural Network - Using GAN for Localized Sampling and Node Embedding".
+
+</div>
 
 ## Publications
 
