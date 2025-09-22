@@ -22,6 +22,7 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
   margin: 0;
   padding: 0 0 0.2em 0;
   line-height: 1.3;
+  font-size: 0.9em;
 }
 </style>
 
