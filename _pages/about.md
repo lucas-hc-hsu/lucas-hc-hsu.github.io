@@ -26,6 +26,17 @@ Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from
 }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add target="_blank" to all links in the news section
+  var newsLinks = document.querySelectorAll('.news-section a');
+  newsLinks.forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+});
+</script>
+
 <div class="news-section" markdown="1">
 
 - **Sep 2025**: We release our work in TREC iKAT 2025, "[CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion](https://arxiv.org/abs/2509.15588v1)."
