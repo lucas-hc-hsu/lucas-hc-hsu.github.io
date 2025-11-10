@@ -10,7 +10,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. My research interests lies in multimodal LLMs, information retrieval, conversational search, and graph neural networks. <span style="font-weight: 600;">My research focuses on developing multimodal LLMs to enable deeper human-AI interaction across diverse modalities and personalized responses from multimodal feedback.</span>
+I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. My research interests lie in multimodal LLMs, information retrieval, conversational search, and graph neural networks. <span style="font-weight: 600;">Currently, my research centers on developing multimodal LLMs to enable deeper human-AI interaction across diverse modalities and to generate personalized responses from multimodal feedback.</span>
 
 🎓 I received my M.S. in Data Science at National Taiwan University in 2023. During Master's degree, I was fortunate to work with Prof. Chiu-Yu Wang at Academia Sinica and Prof. Che Lin at NTU.
 
