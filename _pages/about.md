@@ -2,8 +2,8 @@
 permalink: /
 title: "Hung-Chun Hsu"
 seo_title: "Hung-Chun Hsu - Research Assistant in AI and Machine Learning"
-description: "Hung-Chun Hsu (Lucas) personal website. Research Assistant at Academia Sinica, Taiwan. Specializing in multimodal AI, conversational search, and graph neural networks."
-keywords: "Hung-Chun Hsu, Lucas Hsu, 許鴻君, Academia Sinica, CFDA Lab, multimodal AI, conversational search, graph neural networks, Taiwan"
+description: "Hung-Chun Hsu (Lucas Hsu, Hung Chun Hsu, 許鴻君), also known as Lucas (Hung-Chun) Hsu. Research Assistant at Academia Sinica, Taiwan. Specializing in multimodal AI, conversational search, and graph neural networks."
+keywords: "Hung-Chun Hsu, Hung Chun Hsu, Lucas Hsu, Lucas (Hung-Chun) Hsu, 許鴻君, Academia Sinica, CFDA Lab, multimodal AI, conversational search, graph neural networks, Taiwan"
 author_profile: true
 redirect_from: 
   - /about/
