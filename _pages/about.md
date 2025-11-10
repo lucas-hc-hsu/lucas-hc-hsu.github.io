@@ -10,7 +10,11 @@ redirect_from:
   - /about.html
 ---
 
-Greetings, I'm Hung-Chun Hsu. I received my Master's Degree in Data Science from National Taiwan University in Taiwan in 2023. Currently, I am a Research Assistant at Academia Sinica, a leading national research institution in Taiwan, with a strong focus on information retrieval, conversational search, and graph neural networks. My ongoing research centers on developing multimodal language models to facilitate deeper human‐AI interaction through diverse data modalities (images, video, audio) and to generate personalized responses based on multimodal human feedback. I am actively seeking Ph.D. opportunities in the United States to advance my research contributions.
+I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. My research interests lies in multimodal LLMs, information retrieval, conversational search, and graph neural networks. <span style="font-weight: 600;">My research focuses on developing multimodal LLMs to enable deeper human-AI interaction across diverse modalities and personalized responses from multimodal feedback.</span>
+
+🎓 I received my M.S. in Data Science at National Taiwan University in 2023. During Master's degree, I was fortunate to work with Prof. Chiu-Yu Wang at Academia Sinica and Prof. Che Lin at NTU.
+
+🚀 I am actively seeking Ph.D. opportunities in the United States.
 
 <small>My name is Hung-Chun Hsu, which is 許鴻君 in Traditional Chinese. I'm from Taiwan. I also go by Lucas.</small>
 

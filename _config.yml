@@ -124,7 +124,7 @@ atom_feed:
 
 
 # SEO Related
-google_site_verification : "google53fed944005ba0a8.html"
+google_site_verification : "googlec66240403668f88b.html"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -158,6 +158,7 @@ include:
   - .htaccess
   - _pages
   - files
+  - googlec66240403668f88b.html
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
