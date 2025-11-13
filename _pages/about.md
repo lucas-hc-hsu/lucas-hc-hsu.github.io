@@ -3,7 +3,7 @@ permalink: /
 title: "Hung-Chun Hsu"
 seo_title: "Hung-Chun Hsu"
 description: "Hung-Chun Hsu (Lucas Hsu, Hung Chun Hsu, 許鴻君), also known as Lucas (Hung-Chun) Hsu."
-keywords: "Hung-Chun Hsu, Hung Chun Hsu, Lucas Hsu, Lucas (Hung-Chun) Hsu, 許鴻君, Academia Sinica, CFDA Lab, multimodal AI, conversational search, graph neural networks, Taiwan"
+keywords: "Hung-Chun Hsu, Hung Chun Hsu, Lucas Hsu, Lucas (Hung-Chun) Hsu, 許鴻君"
 author_profile: true
 redirect_from: 
   - /about/
