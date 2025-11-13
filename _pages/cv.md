@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Curriculum Vitae"
-seo_title: "CV - Hung-Chun Hsu | Research Assistant at Academia Sinica"
+seo_title: "CV | Hung-Chun Hsu"
 description: "Curriculum Vitae of Hung-Chun Hsu. Education, research experience, publications, and skills in AI and machine learning."
 permalink: /cv/
 author_profile: true
