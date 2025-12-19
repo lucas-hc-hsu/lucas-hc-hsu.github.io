@@ -21,7 +21,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/icassp_poster.jpg" alt="ICASSP Poster" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-icassp-2024.jpg" alt="ICASSP Poster" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: #333;">Presenting our FincGAN paper at ICASSP 2024</h3>
@@ -43,7 +43,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/masters_graduation_ceremony.jpg" alt="Master's Graduation Ceremony" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-graduation-2023.jpg" alt="Master's Graduation Ceremony" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: #333;">My Master's Graduation Ceremony – Top of the Class</h3>
@@ -67,7 +67,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/cathay_project_final_report.jpg" alt="Cathay Project Final Report" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-cathay-2023.jpg" alt="Cathay Project Final Report" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: #333;">From Thesis to Impact: Collaboration with Cathay Financial Holdings</h3>
@@ -93,7 +93,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/data_competition.jpg" alt="Data Competition" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-competition-2022.jpg" alt="Data Competition" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: #333;">Carrefour Online Marketplace Next Purchase Prediction – 2nd Place</h3>

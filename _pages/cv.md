@@ -25,7 +25,7 @@ Education
 {% endcomment %}
 <div style="display: flex; align-items: center; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 140px; min-width: 140px;">
-    <img src="/images/ntu_cis_2.jpg" alt="National Taiwan University" style="width: 140px; height: auto; border-radius: 5px;">
+    <img src="/images/logo-ntu.jpg" alt="National Taiwan University" style="width: 140px; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
@@ -36,7 +36,7 @@ Education
 
 <div style="display: flex; align-items: center; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 140px; min-width: 140px;">
-    <img src="/images/nthu_cis_8.gif" alt="National Tsing Hua University" style="width: 140px; height: auto; border-radius: 5px;">
+    <img src="/images/logo-nthu.gif" alt="National Tsing Hua University" style="width: 140px; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
@@ -87,78 +87,94 @@ Publications
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
   <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
-    Work Experience
+    Research Experience
   </div>
   <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
 </div>
 
 {% comment %}
-Work Experience
+Research Experience
 ======
 {% endcomment %}
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Research Assistant, CFDA Lab, CITI, Academia Sinica, Taiwan <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Present</span>
+      Research Assistant, CFDA Lab, CITI, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Present</span>
     </p>
-    <p style="font-size: 0.85em; margin-bottom: 0;">Supervised by Dr. Chuan-Ju Wang and Dr. Ming-Feng Tsai, leading the Dense Retrieval Project in collaboration with NVIDIA Research Taiwan, developing an LLM-based Conversational Product Search (CPS) system that not only accepts multimodal data input but also interacts with users through multimodal data</p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Leading the Information Retrieval (IR) research project in collaboration with NVIDIA Research (Taiwan and US) under the supervision of Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. Focused on conversational retrieval and Multimodal-LLMs.</li>
+      <li style="margin-bottom: 5px;">Participated twice in NIST's Text Retrieval Conference (TREC) tracks starting from 2024: Product Recommendations and Interactive Knowledge Assistance (iKAT). Led and coordinated the competition teams with up to 6 direct reports.</li>
+    </ul>
   </div>
 </div>
 
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Data Scientist R&D Intern, Center of Digital, Data and Technology, Cathay Financial Holdings <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Feb. 2024 - Apr. 2024</span>
+      Data Scientist Intern - R&D, Cathay Financial Holdings <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Feb. 2024 - Apr. 2024</span>
     </p>
-    <p style="font-size: 0.85em; margin-bottom: 0;">Developed a system for rapid identification of internal regulations requiring adjustment due to external legal changes.</p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Developed an enterprise-level Chinese legal retrieval pipeline leveraging LangChain, increasing recall@50 performance from 23% to 39% compared to LangChain's basic two-staged retrieval settings through a novel legal articles pre-classification approach.</li>
+    </ul>
   </div>
 </div>
 
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Research Assistant, SNAC Lab, CITI, Academia Sinica, Taiwan <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2023 - Feb. 2024</span>
+      Research Assistant, SNAC Lab, CITI, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Feb. 2024</span>
     </p>
-    <p style="font-size: 0.85em; margin-bottom: 0;">Supervised by Dr. Chi-Yu Wang and Dr. Che Lin, developed a conditional node generation model for Heterogeneous Graphs (HetGs), facilitating downstream node classification tasks.</p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Developed novel GAN-based data augmentation frameworks for heterogeneous graphs, addressing critical node class imbalance issues in graph neural networks.</li>
+      <li style="margin-bottom: 5px;">Achieved 14.4% improvement in F-score and 12.3% in PR-AUC over SOTA baseline GraphSMOTE through innovative handling of structured graph G=(V,E,X). Published research in IEEE ICASSP with ongoing follow-up studies.</li>
+    </ul>
   </div>
 </div>
 
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
   <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
-    Projects
+    Representative Project
   </div>
   <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
 </div>
 
 {% comment %}
-Projects
+Representative Project
 ======
 {% endcomment %}
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      2025 TREC Interactive Knowledge Assistance Track (iKAT) <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Jun. 2025 - Present</span>
+      2025 TREC Interactive Knowledge Assistance Track (iKAT) <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Jun. 2025 - Sep. 2025</span>
     </p>
-    <p style="font-size: 0.85em; margin-bottom: 0;">Leading a team of seven members in this ongoing competition.</p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Led a team of 7 members to participate in the iKAT track, developing pipelines for traditional offline conversational search and exploring real-time conversational retrieval methods requiring low latency.</li>
+      <li style="margin-bottom: 5px;">Achieved 2nd place in Offline Passage Ranking and 3rd place in Online Interactive Generation among participating teams, outperforming the competition median by 10 pts in nDCG@3 and 11 pts in average human evaluation score respectively.</li>
+    </ul>
   </div>
 </div>
 
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      2024 TREC Product Search Track <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Jul. 2024 - Sep. 2024</span>
+      2024 TREC Product Search and Recommendations Track <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Jun. 2024 - Sep. 2024</span>
     </p>
-    <p style="font-size: 0.85em; margin-bottom: 0;">Lead a team of three interns to enhance product recommendation accuracy using visual embeddings from vision models (BLIP, ViLT, BEiT‐3).</p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Led a 4-member team in the product search and recommendations track. Developed a multimodal product retrieval system leveraging BLIP, ViLT, and BEiT-3 as dual encoders and cross encoders.</li>
+      <li style="margin-bottom: 5px;">Implemented Weighted Sum Fusion to combine unimodal and multimodal retrieval results, achieving nDCG@10 of 76% compared to 72% from traditional BM25 and SPLADE retrievers.</li>
+    </ul>
   </div>
 </div>
 
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Insurance Fraud Detection, Cathay Life Insurance Company, Ltd. & National Taiwan University <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Sep. 2022</span>
+      Insurance Claim Fraud Prediction, Cathay Life Insurance Co., Ltd. & National Taiwan University <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Sep. 2022</span>
     </p>
-    <p style="font-size: 0.85em; margin-bottom: 0;">Developed a Heterogeneous Graph Neural Network to identify fraudulent accounts through social network analysis using insurance data.</p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Designed and implemented heterogeneous social network graphs for large-scale networks and developed data augmentation framework to enhance graph neural network performance in detecting hard-to-identify minority fraud risk accounts.</li>
+    </ul>
   </div>
 </div>
 

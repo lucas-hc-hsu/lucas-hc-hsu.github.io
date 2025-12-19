@@ -6,13 +6,13 @@ permalink: /publication/test-time-scaling
 date: 2025-08-01
 venue: 'arXiv preprint arXiv:2508.18132'
 authors: 'Hung-Chun Hsu, Yuan-Ching Kuo, Chao-Han Huck Yang, Szu-Wei Fu, Hanrong Ye, Hongxu Yin, Yu-Chiang Frank Wang, Ming-Feng Tsai, Chuan-Ju Wang'
-image: 'TTCPS_Front_Page_Diagram.png'
+image: 'pub-test-time-scaling.png'
 paperurl: 'https://www.arxiv.org/abs/2508.18132'
 ---
 
 <!-- Image for individual page -->
 <div style="text-align: center; margin-bottom: 20px;">
-  <img src="/images/TTCPS_Front_Page_Diagram.png" alt="Test-Time Scaling Strategies Framework" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
+  <img src="/images/pub-test-time-scaling.png" alt="Test-Time Scaling Strategies Framework" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
 </div>
 
 <h2 style="text-align: left;">TL;DR</h2>
