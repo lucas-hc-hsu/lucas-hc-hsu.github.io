@@ -15,7 +15,23 @@
             {% endif %}
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
+          <!-- Theme toggle as menu item -->
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a role="button" aria-labelledby="theme-icon">
+              <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i>
+            </a>
+          </li>
         </ul>
+        <script>
+          // Immediately update icon based on current theme
+          (function() {
+            var icon = document.getElementById('theme-icon');
+            if (icon && document.documentElement.getAttribute('data-theme') === 'dark') {
+              icon.classList.remove('fa-sun');
+              icon.classList.add('fa-moon');
+            }
+          })();
+        </script>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>

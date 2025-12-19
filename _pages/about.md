@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {% endfor %}
 
 <div style="margin-top: 15px; text-align: center;">
-  <a href="/publications/" style="font-size: 0.9em; padding: 8px 16px; background-color: white; color: black; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; display: inline-block; transition: background-color 0.3s;">
+  <a href="/publications/" class="btn btn--inverse">
     <i class="fas fa-external-link-alt"></i> View all publications
   </a>
 </div>

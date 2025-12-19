@@ -30,4 +30,50 @@
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- Theme toggle script -->
+<script>
+  // Set theme and update icon
+  function setTheme(theme) {
+    var icon = document.getElementById('theme-icon');
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (icon) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (icon) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
+    }
+  }
+
+  // Toggle theme on click
+  function toggleTheme() {
+    var currentTheme = document.documentElement.getAttribute('data-theme');
+    var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    setTheme(newTheme);
+  }
+
+  // Initialize theme on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get saved theme or use system preference
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
+
+    // Add click listener to toggle button
+    var themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
+  });
+</script>
+
 <!-- end custom head snippets -->

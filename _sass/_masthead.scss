@@ -4,8 +4,8 @@
 
 .masthead {
   position: fixed;
-  background: white;
-  border-bottom: 1px solid $border-color;
+  background: var(--global-bg-color);
+  border-bottom: 1px solid var(--global-border-color);
   height: $masthead-height;
   top: 0;
   width: 100%;
@@ -60,5 +60,35 @@
   &--lg {
     padding-right: 2em;
     font-weight: 700;
+  }
+}
+
+/* Persist class - keeps item visible in greedy-nav */
+.persist {
+  display: inline-block !important;
+}
+
+/* Tail class - positions at end of menu */
+.tail {
+  margin-left: auto;
+}
+
+/* Theme toggle in navigation */
+#theme-toggle {
+  cursor: pointer;
+  padding-left: 0.5em;
+
+  a {
+    cursor: pointer;
+    color: var(--global-text-color);
+
+    &:hover {
+      color: var(--link-color);
+    }
+  }
+
+  #theme-icon {
+    font-size: 1.1em;
+    vertical-align: middle;
   }
 }

@@ -11,32 +11,32 @@ author_profile: true
 {% for post in sorted_talks %}
   <!-- Section Divider for all talks -->
   <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
-    <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
+    <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
       {{ post.title }}
     </div>
-    <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
+    <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
   </div>
-  
+
   <div style="margin-bottom: 40px; padding-bottom: 30px;">
-    
+
     {% if post.venue or post.date_display or post.date or post.slides_url or post.video_url %}
-      <div style="font-size: 0.8em; color: #777; margin-bottom: 15px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div style="font-size: 0.8em; color: var(--global-text-color); opacity: 0.8; margin-bottom: 15px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
         <span>
           {% if post.venue %}<strong>Venue:</strong> {{ post.venue }}{% endif %}
           {% if post.venue and (post.date_display or post.date) %} | {% endif %}
           {% if post.date_display %}<strong>Date:</strong> {{ post.date_display }}{% elsif post.date %}<strong>Date:</strong> {{ post.date | date: "%B %d, %Y" }}{% endif %}
         </span>
-        
+
         {% if post.slides_url or post.video_url %}
           <span>
             {% if post.slides_url %}
-              <a href="{{ post.slides_url }}" style="font-size: 0.7em; padding: 2px 6px; margin-right: 5px; background-color: white; color: black; border: 1px solid #ccc; border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank">
+              <a href="{{ post.slides_url }}" style="font-size: 0.7em; padding: 2px 6px; margin-right: 5px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--global-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank">
                 <i class="fas fa-external-link-alt"></i> View Slides
               </a>
             {% endif %}
-            
+
             {% if post.video_url %}
-              <a href="{{ post.video_url }}" style="font-size: 0.7em; padding: 2px 6px; background-color: white; color: black; border: 1px solid #ccc; border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank">
+              <a href="{{ post.video_url }}" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--global-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank">
                 <i class="fas fa-play"></i> Watch Video
               </a>
             {% endif %}
@@ -44,13 +44,13 @@ author_profile: true
         {% endif %}
       </div>
     {% endif %}
-    
+
     {% if post.slides_embed %}
       <div style="margin: 20px 0;">
         <iframe src="{{ post.slides_embed }}" frameborder="0" width="100%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
       </div>
     {% endif %}
-    
+
     {% if post.excerpt %}
       <div style="margin-top: 15px; font-size: 0.9em; line-height: 1.6;">
         {{ post.excerpt }}
@@ -60,5 +60,5 @@ author_profile: true
 {% endfor %}
 
 {% if site.talks.size == 0 %}
-  <p style="font-size: 16px; color: #666; text-align: center; margin: 50px 0;">No talks available yet. Check back soon!</p>
+  <p style="font-size: 16px; color: var(--global-text-color); opacity: 0.8; text-align: center; margin: 50px 0;">No talks available yet. Check back soon!</p>
 {% endif %}

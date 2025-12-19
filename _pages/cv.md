@@ -13,10 +13,10 @@ redirect_from:
 
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
-  <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
+  <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
     Education
   </div>
-  <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
 </div>
 
 {% comment %}
@@ -24,8 +24,8 @@ Education
 ======
 {% endcomment %}
 <div style="display: flex; align-items: center; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
-  <div style="flex: 0 0 140px; min-width: 140px;">
-    <img src="/images/logo-ntu.jpg" alt="National Taiwan University" style="width: 140px; height: auto; border-radius: 5px;">
+  <div style="flex: 0 0 140px; min-width: 140px; height: 50px; background-color: white; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center;">
+    <img src="/images/logo-ntu-removebg-preview.png" alt="National Taiwan University" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
@@ -35,8 +35,8 @@ Education
 </div>
 
 <div style="display: flex; align-items: center; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
-  <div style="flex: 0 0 140px; min-width: 140px;">
-    <img src="/images/logo-nthu.gif" alt="National Tsing Hua University" style="width: 140px; height: auto; border-radius: 5px;">
+  <div style="flex: 0 0 140px; min-width: 140px; height: 50px; background-color: white; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center;">
+    <img src="/images/logo-nthu.gif" alt="National Tsing Hua University" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
@@ -47,10 +47,10 @@ Education
 
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
-  <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
+  <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
     Publications
   </div>
-  <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
 </div>
 
 {% comment %}
@@ -86,10 +86,10 @@ Publications
 
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
-  <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
+  <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
     Research Experience
   </div>
-  <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
 </div>
 
 {% comment %}
@@ -133,10 +133,10 @@ Research Experience
 
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
-  <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
+  <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
     Representative Project
   </div>
-  <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
 </div>
 
 {% comment %}
@@ -181,10 +181,10 @@ Representative Project
 {% comment %}
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
-  <div style="padding: 0 20px 0 0; font-weight: bold; color: #666; font-size: 24px; background-color: white;">
+  <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
     Skills
   </div>
-  <div style="flex: 1; height: 1px; background-color: #e1e1e1;"></div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
 </div>
 
 Skills

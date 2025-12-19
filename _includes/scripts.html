@@ -1,3 +1,50 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<!-- Fix greedy-nav to preserve .persist items (like theme toggle) -->
+<script>
+(function() {
+  var $nav = $('#site-nav');
+  var $btn = $('#site-nav button');
+  var $vlinks = $('#site-nav .visible-links');
+  var $hlinks = $('#site-nav .hidden-links');
+  var breaks = [];
+
+  function updateNav() {
+    var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
+
+    if($vlinks.width() > availableSpace) {
+      breaks.push($vlinks.width());
+      // Exclude .persist items from being moved to hidden menu
+      $vlinks.children('*:not(.masthead__menu-item--lg):not(.persist)').last().prependTo($hlinks);
+      if($btn.hasClass('hidden')) {
+        $btn.removeClass('hidden');
+      }
+    } else {
+      if(availableSpace > breaks[breaks.length-1]) {
+        $hlinks.children().first().appendTo($vlinks);
+        breaks.pop();
+      }
+      if(breaks.length < 1) {
+        $btn.addClass('hidden');
+        $hlinks.addClass('hidden');
+      }
+    }
+    $btn.attr("count", breaks.length);
+    if($vlinks.width() > availableSpace) {
+      updateNav();
+    }
+  }
+
+  // Override the default updateNav
+  $(window).off('resize').resize(function() {
+    updateNav();
+  });
+
+  // Re-run on load
+  $(document).ready(function() {
+    updateNav();
+  });
+})();
+</script>
+
 {% include analytics.html %}
