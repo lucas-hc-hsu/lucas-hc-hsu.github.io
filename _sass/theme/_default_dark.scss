@@ -52,4 +52,10 @@ html[data-theme="dark"] {
     --global-text-color-light           : #d0d0d0;
     --global-thead-color                : #{$background-lighter};
     --card-bg-color                     : #333333;
+    --selection-bg-color                : #{$link};
+    --selection-text-color              : #fff;
+    --notice-bg-color                   : #3a3a3a;
+    --navicon-color                     : #{$text};
+    --pagination-text-color             : #{$text};
+    --pagination-bg-active              : #{$link};
 }

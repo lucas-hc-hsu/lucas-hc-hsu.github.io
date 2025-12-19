@@ -8,7 +8,7 @@ div.highlighter-rouge, figure.highlight {
   padding: 1em;
   border: 1px solid var(--global-border-color);
   border-radius: $border-radius;
-  background-color: $code-background-color;
+  background-color: var(--global-code-background-color);
   box-shadow: $box-shadow;
   font-size: $type-size-4;
 
@@ -17,7 +17,7 @@ div.highlighter-rouge, figure.highlight {
     top: 0;
     right: 0;
     padding: 0.5em;
-    background-color: $lighter-gray;
+    background-color: var(--global-border-color);
     content: "\f121";
     font-family: "Font Awesome 6 Free" !important;
     font-size: $type-size-6;
@@ -31,6 +31,7 @@ div.highlighter-rouge, figure.highlight {
     font-family: $monospace;
     font-size: $type-size-6;
     line-height: 1.8;
+    color: var(--global-code-text-color);
   }
 }
 

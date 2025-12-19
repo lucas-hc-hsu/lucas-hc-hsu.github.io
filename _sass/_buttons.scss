@@ -53,15 +53,16 @@
     background-color: var(--global-bg-color);
 
     &:hover {
-      color: #fff !important;
-      border-color: $gray;
+      color: var(--global-bg-color) !important;
+      background-color: var(--global-text-color);
+      border-color: var(--global-text-color);
     }
   }
 
   /* light outline */
 
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
+    border: 1px solid var(--global-border-color) !important; /* override*/
     background-color: transparent;
   }
 

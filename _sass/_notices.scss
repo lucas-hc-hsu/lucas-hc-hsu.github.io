@@ -16,13 +16,15 @@
   font-family: $global-font-family;
   font-size: $type-size-6 !important;
   text-indent: initial; /* override*/
-  background-color: mix(#fff, $notice-color, 90%);
+  background-color: var(--notice-bg-color);
   border-radius: $border-radius;
   box-shadow: 0 1px 1px rgba($notice-color, 0.25);
+  border-left: 4px solid $notice-color;
 
   h4 {
     margin-top: 0 !important; /* override*/
     margin-bottom: 0.75em;
+    color: var(--global-text-color);
   }
 
   @at-root .page__content #{&} h4 {
@@ -47,12 +49,12 @@
     color: $notice-color;
 
     &:hover {
-      color: mix(#000, $notice-color, 40%);
+      color: var(--global-link-color-hover);
     }
   }
 
   code {
-    background-color: mix(#fff, $notice-color, 95%)
+    background-color: var(--global-code-background-color);
   }
 
   ul {
