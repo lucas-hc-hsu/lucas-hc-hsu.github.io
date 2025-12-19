@@ -35,13 +35,37 @@
     }
   }
 
+  function initNav() {
+    // First, rescue any .persist items that were moved to hidden-links by the original script
+    $hlinks.children('.persist').appendTo($vlinks);
+
+    // Reset breaks array and recalculate
+    breaks = [];
+    var hiddenCount = $hlinks.children().length;
+
+    // Rebuild breaks array based on items in hidden-links
+    for (var i = 0; i < hiddenCount; i++) {
+      breaks.push(0); // Placeholder values
+    }
+
+    // Update button visibility
+    if (hiddenCount > 0) {
+      $btn.removeClass('hidden');
+      $btn.attr("count", hiddenCount);
+    } else {
+      $btn.addClass('hidden');
+      $hlinks.addClass('hidden');
+    }
+  }
+
   // Override the default updateNav
   $(window).off('resize').resize(function() {
     updateNav();
   });
 
-  // Re-run on load
+  // Re-run on load - first rescue persist items, then update
   $(document).ready(function() {
+    initNav();
     updateNav();
   });
 })();
