@@ -33,7 +33,7 @@ author_profile: true
       <div style="font-size: 0.9em; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
         <span><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
         {% if post.paperurl %}
-          <a href="{{ post.paperurl }}" class="btn btn--small btn--inverse" target="_blank">
+          <a href="{{ post.paperurl }}" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank">
             <i class="fas fa-external-link-alt"></i> paper link
           </a>
         {% endif %}
@@ -48,7 +48,7 @@ author_profile: true
 <hr />
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">For more information, please feel free to visit <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">For more information, please feel free to visit my Google Scholar profile. <a href="{{site.author.googlescholar}}" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> Google Scholar</a></div>
 {% endif %}
 
 
