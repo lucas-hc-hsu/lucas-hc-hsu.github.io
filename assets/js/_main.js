@@ -2,8 +2,8 @@
    Theme toggle functions
    ========================================================================== */
 
-// detect OS/browser preference
-const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+// Default theme is light (day theme)
+const defaultTheme = 'light';
 
 // Set the theme on page load or when explicitly called
 let setTheme = (theme) => {
@@ -11,7 +11,7 @@ let setTheme = (theme) => {
     theme ||
     localStorage.getItem("theme") ||
     $("html").attr("data-theme") ||
-    browserPref;
+    defaultTheme;
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
@@ -39,14 +39,8 @@ $(document).ready(function(){
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
   const scssMastheadHeight = 70;  // pixels
 
-  // If the user hasn't chosen a theme, follow the OS preference
+  // Initialize theme (defaults to light if no preference saved)
   setTheme();
-  window.matchMedia('(prefers-color-scheme: dark)')
-        .addEventListener("change", (e) => {
-          if (!localStorage.getItem("theme")) {
-            setTheme(e.matches ? "dark" : "light");
-          }
-        });
 
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);

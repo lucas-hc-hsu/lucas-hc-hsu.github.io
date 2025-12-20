@@ -21,12 +21,11 @@
 <script>
   (function() {
     var theme = localStorage.getItem('theme');
-    var isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    if (isDark) {
+    // Default to light theme if no preference is saved
+    if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'dark');
     }
-    // Store initial theme state for later icon update
-    window.__initialTheme = isDark ? 'dark' : 'light';
+    window.__initialTheme = theme === 'dark' ? 'dark' : 'light';
   })();
 </script>
 
