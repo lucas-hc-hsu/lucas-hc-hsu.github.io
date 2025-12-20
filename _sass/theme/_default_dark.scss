@@ -60,4 +60,5 @@ html[data-theme="dark"] {
     --pagination-text-color             : #{$text};
     --pagination-bg-active              : #{$link};
     --image-border-color                : transparent;
+    --button-border-color               : #{$light-gray};
 }

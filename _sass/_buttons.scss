@@ -49,7 +49,7 @@
 
   &--inverse {
     color: var(--global-text-color) !important;
-    border: 1px solid var(--global-border-color) !important; /* override*/
+    border: 1px solid var(--button-border-color) !important; /* override*/
     background-color: var(--global-bg-color);
 
     &:hover {
