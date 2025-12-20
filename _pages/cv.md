@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Curriculum Vitae"
-seo_title: "CV | Hung-Chun Hsu"
-description: "Curriculum Vitae of Hung-Chun Hsu. Education, research experience, publications, and skills in AI and machine learning."
+title: "Résumé"
+seo_title: "Résumé | Hung-Chun Hsu"
+description: "Résumé of Hung-Chun Hsu. Education, research experience, publications, and skills in AI and machine learning."
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -10,6 +10,10 @@ redirect_from:
 ---
 
 {% include base_path %}
+
+<p style="margin-bottom: 20px; font-size: 0.9em;">
+  For a complete overview of my background, feel free to download my résumé. <a href="/files/Lucas_Hsu_Resume.pdf" class="btn btn--small btn--inverse" target="_blank"><i class="fas fa-external-link-alt"></i> résumé link</a>
+</p>
 
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
