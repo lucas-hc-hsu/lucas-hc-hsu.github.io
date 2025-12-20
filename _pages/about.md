@@ -14,7 +14,7 @@ I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. 
 
 🎓 I received my M.S. in Data Science at National Taiwan University in 2023. During Master's degree, I was fortunate to work with Prof. Chiu-Yu Wang at Academia Sinica and Prof. Che Lin at NTU.
 
-🚀 <span style="color: #990000; font-weight: bold;">I am actively seeking Ph.D. opportunities in the United States!</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.7em; padding: 2px 6px; margin-left: 10px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block; font-weight: bold;" target="_blank"><i class="fas fa-external-link-alt"></i> my resume</a>
+🚀 <span style="color: #990000; font-weight: bold;">I am actively seeking Ph.D. opportunities in the United States!</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.6em; padding: 2px 6px; margin-left: 10px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> my resume</a>
 
 <small>My name is Hung-Chun Hsu, which is 許鴻君 in Traditional Chinese. I'm from Taiwan. I also go by Lucas.</small>
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="news-section" markdown="1">
 
-- **Dec 2025**: Our team achieved strong results in TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation! <a href="/files/final_report.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> Full Results</a> <a href="/files/trec-ikat25-overview.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> Official Overview</a>
+- **Dec 2025**: Our team achieved strong results in TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation!
 - **Sep 2025**: We release our work in TREC iKAT 2025, "[CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion](https://arxiv.org/abs/2509.15588v1)."
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
 - **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
