@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="news-section" markdown="1">
 
-- **Dec 2025**: Our team achieved strong results in [TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation!](/files/trec-ikat25-overview.pdf)
+- **Dec 2025**: Our team achieved strong results in TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation! <a href="/files/final_report.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> Full Results</a> <a href="/files/trec-ikat25-overview.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> Official Overview</a>
 - **Sep 2025**: We release our work in TREC iKAT 2025, "[CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion](https://arxiv.org/abs/2509.15588v1)."
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
 - **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
