@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "Résumé"
-seo_title: "Résumé | Hung-Chun Hsu"
-description: "Résumé of Hung-Chun Hsu. Education, research experience, publications, and skills in AI and machine learning."
+title: "Resume"
+seo_title: "Resume | Hung-Chun Hsu"
+description: "Resume of Hung-Chun Hsu. Education, research experience, publications, and skills in AI and machine learning."
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -12,7 +12,7 @@ redirect_from:
 {% include base_path %}
 
 <p style="margin-bottom: 20px;">
-  <span style="font-size: 0.8em;">For a complete overview of my background, feel free to download my résumé.</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> résumé link</a>
+  <span style="font-size: 0.8em;">For a complete overview of my background, feel free to download my resume.</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> resume link</a>
 </p>
 
 <!-- Section Divider -->
