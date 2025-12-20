@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="news-section" markdown="1">
 
-- **Dec 2025**: Our team achieved strong results in TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation!
+- **Dec 2025**: Our team achieved strong results in [TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation!](/files/trec-ikat25-overview.pdf)
 - **Sep 2025**: We release our work in TREC iKAT 2025, "[CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion](https://arxiv.org/abs/2509.15588v1)."
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
 - **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
