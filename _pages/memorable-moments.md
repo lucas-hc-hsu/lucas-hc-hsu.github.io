@@ -13,6 +13,33 @@ author_profile: true
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
   <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
   <div style="padding: 0 20px; font-weight: bold; color: var(--global-text-color); font-size: 14px; background-color: var(--global-bg-color);">
+    December 12, 2025
+  </div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
+</div>
+
+<!-- Event Content -->
+<div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+  <div style="flex: 0 0 300px; min-width: 250px;">
+    <img src="/images/ikat_automatic_passage_ranking_results.png" alt="TREC iKAT 2025 Results" style="width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--image-border-color);">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h3 style="margin-top: 0; color: var(--global-text-color);">Top Rankings at TREC iKAT 2025 Competition</h3>
+    <p style="font-size: 0.8em;"><strong>Thrilled to share that our team achieved excellent results in the TREC iKAT 2025 competition!</strong> <a href="/files/final_report.pdf" class="btn btn--small btn--inverse" target="_blank"><i class="fas fa-external-link-alt"></i> Full Results</a> <a href="/files/trec-ikat25-overview.pdf" class="btn btn--small btn--inverse" target="_blank"><i class="fas fa-external-link-alt"></i> Official Overview</a></p>
+    <p style="font-size: 0.8em;">Together with my teammates Yuan-Ching Kuo, Tsung-En Yu, Yu-Cheng Chang, Guan-Wei Yeo, Quah Eugene, and Fan-Jie Shih from Dr. Chuan-Ju Wang's laboratory, we achieved strong results across multiple run-wise evaluations:</p>
+    <ul style="font-size: 0.8em;">
+      <li>Offline Passage Ranking: 5th place</li>
+      <li>Offline Generated Response 1 (RAG): 13th place</li>
+      <li>Offline Generated Response 2 (Generation-only): 1st place</li>
+      <li>Online Interactive Response Generation: 4th place</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Date Separator -->
+<div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
+  <div style="padding: 0 20px; font-weight: bold; color: var(--global-text-color); font-size: 14px; background-color: var(--global-bg-color);">
     April 21, 2024
   </div>
   <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
