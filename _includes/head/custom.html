@@ -51,7 +51,8 @@
   }
 
   // Toggle theme on click
-  function toggleTheme() {
+  function toggleTheme(e) {
+    e.preventDefault();
     var currentTheme = document.documentElement.getAttribute('data-theme');
     var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     localStorage.setItem('theme', newTheme);
@@ -67,11 +68,13 @@
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark');
     }
+  });
 
-    // Add click listener to toggle button
+  // Use event delegation for theme toggle (works even if element is moved in DOM)
+  document.addEventListener('click', function(e) {
     var themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-      themeToggle.addEventListener('click', toggleTheme);
+    if (themeToggle && (themeToggle === e.target || themeToggle.contains(e.target))) {
+      toggleTheme(e);
     }
   });
 </script>
