@@ -16,43 +16,16 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a href="#" role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i></a>
+            <a role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i></a>
           </li>
         </ul>
         <script>
-          // Immediately update icon based on current theme
+          // Immediately update icon based on current theme (before main.js loads)
           (function() {
             var icon = document.getElementById('theme-icon');
             if (icon && document.documentElement.getAttribute('data-theme') === 'dark') {
               icon.classList.remove('fa-sun');
               icon.classList.add('fa-moon');
-            }
-
-            // Add click listener directly here (after element exists)
-            var toggle = document.getElementById('theme-toggle');
-            if (toggle) {
-              toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                var currentTheme = document.documentElement.getAttribute('data-theme');
-                var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                localStorage.setItem('theme', newTheme);
-
-                // Update theme
-                if (newTheme === 'dark') {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                  if (icon) {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                  }
-                } else {
-                  document.documentElement.removeAttribute('data-theme');
-                  if (icon) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                  }
-                }
-              });
             }
           })();
         </script>

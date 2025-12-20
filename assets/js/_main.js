@@ -1,8 +1,56 @@
 /* ==========================================================================
+   Theme toggle functions
+   ========================================================================== */
+
+// detect OS/browser preference
+const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+// Set the theme on page load or when explicitly called
+let setTheme = (theme) => {
+  const use_theme =
+    theme ||
+    localStorage.getItem("theme") ||
+    $("html").attr("data-theme") ||
+    browserPref;
+
+  if (use_theme === "dark") {
+    $("html").attr("data-theme", "dark");
+    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+  } else if (use_theme === "light") {
+    $("html").removeAttr("data-theme");
+    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+  }
+};
+
+// Toggle the theme manually
+var toggleTheme = () => {
+  const current_theme = $("html").attr("data-theme");
+  const new_theme = current_theme === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", new_theme);
+  setTheme(new_theme);
+};
+
+/* ==========================================================================
    jQuery plugin settings and other scripts
    ========================================================================== */
 
 $(document).ready(function(){
+  // SCSS SETTINGS
+  const scssLarge = 925;          // pixels, from /_sass/_themes.scss
+  const scssMastheadHeight = 70;  // pixels
+
+  // If the user hasn't chosen a theme, follow the OS preference
+  setTheme();
+  window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener("change", (e) => {
+          if (!localStorage.getItem("theme")) {
+            setTheme(e.matches ? "dark" : "light");
+          }
+        });
+
+  // Enable the theme toggle
+  $('#theme-toggle').on('click', toggleTheme);
+
   // Sticky footer
   var bumpIt = function() {
       $("body").css("margin-bottom", $(".page__footer").outerHeight(true));
@@ -20,7 +68,7 @@ $(document).ready(function(){
       bumpIt();
     }
   }, 250);
-  
+
   // FitVids init
   fitvids();
 
@@ -30,8 +78,15 @@ $(document).ready(function(){
     $(".author__urls-wrapper button").toggleClass("open");
   });
 
+  // Restore the follow menu if toggled on a window resize
+  jQuery(window).on('resize', function () {
+    if ($('.author__urls.social-icons').css('display') == 'none' && $(window).width() >= scssLarge) {
+      $(".author__urls").css('display', 'block')
+    }
+  });
+
   // init smooth scroll, this needs to be slightly more than then fixed masthead height
-  $("a").smoothScroll({offset: -65});
+  $("a").smoothScroll({offset: -scssMastheadHeight, preventDefault: false});
 
   // add lightbox class to all image links
   $("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']").addClass("image-popup");
