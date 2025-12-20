@@ -16,7 +16,7 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a href="javascript:void(0)" role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i></a>
+            <a href="#" onclick="toggleTheme(event); return false;" role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i></a>
           </li>
         </ul>
         <script>
