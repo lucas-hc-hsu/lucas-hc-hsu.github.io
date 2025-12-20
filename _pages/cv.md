@@ -12,7 +12,7 @@ redirect_from:
 {% include base_path %}
 
 <p style="margin-bottom: 20px;">
-  <span style="font-size: 0.8em;">For a complete overview of my background, feel free to download my résumé.</span> <a href="/files/Lucas_Hsu_Resume.pdf" class="btn btn--small btn--inverse" target="_blank"><i class="fas fa-external-link-alt"></i> résumé link</a>
+  <span style="font-size: 0.8em;">For a complete overview of my background, feel free to download my résumé.</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> résumé link</a>
 </p>
 
 <!-- Section Divider -->
