@@ -14,7 +14,7 @@ I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. 
 
 🎓 I received my M.S. in Data Science at National Taiwan University in 2023. During Master's degree, I was fortunate to work with Prof. Chiu-Yu Wang at Academia Sinica and Prof. Che Lin at NTU.
 
-🚀 <span style="color: #990000; font-weight: bold;">I am actively seeking Ph.D. opportunities in the United States!</span> <a href="/files/Lucas_Hsu_Resume.pdf" class="btn btn--small btn--inverse" target="_blank"><i class="fas fa-external-link-alt"></i> résumé link</a>
+🚀 <span style="color: #990000; font-weight: bold;">I am actively seeking Ph.D. opportunities in the United States!</span> <a href="/files/Lucas_Hsu_Resume.pdf" class="btn btn--small btn--inverse" style="margin-left: 10px; padding: 0.25em 0.75em; font-size: 0.7em;" target="_blank"><i class="fas fa-external-link-alt"></i> résumé link</a>
 
 <small>My name is Hung-Chun Hsu, which is 許鴻君 in Traditional Chinese. I'm from Taiwan. I also go by Lucas.</small>
 
