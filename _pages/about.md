@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hung-Chun Hsu"
+title: "Lucas Here! 👋"
 seo_title: "Hung-Chun Hsu"
 description: "Hung-Chun Hsu (Lucas Hsu, Hung Chun Hsu, 許鴻君), also known as Lucas (Hung-Chun) Hsu."
 keywords: "Hung-Chun Hsu, Hung Chun Hsu, Lucas Hsu, Lucas (Hung-Chun) Hsu, 許鴻君"
@@ -10,13 +10,11 @@ redirect_from:
   - /about.html
 ---
 
-I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. My research interests lie in multimodal LLMs, information retrieval, conversational search, and graph neural networks. <span style="font-weight: 600;">Currently, my research centers on developing multimodal LLMs to enable deeper human-AI interaction across diverse modalities and to generate personalized responses from multimodal feedback.</span>
+Hi, I'm Hung-Chun Hsu, and I also go by Lucas. I am a senior research assistant at Academia Sinica, Taiwan, working with Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. My research interests lie in multimodal LLMs, information retrieval, conversational search, and graph neural networks. <span style="font-weight: 600;">Currently, my research centers on developing multimodal LLMs to enable deeper human-AI interaction across diverse modalities and to generate personalized responses from multimodal feedback.</span>
 
 🎓 I received my M.S. in Data Science at National Taiwan University in 2023. During Master's degree, I was fortunate to work with Prof. Chiu-Yu Wang at Academia Sinica and Prof. Che Lin at NTU.
 
 🚀 <span style="color: #990000; font-weight: bold;">I am actively seeking Ph.D. opportunities in the United States!</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.6em; padding: 2px 6px; margin-left: 10px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> my resume</a>
-
-<small>My name is Hung-Chun Hsu, which is 許鴻君 in Traditional Chinese. I'm from Taiwan. I also go by Lucas.</small>
 
 ## News
 
