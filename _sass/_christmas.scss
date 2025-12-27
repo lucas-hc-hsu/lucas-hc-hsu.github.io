@@ -79,6 +79,13 @@ html {
     padding-bottom: calc(1em + 15px) !important;
 }
 
+/* Reduce spacing between masthead and profile for small screens */
+@media screen and (max-width: 924px) {
+    .masthead__inner-wrap {
+        padding-bottom: calc(1em - 5px) !important;
+    }
+}
+
 /* Add spacing between masthead and content for medium screens (925px - 1024px) */
 @media screen and (min-width: 925px) and (max-width: 1023px) {
     #main {

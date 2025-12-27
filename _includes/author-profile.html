@@ -53,11 +53,33 @@
           display: none !important;
         }
       }
-      
+
       /* Show contact buttons when sidebar is on top (narrow viewports) */
       @media (max-width: 924px) {
         .author__contact-buttons {
           display: block !important;
+        }
+      }
+
+      /* Small screens (< 600px): Hide bio and shrink buttons */
+      @media (max-width: 599px) {
+        .author__bio {
+          display: none !important;
+        }
+        .author__contact-buttons {
+          display: flex !important;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 4px;
+          margin-top: 8px;
+        }
+        .author__contact-buttons .btn {
+          font-size: 0.75rem !important;
+          padding: 0.3em 0.6em !important;
+          margin: 0 !important;
+        }
+        .author__contact-buttons .btn i {
+          font-size: 0.85rem;
         }
       }
     </style>
