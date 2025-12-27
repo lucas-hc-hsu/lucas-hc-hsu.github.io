@@ -159,9 +159,9 @@ html[data-theme="dark"] .author__urls .ai {
         left: 50%;
         /* Fine-tune alignment: adjust these values to align wreath center with photo center */
         transform: translate(-50%, -50%) translate(1px, -5px);
-        /* Size relative to container: 145% of image size */
-        width: 145%;
-        height: 145%;
+        /* Size relative to container: 150% of image size */
+        width: 150%;
+        height: 150%;
         background-image: url('/images/christmas/wreath-centered.png');
         background-size: contain;
         background-repeat: no-repeat;
