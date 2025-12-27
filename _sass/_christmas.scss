@@ -14,7 +14,7 @@ html {
 /* Candy Cane Border - Top (for masthead) */
 .christmas-border-top {
     border-bottom: none !important;
-    overflow: hidden;
+    /* Note: Do NOT use overflow: hidden here - it clips the mobile dropdown menu */
 }
 
 .christmas-border-top::after {
