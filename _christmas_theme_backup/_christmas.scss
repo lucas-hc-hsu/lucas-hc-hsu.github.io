@@ -123,6 +123,7 @@ html[data-theme="dark"] .author__urls .ai {
 .author__avatar img {
     position: relative;
     z-index: 1;
+    border-radius: 50% !important;  /* Ensure round border in all browsers */
 }
 
 /* Wreath - hidden by default on small screens */

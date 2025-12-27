@@ -12,6 +12,11 @@
     const MIN_OPACITY = 0.4;
     const MAX_OPACITY = 0.7;
 
+    // Create a style element once for all keyframes
+    const snowStyleEl = document.createElement('style');
+    snowStyleEl.id = 'snowfall-keyframes';
+    document.head.appendChild(snowStyleEl);
+
     // Create a unique keyframe animation for each opacity level
     function createOpacityKeyframes(opacity, index) {
         const keyframeName = `snowfall-${index}`;
@@ -34,16 +39,8 @@
             }
         `;
 
-        // Add keyframe to stylesheet
-        const styleSheet = document.styleSheets[0];
-        try {
-            styleSheet.insertRule(keyframeRule, styleSheet.cssRules.length);
-        } catch (e) {
-            // Fallback: create a style element
-            const style = document.createElement('style');
-            style.textContent = keyframeRule;
-            document.head.appendChild(style);
-        }
+        // Append keyframe to our dedicated style element
+        snowStyleEl.textContent += keyframeRule;
 
         return keyframeName;
     }
