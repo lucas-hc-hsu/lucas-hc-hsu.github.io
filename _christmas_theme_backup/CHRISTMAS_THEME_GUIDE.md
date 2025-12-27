@@ -17,6 +17,7 @@ All Christmas theme files are backed up in: `_christmas_theme_backup/`
 | `_christmas_dark.scss` | `_sass/theme/` | Christmas dark theme colors and variables |
 | `christmas-snow.html` | `_includes/` | JavaScript snowfall effect |
 | `masthead.html` | `_includes/` | Modified to include Santa sleigh animation elements |
+| `head.html` | `_includes/` | Modified to set default theme to dark |
 | `default.html` | `_layouts/` | Modified to include snow effect and Christmas border classes |
 | `main.scss` | `assets/css/` | Modified to import Christmas theme files |
 
@@ -104,7 +105,25 @@ Changes:
 1. Remove `christmas-border-top` class from `.masthead`
 2. Remove Santa sleigh `<div>` elements
 
-### Step 4: (Optional) Remove Christmas Files
+### Step 4: Restore Default Theme to Light in `head.html`
+
+Edit `_includes/head.html` and change:
+
+```javascript
+// FROM (Christmas - dark default):
+if (theme !== 'light') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+window.__initialTheme = theme === 'light' ? 'light' : 'dark';
+
+// TO (Normal - light default):
+if (theme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+window.__initialTheme = theme === 'dark' ? 'dark' : 'light';
+```
+
+### Step 5: (Optional) Remove Christmas Files
 
 You can optionally remove or keep the following files:
 - `_sass/_christmas.scss`
@@ -173,7 +192,25 @@ Edit `_includes/masthead.html`:
   ...
 ```
 
-### Step 5: Rebuild Site
+### Step 5: Set Default Theme to Dark in `head.html`
+
+Edit `_includes/head.html` and change:
+
+```javascript
+// FROM (Normal - light default):
+if (theme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+window.__initialTheme = theme === 'dark' ? 'dark' : 'light';
+
+// TO (Christmas - dark default):
+if (theme !== 'light') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+}
+window.__initialTheme = theme === 'light' ? 'light' : 'dark';
+```
+
+### Step 6: Rebuild Site
 
 ```bash
 bundle exec jekyll build
@@ -189,7 +226,7 @@ bundle exec jekyll serve
 - **Candy Cane Border**: Red/white/green striped border on header and footer (6px height)
 - **Snowfall Effect**: 60 animated snowflakes falling across the page
 - **Santa Sleigh**: Animated Santa sleigh flying across the header (29s animation cycle)
-- **Christmas Wreath**: Responsive wreath around profile picture (154% of image size, offset: right 5px, up 22px)
+- **Christmas Wreath**: Responsive wreath around profile picture (154% of image size, offset: right 5px, up 10px)
 - **Warm Color Scheme**: Cream-toned background with Christmas red/green accents
 
 ### Theme Colors
@@ -209,7 +246,7 @@ bundle exec jekyll serve
 - Extra bottom padding in masthead: 15px
 - Sidebar top padding: 105px
 - Profile picture margin-left: 10px
-- Profile picture margin-bottom: 55px
+- Profile picture margin-bottom: 35px
 
 ---
 
