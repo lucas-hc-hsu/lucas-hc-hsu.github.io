@@ -82,7 +82,14 @@ html {
 /* Reduce spacing between masthead and profile for small screens */
 @media screen and (max-width: 924px) {
     .masthead__inner-wrap {
-        padding-bottom: calc(1em - 5px) !important;
+        padding-bottom: 0.5em !important;
+    }
+    .sidebar {
+        margin-top: -10px !important;
+        padding-top: 0 !important;
+    }
+    .author__avatar {
+        margin-top: 0 !important;
     }
 }
 
