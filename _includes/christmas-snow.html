@@ -1,87 +1,43 @@
 <!-- Christmas Snowfall Effect -->
-<div class="snowflakes" id="snowflakes-container" aria-hidden="true"></div>
-
-<script>
-(function() {
-    // Configuration
-    const SNOWFLAKE_COUNT = 60; // Moderate snowfall
-    const MIN_SIZE = 3;
-    const MAX_SIZE = 6;
-    const MIN_DURATION = 10;
-    const MAX_DURATION = 20;
-    const MIN_OPACITY = 0.4;
-    const MAX_OPACITY = 0.7;
-
-    // Create a style element once for all keyframes
-    const snowStyleEl = document.createElement('style');
-    snowStyleEl.id = 'snowfall-keyframes';
-    document.head.appendChild(snowStyleEl);
-
-    // Create a unique keyframe animation for each opacity level
-    function createOpacityKeyframes(opacity, index) {
-        const keyframeName = `snowfall-${index}`;
-        const keyframeRule = `
-            @keyframes ${keyframeName} {
-                0% {
-                    transform: translateY(-10px) translateX(0) rotate(0deg);
-                    opacity: 0;
-                }
-                10% {
-                    opacity: ${opacity};
-                }
-                90% {
-                    opacity: ${opacity};
-                }
-                100% {
-                    transform: translateY(100vh) translateX(20px) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-
-        // Append keyframe to our dedicated style element
-        snowStyleEl.textContent += keyframeRule;
-
-        return keyframeName;
-    }
-
-    // Create snowflakes
-    function createSnowflakes() {
-        const container = document.getElementById('snowflakes-container');
-        if (!container) return;
-
-        for (let i = 0; i < SNOWFLAKE_COUNT; i++) {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-
-            // Random properties
-            const size = Math.random() * (MAX_SIZE - MIN_SIZE) + MIN_SIZE;
-            const left = Math.random() * 100;
-            const duration = Math.random() * (MAX_DURATION - MIN_DURATION) + MIN_DURATION;
-            const delay = Math.random() * MAX_DURATION;
-            const opacity = Math.random() * (MAX_OPACITY - MIN_OPACITY) + MIN_OPACITY;
-
-            // Create unique animation for this snowflake's opacity
-            const animationName = createOpacityKeyframes(opacity, i);
-
-            // Apply styles
-            snowflake.style.cssText = `
-                width: ${size}px;
-                height: ${size}px;
-                left: ${left}%;
-                animation: ${animationName} ${duration}s linear infinite;
-                animation-delay: ${delay}s;
-            `;
-
-            container.appendChild(snowflake);
-        }
-    }
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', createSnowflakes);
-    } else {
-        createSnowflakes();
-    }
-})();
-</script>
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake sf-1"></div>
+  <div class="snowflake sf-2"></div>
+  <div class="snowflake sf-3"></div>
+  <div class="snowflake sf-4"></div>
+  <div class="snowflake sf-5"></div>
+  <div class="snowflake sf-6"></div>
+  <div class="snowflake sf-7"></div>
+  <div class="snowflake sf-8"></div>
+  <div class="snowflake sf-9"></div>
+  <div class="snowflake sf-10"></div>
+  <div class="snowflake sf-11"></div>
+  <div class="snowflake sf-12"></div>
+  <div class="snowflake sf-13"></div>
+  <div class="snowflake sf-14"></div>
+  <div class="snowflake sf-15"></div>
+  <div class="snowflake sf-16"></div>
+  <div class="snowflake sf-17"></div>
+  <div class="snowflake sf-18"></div>
+  <div class="snowflake sf-19"></div>
+  <div class="snowflake sf-20"></div>
+  <div class="snowflake sf-21"></div>
+  <div class="snowflake sf-22"></div>
+  <div class="snowflake sf-23"></div>
+  <div class="snowflake sf-24"></div>
+  <div class="snowflake sf-25"></div>
+  <div class="snowflake sf-26"></div>
+  <div class="snowflake sf-27"></div>
+  <div class="snowflake sf-28"></div>
+  <div class="snowflake sf-29"></div>
+  <div class="snowflake sf-30"></div>
+  <div class="snowflake sf-31"></div>
+  <div class="snowflake sf-32"></div>
+  <div class="snowflake sf-33"></div>
+  <div class="snowflake sf-34"></div>
+  <div class="snowflake sf-35"></div>
+  <div class="snowflake sf-36"></div>
+  <div class="snowflake sf-37"></div>
+  <div class="snowflake sf-38"></div>
+  <div class="snowflake sf-39"></div>
+  <div class="snowflake sf-40"></div>
+</div>
