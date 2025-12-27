@@ -147,6 +147,7 @@ html[data-theme="dark"] .author__urls .ai {
         display: block;
         width: 100%;
         max-width: 175px;
+        border-radius: 50% !important;  /* Ensure round border */
     }
 
     .author__avatar::after {
