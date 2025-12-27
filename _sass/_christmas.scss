@@ -258,8 +258,7 @@ html[data-theme="dark"] .author__urls .ai {
     top: -10px;
     background: #fff;
     border-radius: 50%;
-    opacity: 0;
-    animation: snowfall linear infinite;
+    /* Animation is dynamically created by JavaScript for Firefox compatibility */
     box-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
 }
 
