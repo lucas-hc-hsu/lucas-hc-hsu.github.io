@@ -17,10 +17,31 @@
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
     {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
+
+    <!-- Contact buttons for small screens (< 600px) - positioned below name -->
+    <div class="author__contact-buttons-mobile">
+      {% if author.email %}
+        <a href="mailto:{{ author.email }}" class="btn btn--inverse">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      {% endif %}
+      {% if author.github %}
+        <a href="https://github.com/{{ author.github }}" class="btn btn--dark" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      {% endif %}
+      {% if author.googlescholar %}
+        <a href="{{ author.googlescholar }}" class="btn btn--info" target="_blank">
+          <i class="ai ai-google-scholar"></i> Scholar
+        </a>
+      {% endif %}
+    </div>
+
     {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
+    <!-- Contact buttons for medium screens (600px - 924px) -->
     <div class="author__contact-buttons" style="margin-bottom: 10px;">
       {% if author.email %}
         <a href="mailto:{{ author.email }}" class="btn btn--inverse" style="margin-right: 5px; margin-bottom: 5px;">
@@ -32,13 +53,6 @@
           <i class="fab fa-github"></i> GitHub
         </a>
       {% endif %}
-      {% comment %}
-      {% if author.linkedin %}
-        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="btn btn--info" target="_blank" style="margin-right: 5px; margin-bottom: 5px;">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-      {% endif %}
-      {% endcomment %}
       {% if author.googlescholar %}
         <a href="{{ author.googlescholar }}" class="btn btn--info" target="_blank" style="margin-bottom: 5px;">
           <i class="ai ai-google-scholar"></i> Google Scholar
@@ -47,39 +61,53 @@
     </div>
 
     <style>
-      /* Hide contact buttons when sidebar is on the left (wide viewports) */
+      /* Default: hide mobile buttons */
+      .author__contact-buttons-mobile {
+        display: none;
+      }
+
+      /* Large screens (>= 925px): Hide both button sets */
       @media (min-width: 925px) {
         .author__contact-buttons {
           display: none !important;
         }
-      }
-
-      /* Show contact buttons when sidebar is on top (narrow viewports) */
-      @media (max-width: 924px) {
-        .author__contact-buttons {
-          display: block !important;
+        .author__contact-buttons-mobile {
+          display: none !important;
         }
       }
 
-      /* Small screens (< 600px): Hide bio and shrink buttons */
+      /* Medium screens (600px - 924px): Show regular buttons */
+      @media (min-width: 600px) and (max-width: 924px) {
+        .author__contact-buttons {
+          display: block !important;
+        }
+        .author__contact-buttons-mobile {
+          display: none !important;
+        }
+      }
+
+      /* Small screens (< 600px): Hide bio, show mobile buttons below name */
       @media (max-width: 599px) {
         .author__bio {
           display: none !important;
         }
         .author__contact-buttons {
+          display: none !important;
+        }
+        .author__contact-buttons-mobile {
           display: flex !important;
           flex-wrap: wrap;
           justify-content: center;
           gap: 4px;
-          margin-top: 8px;
+          margin-top: 10px;
+          margin-bottom: 5px;
         }
-        .author__contact-buttons .btn {
-          font-size: 0.75rem !important;
-          padding: 0.3em 0.6em !important;
-          margin: 0 !important;
+        .author__contact-buttons-mobile .btn {
+          font-size: 0.7rem !important;
+          padding: 0.25em 0.5em !important;
         }
-        .author__contact-buttons .btn i {
-          font-size: 0.85rem;
+        .author__contact-buttons-mobile .btn i {
+          font-size: 0.8rem;
         }
       }
     </style>
