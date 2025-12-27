@@ -79,6 +79,13 @@ html {
     padding-bottom: calc(1em + 15px) !important;
 }
 
+/* Add spacing between masthead and content for medium screens (925px - 1024px) */
+@media screen and (min-width: 925px) and (max-width: 1023px) {
+    #main {
+        margin-top: 2em !important;
+    }
+}
+
 /* Increase spacing between header and profile picture */
 @media screen and (min-width: 1024px) {
     .sidebar {
