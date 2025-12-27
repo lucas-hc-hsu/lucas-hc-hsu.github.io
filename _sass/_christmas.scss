@@ -158,7 +158,7 @@ html[data-theme="dark"] .author__urls .ai {
         top: 50%;
         left: 50%;
         /* Fine-tune alignment: adjust these values to align wreath center with photo center */
-        transform: translate(-50%, -50%) translate(1px, 0px);
+        transform: translate(-50%, -50%) translate(-1px, 2px);
         /* Size relative to container: 160% of image size */
         width: 160%;
         height: 160%;
