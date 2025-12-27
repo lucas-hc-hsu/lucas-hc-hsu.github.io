@@ -1,0 +1,39 @@
+{% include base_path %}
+
+<div class="masthead christmas-border-top">
+  <!-- Santa Sleigh Animation -->
+  <div class="santa-sleigh" aria-hidden="true"></div>
+  <div class="santa-sleigh-reverse" aria-hidden="true"></div>
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button class="hidden"><span class="navicon"></span></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = base_path %}
+            {% endif %}
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+          <li id="theme-toggle" class="masthead__menu-item persist tail">
+            <a role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i></a>
+          </li>
+        </ul>
+        <script>
+          // Immediately update icon based on current theme (before main.js loads)
+          (function() {
+            var icon = document.getElementById('theme-icon');
+            if (icon && document.documentElement.getAttribute('data-theme') === 'dark') {
+              icon.classList.remove('fa-sun');
+              icon.classList.add('fa-moon');
+            }
+          })();
+        </script>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>

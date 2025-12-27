@@ -1,0 +1,69 @@
+/* ==========================================================================
+   CHRISTMAS LIGHT THEME - Classic Christmas
+   ========================================================================== */
+
+/* Color codes used for the theme */
+$gray                       : #7a8288;
+$dark-gray                  : mix(#000, $gray, 40%);
+$darker-gray                : mix(#000, $gray, 60%);
+$light-gray                 : mix(#fff, $gray, 50%);
+$lighter-gray               : mix(#fff, $gray, 90%);
+
+/* Christmas color palette */
+$christmas-red              : #C41E3A;
+$christmas-green            : #1D6F42;
+$christmas-gold             : #D4AF37;
+$christmas-dark-red         : #B22234;
+$christmas-darker-red       : #8B1A28;
+
+/* Color codes used for the site */
+$danger-color               : #ee5f5b;
+$info-color                 : #2f7f93;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
+
+/* Other basic settings for the template */
+$border-radius              : 4px;
+$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 85px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Christmas Light theme for the site */
+:root {
+    --global-base-color                 : #{$gray};
+    --global-bg-color                   : #FDF8F5;
+    --global-footer-bg-color            : #F5EDE8;
+    --global-border-color               : #E8E0D8;
+    --global-dark-border-color          : #D4C9C0;
+    --global-code-background-color      : #FAF4F0;
+    --global-code-text-color            : #{$darker-gray};
+    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
+    --global-link-color                 : #{$christmas-dark-red};
+    --global-link-color-hover           : #{$christmas-darker-red};
+    --global-link-color-visited         : #9E3A47;
+    --global-masthead-link-color        : #{$dark-gray};
+    --global-masthead-link-color-hover  : #{$christmas-dark-red};
+    --global-text-color                 : #{$dark-gray};
+    --global-text-color-light           : #{$light-gray};
+    --global-text-color-medium          : #{$gray};
+    --global-thead-color                : #F5EDE8;
+    --card-bg-color                     : #FAF4F0;
+    --selection-bg-color                : #{$christmas-red};
+    --selection-text-color              : #fff;
+    --notice-bg-color                   : #F5EDE8;
+    --navicon-color                     : #{$dark-gray};
+    --pagination-text-color             : #{$dark-gray};
+    --pagination-bg-active              : #{$christmas-dark-red};
+    --image-border-color                : #5C5346;
+    --button-border-color               : #C4A07D;
+
+    /* Christmas specific variables */
+    --christmas-red                     : #{$christmas-red};
+    --christmas-green                   : #{$christmas-green};
+    --christmas-gold                    : #{$christmas-gold};
+}

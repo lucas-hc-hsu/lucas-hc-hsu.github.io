@@ -1,0 +1,286 @@
+/* ==========================================================================
+   CHRISTMAS DECORATIONS
+   ========================================================================== */
+
+/* Fix white bar at bottom - ensure html background matches */
+html {
+    background-color: var(--global-footer-bg-color);
+}
+
+/* ==========================================================================
+   CHRISTMAS CANDY CANE BORDER
+   ========================================================================== */
+
+/* Candy Cane Border - Top (for masthead) */
+.christmas-border-top {
+    border-bottom: none !important;
+    overflow: hidden;
+}
+
+.christmas-border-top::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        45deg,
+        #C41E3A 0px,
+        #C41E3A 6px,
+        #FFFFFF 6px,
+        #FFFFFF 12px,
+        #1D6F42 12px,
+        #1D6F42 18px,
+        #FFFFFF 18px,
+        #FFFFFF 24px
+    );
+    box-shadow:
+        inset 0 1px 1px rgba(255,255,255,0.3),
+        0 1px 2px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* Candy Cane Border - Bottom (for footer) */
+.christmas-border-bottom {
+    border-top: none !important;
+}
+
+.christmas-border-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #C41E3A 0px,
+        #C41E3A 6px,
+        #FFFFFF 6px,
+        #FFFFFF 12px,
+        #1D6F42 12px,
+        #1D6F42 18px,
+        #FFFFFF 18px,
+        #FFFFFF 24px
+    );
+    box-shadow:
+        inset 0 -1px 1px rgba(255,255,255,0.3),
+        0 -1px 2px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* ==========================================================================
+   CHRISTMAS LAYOUT ADJUSTMENTS
+   ========================================================================== */
+
+/* Increase masthead bottom padding */
+.masthead__inner-wrap {
+    padding-bottom: calc(1em + 15px) !important;
+}
+
+/* Increase spacing between header and profile picture */
+@media screen and (min-width: 1024px) {
+    .sidebar {
+        padding-top: 105px !important;  /* masthead 70px + extra 35px */
+    }
+}
+
+/* ==========================================================================
+   CHRISTMAS WREATH DECORATION FOR PROFILE
+   ========================================================================== */
+
+/* Default (small screens): no wreath */
+.author__avatar {
+    position: relative;
+}
+
+.sidebar {
+    overflow: visible !important;
+}
+
+/* Dark theme icon visibility fix */
+html[data-theme="dark"] .fab.fa-github,
+html[data-theme="dark"] .fa-github {
+    color: #f0f0f0 !important;
+}
+
+html[data-theme="dark"] .author__urls .fab,
+html[data-theme="dark"] .author__urls .fas,
+html[data-theme="dark"] .author__urls .fa,
+html[data-theme="dark"] .author__urls .ai {
+    color: #e0e0e0 !important;
+}
+
+/* Christmas wreath frame around profile picture */
+.author__avatar img {
+    position: relative;
+    z-index: 1;
+}
+
+/* Wreath - hidden by default on small screens */
+.author__avatar::after {
+    content: '';
+    display: none;
+}
+
+/* Large screen (925px+): Show wreath when avatar is displayed as block */
+@media screen and (min-width: 925px) {
+    .author__avatar {
+        /* Make container shrink-wrap around image for proper wreath sizing */
+        display: inline-block !important;
+        overflow: visible !important;
+        margin-bottom: 35px;
+        margin-left: 10px;
+    }
+
+    .author__avatar img {
+        /* Ensure image defines the container size */
+        display: block;
+        width: 100%;
+        max-width: 175px;
+    }
+
+    .author__avatar::after {
+        display: block;
+        content: '';
+        position: absolute;
+        /* Center on the container (which now matches image size) */
+        top: 50%;
+        left: 50%;
+        /* Fine-tune alignment: adjust these values to align wreath center with photo center */
+        transform: translate(-50%, -50%) translate(5px, -10px);
+        /* Size relative to container: 154% of image size */
+        width: 154%;
+        height: 154%;
+        background-image: url('/images/christmas/wreath-centered.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 2;
+        pointer-events: none;
+    }
+}
+
+/* ==========================================================================
+   SANTA SLEIGH ANIMATION
+   ========================================================================== */
+
+.santa-sleigh {
+    position: absolute;
+    width: 200px;
+    height: 90px;
+    top: calc(50% + 15px);
+    transform: translateY(-50%);
+    z-index: 200;
+    pointer-events: none;
+    animation: santa-fly-headbar 29s linear infinite;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+    background-image: url('/images/christmas/santa-sleigh-rotated-10.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Santa flying within headbar */
+@keyframes santa-fly-headbar {
+    /* First pass: left to right */
+    0% {
+        left: -120px;
+        opacity: 0;
+        transform: translateY(-50%) scaleX(1);
+    }
+    5% {
+        opacity: 1;
+    }
+    45% {
+        left: calc(100% + 20px);
+        opacity: 1;
+        transform: translateY(-50%) scaleX(1);
+    }
+    48% {
+        opacity: 0;
+    }
+    /* Prepare for reverse */
+    52% {
+        left: calc(100% + 20px);
+        opacity: 0;
+        transform: translateY(-50%) scaleX(-1);
+    }
+    /* Second pass: right to left */
+    55% {
+        opacity: 1;
+    }
+    95% {
+        left: -120px;
+        opacity: 1;
+        transform: translateY(-50%) scaleX(-1);
+    }
+    98% {
+        opacity: 0;
+    }
+    100% {
+        left: -120px;
+        opacity: 0;
+        transform: translateY(-50%) scaleX(1);
+    }
+}
+
+/* Hide the reverse sleigh - not needed anymore */
+.santa-sleigh-reverse {
+    display: none;
+}
+
+/* ==========================================================================
+   SNOWFLAKES
+   ========================================================================== */
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: snowfall linear infinite;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+/* Dark theme snowflakes - more visible */
+html[data-theme="dark"] .snowflake {
+    opacity: 0;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+
+/* ==========================================================================
+   CHRISTMAS BACKGROUND DECORATIONS
+   ========================================================================== */
+
+/* Subtle Christmas pattern background */
+body {
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(193, 30, 58, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(29, 111, 66, 0.03) 0%, transparent 25%),
+        radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.02) 0%, transparent 20%),
+        radial-gradient(circle at 60% 60%, rgba(193, 30, 58, 0.02) 0%, transparent 20%);
+    background-attachment: fixed;
+}
+
+/* Dark theme background adjustments */
+html[data-theme="dark"] body {
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 60% 60%, rgba(255, 107, 107, 0.03) 0%, transparent 20%);
+}

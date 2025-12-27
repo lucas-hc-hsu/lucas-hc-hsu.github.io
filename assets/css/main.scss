@@ -12,8 +12,8 @@
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
-@import "theme/default_light";
-@import "theme/default_dark";
+@import "theme/christmas_light";  // Christmas Light Theme
+@import "theme/christmas_dark";   // Christmas Dark Theme
 @import "mixins";
 @import "vendor/susy/susy";
 
@@ -22,6 +22,7 @@
 
 @import "utilities";
 @import "animations";
+@import "christmas";  // Christmas decorations (borders, snowflakes)
 @import "tables";
 @import "buttons";
 @import "notices";
