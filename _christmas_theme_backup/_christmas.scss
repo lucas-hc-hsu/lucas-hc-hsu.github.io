@@ -14,7 +14,7 @@ html {
 /* Candy Cane Border - Top (for masthead) */
 .christmas-border-top {
     border-bottom: none !important;
-    overflow: hidden;
+    /* Note: Do NOT use overflow: hidden here - it clips the mobile dropdown menu */
 }
 
 .christmas-border-top::after {
@@ -38,7 +38,7 @@ html {
     box-shadow:
         inset 0 1px 1px rgba(255,255,255,0.3),
         0 1px 2px rgba(0,0,0,0.1);
-    z-index: 100;
+    z-index: 5;
 }
 
 /* Candy Cane Border - Bottom (for footer) */
@@ -67,7 +67,7 @@ html {
     box-shadow:
         inset 0 -1px 1px rgba(255,255,255,0.3),
         0 -1px 2px rgba(0,0,0,0.1);
-    z-index: 100;
+    z-index: 5;
 }
 
 /* ==========================================================================
@@ -77,6 +77,20 @@ html {
 /* Increase masthead bottom padding */
 .masthead__inner-wrap {
     padding-bottom: calc(1em + 15px) !important;
+}
+
+/* Reduce spacing between masthead and profile for small screens */
+@media screen and (max-width: 924px) {
+    .masthead__inner-wrap {
+        padding-bottom: 0.5em !important;
+    }
+    .sidebar {
+        margin-top: 20px !important;
+        padding-top: 0 !important;
+    }
+    .author__avatar {
+        margin-top: 0 !important;
+    }
 }
 
 /* Add spacing between masthead and content for medium screens (925px - 1024px) */
@@ -89,7 +103,7 @@ html {
 /* Increase spacing between header and profile picture */
 @media screen and (min-width: 1024px) {
     .sidebar {
-        padding-top: 105px !important;  /* masthead 70px + extra 35px */
+        padding-top: 140px !important;
     }
 }
 
@@ -138,8 +152,8 @@ html[data-theme="dark"] .author__urls .ai {
         /* Make container shrink-wrap around image for proper wreath sizing */
         display: inline-block !important;
         overflow: visible !important;
-        margin-bottom: 35px;
-        margin-left: 10px;
+        margin-bottom: 60px;
+        margin-left: 30px;
     }
 
     .author__avatar img {
@@ -158,10 +172,10 @@ html[data-theme="dark"] .author__urls .ai {
         top: 50%;
         left: 50%;
         /* Fine-tune alignment: adjust these values to align wreath center with photo center */
-        transform: translate(-50%, -50%) translate(5px, -10px);
-        /* Size relative to container: 154% of image size */
-        width: 154%;
-        height: 154%;
+        transform: translate(-50%, -50%) translate(-1px, 2px);
+        /* Size relative to container: 160% of image size */
+        width: 160%;
+        height: 160%;
         background-image: url('/images/christmas/wreath-centered.png');
         background-size: contain;
         background-repeat: no-repeat;

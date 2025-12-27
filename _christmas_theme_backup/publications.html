@@ -1,0 +1,122 @@
+---
+layout: archive
+title: "Publications"
+seo_title: "Publications | Hung-Chun Hsu"
+description: "Research publications by Hung-Chun Hsu including papers on multimodal AI, graph neural networks, and conversational search systems."
+permalink: /publications/
+author_profile: true
+---
+
+{% include base_path %}
+
+<style>
+  .publication-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .publication-image {
+    flex: 0 0 360px;
+    min-width: 360px;
+  }
+  .publication-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .publication-image img.narrow {
+    width: 83.33%;
+    margin: 0 auto;
+    display: block;
+  }
+  .publication-content {
+    flex: 1;
+    min-width: 0; /* Prevent flex item from overflowing */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .publication-content h3 {
+    margin-top: 0;
+  }
+  .publication-meta {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .publication-link {
+    font-size: 0.7em;
+    padding: 2px 6px;
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+    border: 1px solid var(--button-border-color);
+    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .publication-item {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .publication-image {
+      flex: none;
+      min-width: 0;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto 15px auto;
+    }
+    .publication-content {
+      width: 100%;
+    }
+  }
+</style>
+
+<!-- Custom layout for publications -->
+{% for post in site.publications reversed %}
+  <!-- Custom Publication Layout -->
+  <div class="publication-item">
+    <div class="publication-image">
+      {% if post.image %}
+        {% if post.title contains "Test-Time Scaling Strategies" %}
+          <img src="/images/{{ post.image }}" alt="{{ post.title }}" loading="lazy" class="narrow">
+        {% else %}
+          <img src="/images/{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+        {% endif %}
+      {% endif %}
+    </div>
+    <div class="publication-content">
+      <h3>
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a>
+      </h3>
+      {% if post.authors %}
+        {% assign authors_with_underline = post.authors | replace: "Hung Chun Hsu", "<u>Hung Chun Hsu</u>" | replace: "Hung-Chun Hsu", "<u>Hung-Chun Hsu</u>" %}
+        <p style="font-size: 0.9em;"><strong>Authors:</strong> {{ authors_with_underline }}</p>
+      {% endif %}
+      <div class="publication-meta">
+        <span><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+        {% if post.paperurl %}
+          <a href="{{ post.paperurl }}" class="publication-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i> paper link
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% unless forloop.last %}
+    <hr style="border: none; height: 1px; background-color: var(--global-border-color); margin: 30px 0;">
+  {% endunless %}
+{% endfor %}
+
+<hr />
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">For more information, please feel free to visit my Google Scholar profile. <a href="{{site.author.googlescholar}}" style="font-size: 0.7em; padding: 2px 6px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> Google Scholar</a></div>
+{% endif %}
+
+
+
