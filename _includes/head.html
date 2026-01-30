@@ -18,12 +18,13 @@
 </script>
 
 <!-- Theme detection (must run early to prevent flash) -->
+<!-- Note: <html> tag has data-theme="dark" by default for faster initial render -->
 <script>
   (function() {
     var theme = localStorage.getItem('theme');
-    // Default to dark theme if no preference is saved (Christmas theme)
-    if (theme !== 'light') {
-      document.documentElement.setAttribute('data-theme', 'dark');
+    // If user explicitly chose light theme, remove the dark attribute
+    if (theme === 'light') {
+      document.documentElement.removeAttribute('data-theme');
     }
     window.__initialTheme = theme === 'light' ? 'light' : 'dark';
   })();
