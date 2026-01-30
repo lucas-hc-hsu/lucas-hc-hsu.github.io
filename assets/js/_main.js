@@ -2,8 +2,8 @@
    Theme toggle functions
    ========================================================================== */
 
-// Default theme is light (day theme)
-const defaultTheme = 'light';
+// Default theme is dark (Christmas theme)
+const defaultTheme = 'dark';
 
 // Set the theme on page load or when explicitly called
 let setTheme = (theme) => {
@@ -39,7 +39,7 @@ $(document).ready(function(){
   const scssLarge = 925;          // pixels, from /_sass/_themes.scss
   const scssMastheadHeight = 70;  // pixels
 
-  // Initialize theme (defaults to light if no preference saved)
+  // Initialize theme (defaults to dark if no preference saved)
   setTheme();
 
   // Enable the theme toggle
