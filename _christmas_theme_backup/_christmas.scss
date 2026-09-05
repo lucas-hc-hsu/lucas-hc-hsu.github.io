@@ -2,9 +2,14 @@
    CHRISTMAS DECORATIONS
    ========================================================================== */
 
-/* Fix white bar at bottom - ensure html background matches */
+/* Fix white bar at bottom - ensure html background matches.
+   Must be --global-bg-color, not the footer colour: .page__footer is
+   position:absolute with margin-top:3em, so 54px above the footer's candy-cane
+   stripe is bare canvas. Giving <html> a background also stops body's
+   background from propagating to the canvas, so <html> is what paints that
+   strip -- and the strip sits above the footer, where the page colour belongs. */
 html {
-    background-color: var(--global-footer-bg-color);
+    background-color: var(--global-bg-color);
 }
 
 /* ==========================================================================
