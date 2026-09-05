@@ -23,7 +23,7 @@ author_profile: true
       <div style="font-size: 0.8em; color: var(--global-text-color); opacity: 0.8; margin-bottom: 15px; display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
         <span>
           {% if post.venue %}<strong>Venue:</strong> {{ post.venue }}{% endif %}
-          {% if post.venue and (post.date_display or post.date) %} | {% endif %}
+          {% if post.venue %}{% if post.date_display or post.date %} | {% endif %}{% endif %}
           {% if post.date_display %}<strong>Date:</strong> {{ post.date_display }}{% elsif post.date %}<strong>Date:</strong> {{ post.date | date: "%B %d, %Y" }}{% endif %}
         </span>
 
