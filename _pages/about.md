@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="news-section" markdown="1">
 
+- **Aug 2026**: Our paper "[LODESTAR: Trustworthy Entropy Is Navigated, Not Merely Measured](https://arxiv.org/abs/2608.11922)" is available on arXiv.
 - **Dec 2025**: Our team achieved strong results in TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation!
 - **Sep 2025**: We release our work in TREC iKAT 2025, "[CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion](https://arxiv.org/abs/2509.15588v1)."
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 {% include base_path %}
 
-{% assign recent_publications = site.publications | sort: 'date' | slice: 0, 3 %}
+{% assign recent_publications = site.publications | sort: 'date' | reverse | slice: 0, 3 %}
 
 {% for post in recent_publications %}
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
