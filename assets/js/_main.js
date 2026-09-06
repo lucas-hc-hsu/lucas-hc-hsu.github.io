@@ -40,7 +40,10 @@ $(document).ready(function(){
   // No px copy of $large here any more: the stylesheet's breakpoints compile to
   // em, so a hard-coded pixel figure only agreed with them at a 16px default
   // font size. Anything that needs the breakpoint should ask CSS, not restate it.
-  const scssMastheadHeight = 70;  // pixels
+  //
+  // Same for the masthead: it is a min-height now and grows with its contents,
+  // so the offset anchored links need has to be measured rather than assumed.
+  const scssMastheadHeight = $('.masthead').outerHeight();
 
   // Initialize theme (defaults to dark if no preference saved)
   setTheme();

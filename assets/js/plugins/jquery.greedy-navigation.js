@@ -83,14 +83,18 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", breaks.length);
 
-  // update masthead height and the body/sidebar top padding
+  // Publish the measured masthead height and offset the body by it.
+  //
+  // This used to pad the sidebar by the same amount. That padding was doing two
+  // jobs: holding the sidebar clear of the fixed masthead once it sticks, and,
+  // at the top of the page, adding a second gap on top of the one body's padding
+  // had already created. Handing the measurement to CSS lets the sidebar use it
+  // as a sticky offset instead, which does the first job without the second.
+  // Anything that wants extra room above the avatar, like the Christmas wreath,
+  // still adds its own padding on top.
   var mastheadHeight = $('.masthead').height();
   $('body').css('padding-top', mastheadHeight + 'px');
-  if ($(".author__urls-wrapper button").is(":visible")) {
-    $(".sidebar").css("padding-top", "");
-  } else {
-    $(".sidebar").css("padding-top", mastheadHeight + "px");
-  }
+  document.documentElement.style.setProperty('--masthead-height', mastheadHeight + 'px');
 
 }
 

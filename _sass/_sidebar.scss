@@ -13,7 +13,23 @@
   @include clearfix();
   margin-bottom: 1em;
 
-  @media screen and (min-width: $sidebar-screen-min-width) {
+  /* _includes/sidebar.html also puts the theme's .sticky utility on this
+     element, which pins it at top: 2em from $large up whatever the window is
+     doing. 2em tucks the column under the fixed masthead, and on a short window
+     it pins a column taller than the screen, which is how the last links became
+     unreachable on a short page. Take the position over here instead: static
+     unless the query below finds room to pin properly. _utilities.scss is
+     imported before this file, so this wins at equal specificity. */
+  position: static;
+
+  /* The height condition matters as much as the width one. Pinning only makes
+     sense while the column fits the space it is pinned into: it needs about
+     490px plus the offset below the masthead, so about 615px of window. On a
+     shorter one the pinned column runs off the bottom of the screen, and on a
+     short page its last links cannot be reached at all, because there is not
+     enough article left to push it back up. Below this it just scrolls with the
+     page, which reaches everything. */
+  @media screen and (min-width: $sidebar-screen-min-width) and (min-height: 620px) {
     /* Sticky, not fixed. A fixed sidebar keeps its viewport band all the way
        down the page, so on a short window the footer scrolls up underneath it
        and paints over the last links (LinkedIn first) with no way to reveal
@@ -21,14 +37,37 @@
        inside #main, so it is pushed up by the end of the content instead of
        being overlapped by the footer.
 
-       top: 0 rather than the masthead height on purpose -- the greedy-nav JS
-       sets an inline padding-top from the masthead's measured height, which
-       already holds the content clear of it, and that measurement tracks a
-       wrapped menu where a hard-coded value would not. */
+       The offset is the masthead's measured height, published as
+       --masthead-height by the greedy-nav JS so it tracks a menu that has
+       wrapped or a theme that makes the bar taller. The Sass value is only the
+       fallback for before the script runs.
+
+       $content-top-gap is added on top so the sidebar pins at the same distance
+       below the masthead that it sits at when the page is at rest, instead of
+       sliding up flush against it.
+
+       It is an offset rather than padding on purpose. As padding it also opened
+       the same gap again at the top of the page, where body's own padding has
+       already cleared the masthead. As a sticky offset it only applies where it
+       is needed. Decorations that want more room above the avatar, the
+       Christmas wreath in particular, still add their own padding on top of
+       this and are unaffected. */
     position: sticky;
-    top: 0;
-    max-height: 100vh;
-    overflow-y: auto;               // Add scrollbar if the sidebar is too long
+    top: calc(var(--masthead-height, #{$masthead-height}) + #{$content-top-gap});
+
+    /* No max-height, and so no overflow-y either.
+
+       The theme capped this column at the viewport and gave it overflow-y: auto,
+       which turns it into a scroll container. The column is about 490px tall, so
+       on any window shorter than roughly 560px the cap bit and a second, nested
+       scrollbar appeared inside the sidebar. It shows up as a real draggable bar
+       in browsers with classic scrollbars, and is easy to miss in one that draws
+       overlay scrollbars, which is why it went unnoticed here for a while.
+
+       Sticky does not need the cap. The column is shorter than all but the most
+       cramped windows, and when it is taller the end of #main pushes it up and
+       brings the bottom into view, which is the same gesture the reader is
+       already making. */
   }
 
   @include breakpoint($large) {
@@ -97,7 +136,18 @@
   }
 
   img {
-    max-width: 175px;
+    /* Sized to match the name's ink width so the two share a centre line.
+       Both start at the column's left edge, so equal widths is the same thing
+       as equal centres, and it holds without either of them being centred in
+       the column.
+
+       The name is nowrap at font-size min($type-size-5, 9cqw), so its width
+       tracks the column at 97% until the font caps out, and is a flat ~194px
+       above that. width + max-width reproduces exactly that curve. Box-sizing
+       is border-box, so the padding and border below sit inside this width and
+       do not shift the circle off centre. */
+    width: 97%;
+    max-width: 194px;
     border-radius: 50%;
 
     @include breakpoint($large) {
@@ -126,7 +176,8 @@
   margin: 0;
 
   @include breakpoint($large) {
-    margin-top: 10px;
+    /* More air under the photo than the theme's stock 10px. */
+    margin-top: 22px;
     margin-bottom: 10px;
   }
 }

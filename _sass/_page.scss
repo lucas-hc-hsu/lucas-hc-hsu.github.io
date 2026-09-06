@@ -5,15 +5,23 @@
 #main {
   @include container;
   @include clearfix;
-  margin-top: 0;
+
+  /* The gap under the masthead while the page is at rest. body's padding already
+     tracks the masthead's measured height, so the visible gap is this value less
+     the masthead's 1px border. It covers the sidebar and the article alike, so
+     the avatar and the page title stay on one line.
+
+     Set at every width, not just from $sidebar-screen-min-width up as the theme
+     had it. Below that the margin was 0 and the avatar sat flush against the
+     masthead; _christmas.scss papered over part of the range (925px to 1023px)
+     with an !important of its own, which is why the seam only became visible
+     once the decorations were switched off. */
+  margin-top: $content-top-gap;
+
   padding-left: 1em;
   padding-right: 1em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
-
-  @media screen and (min-width: $sidebar-screen-min-width) {
-    margin-top: 2em;
-  }
 
   @include breakpoint($large) {
     max-width: $x-large;

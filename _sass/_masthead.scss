@@ -15,7 +15,15 @@ $content-right-inset: span(2 of 12 wide);
   position: fixed;
   background: var(--global-bg-color);
   border-bottom: 1px solid var(--global-border-color);
-  height: $masthead-height;
+  /* A minimum, not a fixed height. The inner wrap needs 81px at desktop widths
+     and 94px below $large, where the site title drops back into the link row
+     carrying the seasonal mark, so a hard height left the wrap overflowing its
+     own container: the bottom 1em of padding fell outside the bar and anything
+     painted there landed on top of the border. Growing to fit also restores the
+     symmetry, 1em of padding above the links and 1em below, rather than 1em and
+     whatever is left. body's top padding and --masthead-height are both measured
+     from this at runtime, so the rest of the layout follows. */
+  min-height: $masthead-height;
   top: 0;
   width: 100%;
 

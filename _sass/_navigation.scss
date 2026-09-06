@@ -175,7 +175,13 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background: var(--global-bg-color);
+
+  /* No background of its own. .masthead already paints the same colour behind
+     it, so this only ever duplicated it, and the nav's box is taller than the
+     masthead's fixed 70px height whenever the site title carries the seasonal
+     mark. The surplus painted straight over the masthead's bottom border and
+     erased it, most visibly between about 800px and 924px where the title drops
+     back into the link row and the box grows to 94px. */
 
   a {
     display: block;

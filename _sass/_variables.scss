@@ -164,5 +164,11 @@ $navicon-width              : 28px;
 /* Width kept clear at the right end of the masthead for the theme toggle:
    its link box (1rem margin + the icon, ~2.1rem) plus breathing room. */
 $theme-toggle-reserve       : 3rem !default;
+
+/* Gap between the masthead and the top of the page content. Used twice: as
+   #main's top margin, which sets it while the page is at rest, and as part of
+   the sidebar's sticky offset, which sets it once the sidebar pins. Keeping one
+   value means the sidebar does not jump to a different gap as you scroll. */
+$content-top-gap            : 56px !default;
 $navicon-height             : 4px;
 $global-transition          : all 0.2s ease-in-out;
