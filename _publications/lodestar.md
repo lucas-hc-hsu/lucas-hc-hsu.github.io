@@ -1,5 +1,5 @@
 ---
-title: "LODESTAR: Trustworthy Entropy Is Navigated, Not Merely Measured — Reinforced Polarizer Keeps a Frozen LLM from Being Confidently Misled by the Wrong Evidence"
+title: "LODESTAR: Trustworthy Entropy Is Navigated, Not Merely Measured"
 collection: publications
 category: preprints
 permalink: /publication/lodestar
