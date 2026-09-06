@@ -7,7 +7,7 @@ date: 2025-09-01
 venue: 'NIST Text REtrieval Conference (TREC)'
 authors: 'Yu-Cheng Chang, Guan-Wei Yeo, Quah Eugene, Fan-Jie Shih, Yuan-Ching Kuo, Tsung-En Yu, Hung-Chun Hsu, Ming-Feng Tsai, Chuan-Ju Wang'
 image: 'pub-ikat.png'
-paperurl: 'https://arxiv.org/abs/2509.15588'
+paperurl: 'https://trec.nist.gov/pubs/trec34/papers/cfdalab.ikat.pdf'
 ---
 
 <!-- Image for individual page -->
