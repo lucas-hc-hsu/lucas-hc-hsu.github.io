@@ -2,6 +2,15 @@
    MASTHEAD
    ========================================================================== */
 
+/* Distance from the right edge of the layout container to the right edge of the
+   page content. `.page` / `.archive` are span(10 of 12 last) with
+   suffix(2 of 12), so their text stops this far short of the container, and the
+   masthead shares that container. Everything in the masthead that should line up
+   with the end of the text -- the theme toggle, the collapsed-menu button and
+   its dropdown -- is offset by this. Used from _navigation.scss too, which is
+   imported after this file. */
+$content-right-inset: span(2 of 12 wide);
+
 .masthead {
   position: fixed;
   background: var(--global-bg-color);
@@ -79,8 +88,20 @@
    leaves their text 2.5 columns (wide) in from the container edge, and the
    masthead shares that container, so the same prefix lines the two up. */
 .greedy-nav {
+  /* Room on the right for the theme toggle, which is positioned out of the
+     link row below. Reserved unconditionally, including while the menu is
+     collapsed: if the reserve shrank when the toggle moved next to the menu
+     button, the freed space could let greedy-nav restore a link, which would
+     hide the button again and start the whole thing oscillating.
+
+     Below $large the toggle's furthest-right resting place is beside the menu
+     button, so the reserve has to clear the button as well -- keep this in step
+     with the collapsed offset at the bottom of this file. */
+  padding-right: calc(#{$navicon-width} + 1.75rem + #{$theme-toggle-reserve});
+
   @include breakpoint($large) {
     @include prefix(2.5 of 12);
+    padding-right: calc(#{$content-right-inset} + #{$navicon-width} + 1.75rem + #{$theme-toggle-reserve});
   }
 
   /* Cancel the leading margin on the first link so its own left edge, not its
@@ -102,10 +123,23 @@
   margin-left: auto;
 }
 
-/* Theme toggle in navigation */
+/* Theme toggle in navigation.
+
+   Lifted out of the link row and pinned so its right edge meets the right edge
+   of the page content. `.page` / `.archive` are span(10 of 12 last) with
+   suffix(2 of 12), so their text stops 2 columns (wide) short of the container;
+   the masthead shares that container, so the same measure lines the two up.
+   Below $large the content runs full width, so right: 0 is that same edge. */
 #theme-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
-  padding-left: 0.5em;
+
+  @include breakpoint($large) {
+    right: $content-right-inset;
+  }
 
   a {
     cursor: pointer;
@@ -124,3 +158,13 @@
   }
 }
 
+/* Collapsed menu: the toggle would otherwise land underneath the menu button,
+   so park it just to the button's left. The button is $navicon-width wide plus
+   0.5rem of padding on each side. */
+.greedy-nav button:not(.hidden) ~ .visible-links #theme-toggle {
+  right: calc(#{$navicon-width} + 1.75rem);
+
+  @include breakpoint($large) {
+    right: calc(#{$content-right-inset} + #{$navicon-width} + 1.75rem);
+  }
+}

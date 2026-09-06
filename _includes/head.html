@@ -18,19 +18,23 @@
 </script>
 
 <!-- Theme detection (must run early to prevent flash) -->
-<!-- Note: <html> tag has data-theme="dark" by default for faster initial render -->
+<!-- The <html> tag already carries the site default (see _layouts/default.html);
+     this only overrides it when the visitor has picked a theme before. Always
+     leaving an explicit data-theme is what tells _main.js which scheme to use. -->
 <script>
   (function() {
-    var theme = localStorage.getItem('theme');
-    // If user explicitly chose light theme, remove the dark attribute
-    if (theme === 'light') {
-      document.documentElement.removeAttribute('data-theme');
-    }
+    var stored = localStorage.getItem('theme');
+    var theme = (stored === 'light' || stored === 'dark')
+      ? stored
+      : '{% if site.christmas_theme %}dark{% else %}light{% endif %}';
+    document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
 
+{% if site.christmas_theme %}
 <!-- Preload Christmas wreath image for faster display -->
 <link rel="preload" href="/images/christmas/wreath-centered.png" as="image">
+{% endif %}
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

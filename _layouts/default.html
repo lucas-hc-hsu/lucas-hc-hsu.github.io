@@ -5,7 +5,7 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-theme="dark">
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-theme="{% if site.christmas_theme %}dark{% else %}light{% endif %}">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
@@ -13,13 +13,13 @@ layout: compress
 
   <body>
 
-    {% include christmas-snow.html %}
+    {% if site.christmas_theme %}{% include christmas-snow.html %}{% endif %}
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
     {{ content }}
 
-    <div class="page__footer christmas-border-bottom">
+    <div class="page__footer{% if site.christmas_theme %} christmas-border-bottom{% endif %}">
       <footer>
         {% include footer/custom.html %}
         {% include footer.html %}

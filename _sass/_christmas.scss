@@ -2,24 +2,10 @@
    CHRISTMAS DECORATIONS
    ========================================================================== */
 
-/* Fix white bar at bottom.
-   _reset.scss gives <html> `background-color: #fff`. That is what produced the
-   white bar, but the real damage is subtler: CSS only propagates <body>'s
-   background to the canvas while the root element has none of its own. With a
-   background on <html>, body paints only its own box -- and the sticky-footer
-   JS (_main.js) sets body a margin-bottom of the footer's outerHeight(true),
-   so the footer's 3em top margin, 54px directly above the candy-cane stripe,
-   falls outside body and is painted by <html> instead.
-
-   Recolouring <html> only matches the flat colour there; body also carries four
-   fixed radial-gradients (see the bottom of this file), which <html> does not,
-   so the gradient visibly cut off at that seam. Clearing the background instead
-   restores propagation: the canvas takes body's colour AND its gradients, the
-   strip matches the content area exactly, and the white bar stays fixed because
-   the canvas is no longer white. */
-html {
-    background: none;
-}
+/* Note: <html> deliberately carries no background of its own, so body's colour
+   and the fixed radial-gradients at the bottom of this file reach the canvas.
+   That rule lives in _reset.scss because it is needed with or without these
+   decorations. */
 
 /* ==========================================================================
    CHRISTMAS CANDY CANE BORDER
@@ -132,19 +118,6 @@ html {
 
 .sidebar {
     overflow: visible !important;
-}
-
-/* Dark theme icon visibility fix */
-html[data-theme="dark"] .fab.fa-github,
-html[data-theme="dark"] .fa-github {
-    color: #f0f0f0 !important;
-}
-
-html[data-theme="dark"] .author__urls .fab,
-html[data-theme="dark"] .author__urls .fas,
-html[data-theme="dark"] .author__urls .fa,
-html[data-theme="dark"] .author__urls .ai {
-    color: #e0e0e0 !important;
 }
 
 /* Christmas wreath frame around profile picture */

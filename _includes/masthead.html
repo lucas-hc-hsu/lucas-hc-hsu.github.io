@@ -1,9 +1,11 @@
 {% include base_path %}
 
-<div class="masthead christmas-border-top">
+<div class="masthead{% if site.christmas_theme %} christmas-border-top{% endif %}">
+  {% if site.christmas_theme %}
   <!-- Santa Sleigh Animation -->
   <div class="santa-sleigh" aria-hidden="true"></div>
   <div class="santa-sleigh-reverse" aria-hidden="true"></div>
+  {% endif %}
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">

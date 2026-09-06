@@ -26,32 +26,39 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
-/* Default light theme for the site - Warm Cream */
+/* Default light theme for the site - Limestone + Clay
+
+   An unbleached limestone ground (#F4F1EC, L* 95) instead of a near-white one,
+   warm near-black ink, and a single muted clay accent carrying the links. Text
+   reads at 12.50:1 and links at 6.55:1, both comfortably past WCAG AAA and AA.
+
+   Four alternates live in theme/light-candidates/, selectable from _config.yml
+   with `light_palette:`. */
 :root {
-    --global-base-color                 : #{$gray};
-    --global-bg-color                   : #FDF6E3;
-    --global-footer-bg-color            : #F5EFDC;
-    --global-border-color               : #E8DFC7;
-    --global-dark-border-color          : #D4C9AE;
-    --global-code-background-color      : #FAF4E6;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
-    --global-link-color                 : #2A9D8F;
-    --global-link-color-hover           : #1F7A6E;
-    --global-link-color-visited         : #3DB8A9;
-    --global-masthead-link-color        : #{$dark-gray};
-    --global-masthead-link-color-hover  : mix(#000, #{$gray}, 25%);
-    --global-text-color                 : #{$dark-gray};
-    --global-text-color-light           : #{$light-gray};
-    --global-text-color-medium          : #{$gray};
-    --global-thead-color                : #F5EFDC;
-    --card-bg-color                     : #FAF4E6;
-    --selection-bg-color                : #2A9D8F;
-    --selection-text-color              : #fff;
-    --notice-bg-color                   : #F5EFDC;
-    --navicon-color                     : #{$dark-gray};
-    --pagination-text-color             : #{$dark-gray};
-    --pagination-bg-active              : #{$gray};
-    --image-border-color                : #5C5346;
-    --button-border-color               : #B8A88A;
+    --global-base-color                : #6E675E;
+    --global-bg-color                  : #F4F1EC;
+    --global-footer-bg-color           : #EAE6DF;
+    --global-border-color              : #E1DCD3;
+    --global-dark-border-color         : #CFC8BC;
+    --global-code-background-color     : #EAE6DF;
+    --global-code-text-color           : #2E2B27;
+    --global-fig-caption-color         : #6E675E;
+    --global-link-color                : #8A4028;
+    --global-link-color-hover          : #682F1D;
+    --global-link-color-visited        : #5C5346;
+    --global-masthead-link-color       : #2E2B27;
+    --global-masthead-link-color-hover : #8A4028;
+    --global-text-color                : #2E2B27;
+    --global-text-color-light          : #A69E92;
+    --global-text-color-medium         : #6E675E;
+    --global-thead-color               : #EAE6DF;
+    --card-bg-color                    : #FAF8F5;
+    --selection-bg-color               : #8A4028;
+    --selection-text-color             : #fff;
+    --notice-bg-color                  : #EAE6DF;
+    --navicon-color                    : #2E2B27;
+    --pagination-text-color            : #2E2B27;
+    --pagination-bg-active             : #6E675E;
+    --image-border-color               : #A69E92;
+    --button-border-color              : #CFC8BC;
 }

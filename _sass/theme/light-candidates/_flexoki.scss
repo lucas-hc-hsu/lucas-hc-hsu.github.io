@@ -1,0 +1,41 @@
+/* ==========================================================================
+   LIGHT PALETTE CANDIDATE - FLEXOKI (DIMMED PAPER)
+   ========================================================================== */
+
+/* Steph Ango's (Obsidian) scheme, built to feel like pigment on paper. Intensity ramps exponentially towards the ends of the scale, so the warm base and ink accents stay balanced. Uses base-50 as the ground rather than the brighter paper white, which is kept for cards.
+
+   Source: https://stephango.com/flexoki
+
+   Not imported by default. Select it with `light_palette: flexoki` in
+   _config.yml; see light-candidates/README.md. Overrides only the custom
+   properties, so the Sass-level colours in _default_light.scss (button fills,
+   notice accents) are shared with every other candidate. */
+
+:root {
+    --global-base-color                : #6F6E69;
+    --global-bg-color                  : #F2F0E5;
+    --global-footer-bg-color           : #E6E4D9;
+    --global-border-color              : #DAD8CE;
+    --global-dark-border-color         : #CECDC3;
+    --global-code-background-color     : #E6E4D9;
+    --global-code-text-color           : #282726;
+    --global-fig-caption-color         : #6F6E69;
+    --global-link-color                : #205EA6;
+    --global-link-color-hover          : #163B66;
+    --global-link-color-visited        : #5E409D;
+    --global-masthead-link-color       : #282726;
+    --global-masthead-link-color-hover : #205EA6;
+    --global-text-color                : #282726;
+    --global-text-color-light          : #B7B5AC;
+    --global-text-color-medium         : #6F6E69;
+    --global-thead-color               : #E6E4D9;
+    --card-bg-color                    : #FFFCF0;
+    --selection-bg-color               : #205EA6;
+    --selection-text-color             : #fff;
+    --notice-bg-color                  : #E6E4D9;
+    --navicon-color                    : #282726;
+    --pagination-text-color            : #282726;
+    --pagination-bg-active             : #6F6E69;
+    --image-border-color               : #B7B5AC;
+    --button-border-color              : #CECDC3;
+}

@@ -1,0 +1,41 @@
+/* ==========================================================================
+   LIGHT PALETTE CANDIDATE - RADIX SAND + TEAL
+   ========================================================================== */
+
+/* A real design system rather than an editor theme. Radix's 12-step scales are perceptually tuned, with each step assigned a job (background / border / solid / text). Warm neutral ground, one cool accent, guaranteed contrast at every step.
+
+   Source: https://www.radix-ui.com/colors
+
+   Not imported by default. Select it with `light_palette: radix-sand` in
+   _config.yml; see light-candidates/README.md. Overrides only the custom
+   properties, so the Sass-level colours in _default_light.scss (button fills,
+   notice accents) are shared with every other candidate. */
+
+:root {
+    --global-base-color                : #63635E;
+    --global-bg-color                  : #F1F0EF;
+    --global-footer-bg-color           : #E9E8E6;
+    --global-border-color              : #DAD9D6;
+    --global-dark-border-color         : #CFCECA;
+    --global-code-background-color     : #E9E8E6;
+    --global-code-text-color           : #21201C;
+    --global-fig-caption-color         : #63635E;
+    --global-link-color                : #00786A;
+    --global-link-color-hover          : #005A50;
+    --global-link-color-visited        : #7D5E54;
+    --global-masthead-link-color       : #21201C;
+    --global-masthead-link-color-hover : #00786A;
+    --global-text-color                : #21201C;
+    --global-text-color-light          : #8D8D86;
+    --global-text-color-medium         : #63635E;
+    --global-thead-color               : #E9E8E6;
+    --card-bg-color                    : #F9F9F8;
+    --selection-bg-color               : #00786A;
+    --selection-text-color             : #fff;
+    --notice-bg-color                  : #E9E8E6;
+    --navicon-color                    : #21201C;
+    --pagination-text-color            : #21201C;
+    --pagination-bg-active             : #63635E;
+    --image-border-color               : #8D8D86;
+    --button-border-color              : #CFCECA;
+}

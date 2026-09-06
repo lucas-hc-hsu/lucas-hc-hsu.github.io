@@ -17,6 +17,26 @@ url                      : https://lucas-hc-hsu.github.io #https://academicpages
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "lucas-hc-hsu/lucas-hc-hsu.github.io"
 
+# Seasonal Theme
+# christmas_theme: true  -> Christmas palette, candy-cane borders, snowfall,
+#                           Santa sleighs, the wreath around the profile photo,
+#                           and dark as the default colour scheme.
+# christmas_theme: false -> the default light palette (see light_palette below)
+#                           with light as the default colour scheme, and no
+#                           decorations.
+# Everything the Christmas theme needs stays in the repo either way, so this is
+# the only line to flip. Jekyll does not reload _config.yml on its own, so
+# restart `jekyll serve` after changing it.
+christmas_theme          : false
+
+# Light palette
+# Blank uses the default, Limestone + Clay (_sass/theme/_default_light.scss).
+# Set it to one of the alternates in _sass/theme/light-candidates/ to swap:
+#   flexoki | vitesse | radix-sand | rose-pine-dawn | warm-cream
+# Only affects the light theme; the dark theme is unchanged either way.
+# Restart `jekyll serve` after changing it.
+light_palette            : 
+
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html

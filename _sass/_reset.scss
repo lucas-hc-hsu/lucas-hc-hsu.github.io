@@ -7,7 +7,16 @@
 html {
   /* apply a natural box layout model to all elements */
   box-sizing: border-box;
-  background-color: $background-color;
+
+  /* No background here, on purpose. CSS only propagates <body>'s background to
+     the canvas while the root element has none of its own, and the sticky-footer
+     JS (_main.js) gives body a margin-bottom of the footer's outerHeight(true) --
+     so the footer's 3em top margin sits outside body and would be painted by
+     <html> instead, as a mismatched strip above the footer. Leaving <html> bare
+     lets the canvas take body's colour (and, with the Christmas decorations on,
+     its fixed radial-gradients too), so that strip always matches the content. */
+  background: none;
+
   font-size: 16px;
 
   @include breakpoint($medium) {
@@ -67,7 +76,11 @@ audio:not([controls]) {
 }
 
 a {
-  color: $link-color;
+  /* The custom property, not the $link-color Sass variable. _variables.scss
+     resolves $link-color from $info-color before any theme partial is imported,
+     so it freezes at the stock #52adc8 and every content link ignored the
+     theme. On the light background that rendered at 2.38:1, well under AA. */
+  color: var(--global-link-color);
 }
 
 /* Apply focus state */

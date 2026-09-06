@@ -233,6 +233,17 @@ body:hover .visually-hidden button {
     color: $github-color;
   }
 
+  /* $github-color is near black (#171516), which all but disappears on a dark
+     background. Fall back to the theme's text colour there, matching the other
+     sidebar icons. */
+  html[data-theme="dark"] & {
+    .fa-github,
+    .fa-github-alt,
+    .fa-github-square {
+      color: var(--global-text-color);
+    }
+  }
+
   .fa-google-plus,
   .fa-google-plus-square {
     color: $google-plus-color;

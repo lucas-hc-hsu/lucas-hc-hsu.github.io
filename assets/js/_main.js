@@ -2,7 +2,8 @@
    Theme toggle functions
    ========================================================================== */
 
-// Default theme is dark (Christmas theme)
+// Last-resort fallback only: _includes/head.html always writes an explicit
+// data-theme on <html>, picked from the christmas_theme flag in _config.yml.
 const defaultTheme = 'dark';
 
 // Set the theme on page load or when explicitly called
@@ -36,7 +37,9 @@ var toggleTheme = () => {
 
 $(document).ready(function(){
   // SCSS SETTINGS
-  const scssLarge = 925;          // pixels, from /_sass/_themes.scss
+  // No px copy of $large here any more: the stylesheet's breakpoints compile to
+  // em, so a hard-coded pixel figure only agreed with them at a 16px default
+  // font size. Anything that needs the breakpoint should ask CSS, not restate it.
   const scssMastheadHeight = 70;  // pixels
 
   // Initialize theme (defaults to dark if no preference saved)
@@ -72,12 +75,13 @@ $(document).ready(function(){
     $(".author__urls-wrapper button").toggleClass("open");
   });
 
-  // Restore the follow menu if toggled on a window resize
-  jQuery(window).on('resize', function () {
-    if ($('.author__urls.social-icons').css('display') == 'none' && $(window).width() >= scssLarge) {
-      $(".author__urls").css('display', 'block')
-    }
-  });
+  // The upstream theme's "restore the follow menu on resize" handler used to sit
+  // here. It compared the window against a hard-coded 925 while the stylesheet's
+  // breakpoints compile to em, so whenever the reader's default font size was not
+  // 16px the two disagreed and it could force .author__urls open in its popup
+  // form -- with nothing able to close it again, since this site's
+  // author-profile.html carries no follow button. The list is laid out by CSS
+  // alone now.
 
   // init smooth scroll, this needs to be slightly more than then fixed masthead height
   $("a").smoothScroll({offset: -scssMastheadHeight, preventDefault: false});

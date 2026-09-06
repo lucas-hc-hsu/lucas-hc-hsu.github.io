@@ -161,5 +161,8 @@ $susy: (
 $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $navicon-width              : 28px;
+/* Width kept clear at the right end of the masthead for the theme toggle:
+   its link box (1rem margin + the icon, ~2.1rem) plus breathing room. */
+$theme-toggle-reserve       : 3rem !default;
 $navicon-height             : 4px;
 $global-transition          : all 0.2s ease-in-out;

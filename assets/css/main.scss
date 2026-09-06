@@ -12,8 +12,16 @@
 
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
+{% if site.christmas_theme %}
 @import "theme/christmas_light";  // Christmas Light Theme
 @import "theme/christmas_dark";   // Christmas Dark Theme
+{% else %}
+@import "theme/default_light";    // Default Light Theme (Limestone + Clay)
+@import "theme/default_dark";     // Default Dark Theme
+{% if site.light_palette %}
+@import "theme/light-candidates/{{ site.light_palette }}";  // alternate light palette
+{% endif %}
+{% endif %}
 @import "mixins";
 @import "vendor/susy/susy";
 
@@ -22,7 +30,7 @@
 
 @import "utilities";
 @import "animations";
-@import "christmas";  // Christmas decorations (borders, snowflakes)
+{% if site.christmas_theme %}@import "christmas";{% endif %}  // Christmas decorations (borders, snowflakes)
 @import "tables";
 @import "buttons";
 @import "notices";

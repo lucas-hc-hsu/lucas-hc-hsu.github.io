@@ -1,0 +1,41 @@
+/* ==========================================================================
+   LIGHT PALETTE CANDIDATE - VITESSE LIGHT SOFT
+   ========================================================================== */
+
+/* Anthony Fu's editor theme. A sage-warm oatmeal ground with a deep forest-green accent: restrained, natural, and distinctly modern without being trendy.
+
+   Source: https://github.com/antfu/vscode-theme-vitesse
+
+   Not imported by default. Select it with `light_palette: vitesse` in
+   _config.yml; see light-candidates/README.md. Overrides only the custom
+   properties, so the Sass-level colours in _default_light.scss (button fills,
+   notice accents) are shared with every other candidate. */
+
+:root {
+    --global-base-color                : #6B6D63;
+    --global-bg-color                  : #F1F0E9;
+    --global-footer-bg-color           : #E7E5DB;
+    --global-border-color              : #E0DED2;
+    --global-dark-border-color         : #CFCCBE;
+    --global-code-background-color     : #E7E5DB;
+    --global-code-text-color           : #393A34;
+    --global-fig-caption-color         : #6B6D63;
+    --global-link-color                : #1C6B48;
+    --global-link-color-hover          : #124B32;
+    --global-link-color-visited        : #8A4E23;
+    --global-masthead-link-color       : #393A34;
+    --global-masthead-link-color-hover : #1C6B48;
+    --global-text-color                : #393A34;
+    --global-text-color-light          : #A0ADA0;
+    --global-text-color-medium         : #6B6D63;
+    --global-thead-color               : #E7E5DB;
+    --card-bg-color                    : #F7F6F0;
+    --selection-bg-color               : #1C6B48;
+    --selection-text-color             : #fff;
+    --notice-bg-color                  : #E7E5DB;
+    --navicon-color                    : #393A34;
+    --pagination-text-color            : #393A34;
+    --pagination-bg-active             : #6B6D63;
+    --image-border-color               : #A0ADA0;
+    --button-border-color              : #CFCCBE;
+}

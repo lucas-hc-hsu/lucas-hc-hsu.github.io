@@ -60,57 +60,6 @@
       {% endif %}
     </div>
 
-    <style>
-      /* Default: hide mobile buttons */
-      .author__contact-buttons-mobile {
-        display: none;
-      }
-
-      /* Large screens (>= 925px): Hide both button sets */
-      @media (min-width: 925px) {
-        .author__contact-buttons {
-          display: none !important;
-        }
-        .author__contact-buttons-mobile {
-          display: none !important;
-        }
-      }
-
-      /* Medium screens (600px - 924px): Show regular buttons */
-      @media (min-width: 600px) and (max-width: 924px) {
-        .author__contact-buttons {
-          display: block !important;
-        }
-        .author__contact-buttons-mobile {
-          display: none !important;
-        }
-      }
-
-      /* Small screens (< 600px): Hide bio, show mobile buttons below name */
-      @media (max-width: 599px) {
-        .author__bio {
-          display: none !important;
-        }
-        .author__contact-buttons {
-          display: none !important;
-        }
-        .author__contact-buttons-mobile {
-          display: flex !important;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 4px;
-          margin-top: 10px;
-          margin-bottom: 5px;
-        }
-        .author__contact-buttons-mobile .btn {
-          font-size: 0.7rem !important;
-          padding: 0.25em 0.5em !important;
-        }
-        .author__contact-buttons-mobile .btn i {
-          font-size: 0.8rem;
-        }
-      }
-    </style>
     <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}

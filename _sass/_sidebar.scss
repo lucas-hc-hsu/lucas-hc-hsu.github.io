@@ -14,10 +14,21 @@
   margin-bottom: 1em;
 
   @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
+    /* Sticky, not fixed. A fixed sidebar keeps its viewport band all the way
+       down the page, so on a short window the footer scrolls up underneath it
+       and paints over the last links (LinkedIn first) with no way to reveal
+       them. Sticky pins the sidebar the same way while scrolling but keeps it
+       inside #main, so it is pushed up by the end of the content instead of
+       being overlapped by the footer.
+
+       top: 0 rather than the masthead height on purpose -- the greedy-nav JS
+       sets an inline padding-top from the masthead's measured height, which
+       already holds the content clear of it, and that measurement tracks a
+       wrapped menu where a hard-coded value would not. */
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;
   }
 
   @include breakpoint($large) {
@@ -124,6 +135,23 @@
   font-size: $type-size-5;
 }
 
+/* The name has to stay on one line, but the sidebar is a grid column that keeps
+   shrinking: span(2 of 12) is about 200px at 1340px wide and 136px at 926px,
+   while the name measures ~194px at full size. Size it against the column so it
+   scales down instead of wrapping. Guarded by @supports because without
+   container queries cqw would resolve against the viewport, and nowrap would
+   then overflow rather than fall back to wrapping. */
+@supports (container-type: inline-size) {
+  .sidebar {
+    container-type: inline-size;
+  }
+
+  .sidebar .author__name {
+    white-space: nowrap;
+    font-size: min(#{$type-size-5}, 9cqw);
+  }
+}
+
 .sidebar .author__desktop {
   display: none;
   @media screen and (min-width: 1024px) {
@@ -146,6 +174,52 @@
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+}
+
+/* Contact buttons in the author profile.
+
+   These lived in an inline <style> in _includes/author-profile.html with px
+   media queries, while every breakpoint in the stylesheet compiles to em. The
+   two line up only when the reader's default font size is exactly 16px. At 14px
+   the sidebar switched to its wide layout at 809px but the buttons kept showing
+   until 924px, so around 896px both the buttons and the profile link list
+   rendered at once, the list sitting directly under the Google Scholar button.
+   Going through the same mixin as everything else keeps them in step whatever
+   the reader's font size is. */
+.author__contact-buttons-mobile {
+  display: none;
+}
+
+@include breakpoint($large) {
+  .author__contact-buttons,
+  .author__contact-buttons-mobile {
+    display: none;
+  }
+}
+
+@include breakpoint(max-width ($small - 1px)) {
+  .author__bio,
+  .author__contact-buttons {
+    display: none;
+  }
+
+  .author__contact-buttons-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    .btn {
+      font-size: 0.7rem;
+      padding: 0.25em 0.5em;
+
+      i {
+        font-size: 0.8rem;
+      }
+    }
   }
 }
 
@@ -236,7 +310,17 @@
   }
 
   li {
+    /* nowrap suits the popup below $large, where the list sizes to its own
+       content. From $large up it is a column roughly 150-200px wide inside the
+       sidebar, and the longest entry needs ~196px -- nowrap there overflowed
+       and, with the sidebar's overflow-y, left the text reachable only by
+       scrolling sideways. */
     white-space: nowrap;
+
+    @include breakpoint($large) {
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
   }
 
   a {

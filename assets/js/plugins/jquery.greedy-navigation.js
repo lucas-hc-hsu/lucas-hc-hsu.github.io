@@ -12,6 +12,30 @@ var $hlinks = $('#site-nav .hidden-links');
 
 var breaks = [];
 
+// Put every link back and forget the recorded widths.
+//
+// updateNav() only ever restores a link when the space now available exceeds the
+// width recorded when that link was removed. Those recordings assume the layout
+// has not changed underneath them, and at the $large boundary it does: the nav
+// goes from full width to a grid column, and its padding jumps by a few hundred
+// pixels in one step. Widths recorded on one side of that boundary are
+// meaningless on the other, and acting on them restores links that do not fit --
+// they end up overlapping the theme toggle. Resizing is exactly when the
+// boundary gets crossed, so start each resize from scratch.
+function resetNav() {
+  var $vlinks_persist_tail = $vlinks.children('.persist.tail');
+
+  while ($hlinks.children().length > 0) {
+    if ($vlinks_persist_tail.length > 0) {
+      $hlinks.children().first().insertBefore($vlinks_persist_tail);
+    } else {
+      $hlinks.children().first().appendTo($vlinks);
+    }
+  }
+
+  breaks = [];
+}
+
 function updateNav() {
   // Re-query persist.tail element each time to ensure correct DOM reference
   var $vlinks_persist_tail = $vlinks.children('.persist.tail');
@@ -73,11 +97,13 @@ function updateNav() {
 // Window listeners
 
 $(window).on('resize', function () {
+  resetNav();
   updateNav();
 });
 
 if (screen.orientation) {
   screen.orientation.addEventListener("change", function () {
+    resetNav();
     updateNav();
   });
 }

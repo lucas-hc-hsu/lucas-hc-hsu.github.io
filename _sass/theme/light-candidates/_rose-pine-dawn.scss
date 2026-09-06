@@ -1,0 +1,41 @@
+/* ==========================================================================
+   LIGHT PALETTE CANDIDATE - ROSÉ PINE DAWN
+   ========================================================================== */
+
+/* Your pick, done with the whole palette instead of my approximation: surface for cards, overlay for the footer and code, and iris for visited links. Softer text than candidate 3, closer to canonical Dawn.
+
+   Source: https://rosepinetheme.com/palette/
+
+   Not imported by default. Select it with `light_palette: rose-pine-dawn` in
+   _config.yml; see light-candidates/README.md. Overrides only the custom
+   properties, so the Sass-level colours in _default_light.scss (button fills,
+   notice accents) are shared with every other candidate. */
+
+:root {
+    --global-base-color                : #797593;
+    --global-bg-color                  : #FAF4ED;
+    --global-footer-bg-color           : #F2E9E1;
+    --global-border-color              : #EBDFD5;
+    --global-dark-border-color         : #DDD0C4;
+    --global-code-background-color     : #F2E9E1;
+    --global-code-text-color           : #575279;
+    --global-fig-caption-color         : #797593;
+    --global-link-color                : #286983;
+    --global-link-color-hover          : #1B4A5E;
+    --global-link-color-visited        : #907AA9;
+    --global-masthead-link-color       : #575279;
+    --global-masthead-link-color-hover : #286983;
+    --global-text-color                : #575279;
+    --global-text-color-light          : #9893A5;
+    --global-text-color-medium         : #797593;
+    --global-thead-color               : #F2E9E1;
+    --card-bg-color                    : #FFFAF3;
+    --selection-bg-color               : #286983;
+    --selection-text-color             : #fff;
+    --notice-bg-color                  : #F2E9E1;
+    --navicon-color                    : #575279;
+    --pagination-text-color            : #575279;
+    --pagination-bg-active             : #797593;
+    --image-border-color               : #9893A5;
+    --button-border-color              : #D7C9BC;
+}
