@@ -4,7 +4,7 @@ Superseded. Switching themes no longer means editing several files by hand:
 
 ```yaml
 # _config.yml
-christmas_theme          : false   # Warm Cream, light by default
+christmas_theme          : false   # Limestone + Clay, light by default
 christmas_theme          : true    # Christmas, dark by default
 ```
 

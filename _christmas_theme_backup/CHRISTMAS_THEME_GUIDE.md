@@ -4,6 +4,11 @@ The Christmas theme is not removed from the site, only switched off. Everything
 it needs still lives in its normal place in the repo; one flag in `_config.yml`
 decides whether it is compiled and rendered.
 
+It is also December in a twelve-month seasonal plan. See
+[`_sass/theme/README.md`](../_sass/theme/README.md) for the other eleven months,
+for what a new month's theme has to supply, and for why only one seasonal theme
+can be switched on at a time.
+
 ## Turning it on and off
 
 ```yaml
@@ -16,7 +21,7 @@ changing it.
 
 | | `true` | `false` |
 |---|---|---|
-| Palette | `_sass/theme/_christmas_{light,dark}.scss` | `_sass/theme/_default_{light,dark}.scss` (Warm Cream) |
+| Palette | `_sass/theme/_christmas_{light,dark}.scss` | `_sass/theme/_default_{light,dark}.scss` (Limestone + Clay) |
 | Default colour scheme | dark | light |
 | Candy-cane borders | on masthead and footer | none |
 | Snowfall | 40 flakes | none |
