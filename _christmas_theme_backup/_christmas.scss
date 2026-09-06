@@ -2,14 +2,23 @@
    CHRISTMAS DECORATIONS
    ========================================================================== */
 
-/* Fix white bar at bottom - ensure html background matches.
-   Must be --global-bg-color, not the footer colour: .page__footer is
-   position:absolute with margin-top:3em, so 54px above the footer's candy-cane
-   stripe is bare canvas. Giving <html> a background also stops body's
-   background from propagating to the canvas, so <html> is what paints that
-   strip -- and the strip sits above the footer, where the page colour belongs. */
+/* Fix white bar at bottom.
+   _reset.scss gives <html> `background-color: #fff`. That is what produced the
+   white bar, but the real damage is subtler: CSS only propagates <body>'s
+   background to the canvas while the root element has none of its own. With a
+   background on <html>, body paints only its own box -- and the sticky-footer
+   JS (_main.js) sets body a margin-bottom of the footer's outerHeight(true),
+   so the footer's 3em top margin, 54px directly above the candy-cane stripe,
+   falls outside body and is painted by <html> instead.
+
+   Recolouring <html> only matches the flat colour there; body also carries four
+   fixed radial-gradients (see the bottom of this file), which <html> does not,
+   so the gradient visibly cut off at that seam. Clearing the background instead
+   restores propagation: the canvas takes body's colour AND its gradients, the
+   strip matches the content area exactly, and the white bar stays fixed because
+   the canvas is no longer white. */
 html {
-    background-color: var(--global-bg-color);
+    background: none;
 }
 
 /* ==========================================================================
