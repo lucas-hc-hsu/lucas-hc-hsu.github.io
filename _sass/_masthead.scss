@@ -60,6 +60,35 @@
   &--lg {
     padding-right: 2em;
     font-weight: 700;
+
+    /* On wide screens the site title is lifted out of the link row and
+       pinned to the left edge, so the links that follow can start at the
+       content column (see .greedy-nav below). */
+    @include breakpoint($large) {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 0;
+    }
+  }
+}
+
+/* Start the menu links at the same left edge as the page content.
+   `.page` / `.archive` sit at span(10 of 12 last) + prefix(0.5 of 12), which
+   leaves their text 2.5 columns (wide) in from the container edge, and the
+   masthead shares that container, so the same prefix lines the two up. */
+.greedy-nav {
+  @include breakpoint($large) {
+    @include prefix(2.5 of 12);
+  }
+
+  /* Cancel the leading margin on the first link so its own left edge, not its
+     margin box, meets the content column. */
+  .visible-links li:nth-child(2) a {
+    @include breakpoint($large) {
+      margin-left: 0;
+    }
   }
 }
 
