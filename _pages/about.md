@@ -47,9 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 - **Dec 2025**: Our team achieved strong results in TREC iKAT 2025: 5th in Offline Passage Ranking, 1st in Offline Generated Response (generation-only), and 4th in Online Interactive Response Generation!
 - **Sep 2025**: We release our work in TREC iKAT 2025, "[CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion](https://arxiv.org/abs/2509.15588v1)."
 - **Aug 2025**: Our paper "[Test-Time Scaling Strategies for Generative Retrieval in Multimodal Conversational Recommendations](https://www.arxiv.org/abs/2508.18132)" is available on arXiv.
-- **Aug 2025**: We submitted our latest research to the AAAI 2026 main technical track!
 - **Nov 2024**: Our paper "[FlashGAN: Framework of Localized Node Augmentation via Semi-supervised Learning in Heterogeneous Graphs with Generative Adversarial Network](https://arxiv.org/pdf/2312.06519)" is available on arXiv.
-- **Apr 2024**: I completed my Data Scientist R&D Intern position at Cathay Financial Holdings, where I gained valuable experience in building Traditional Chinese RAG pipelines using AWS platform and LangChain framework.
 - **Feb 2024**: Our paper "[FincGAN: A Gan Framework of Imbalanced Node Classification on Heterogeneous Graph Neural Network](https://ieeexplore.ieee.org/document/10448064)" has been accepted at IEEE ICASSP 2024.
 - **Aug 2023**: I graduated top of my class from National Taiwan University's Data Science Master program.
 - **Jul 2023**: I successfully defended my master's thesis titled "A Framework of Imbalanced Node Classification On Heterogeneous Graph Neural Network - Using GAN for Localized Sampling and Node Embedding".
