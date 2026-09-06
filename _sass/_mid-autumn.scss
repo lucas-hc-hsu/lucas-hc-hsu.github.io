@@ -1,0 +1,196 @@
+/* ==========================================================================
+   MID-AUTUMN MARK
+   ========================================================================== */
+
+/* Styles for _includes/mid-autumn-icon.html, the moon rabbit sitting beside the
+   site title with Chang'e crossing the moon behind him.
+
+   The brief was that Chang'e has to be dark and that the mark has to stay
+   legible in both colour schemes, which pull against each other: a dark shape on
+   the dark scheme's #252525 page is a dark shape on a dark page. The way out is
+   that no dark shape here ever touches the page. Chang'e is clipped to the moon
+   disc and the rabbit sits on it, and the disc is warm gold under both schemes,
+   so every dark shape is read against the same ground either way. Only the rim
+   changes, because that is the one edge that does meet the page. */
+
+.mid-autumn {
+  /* Gold in both schemes, a little brighter on the dark one where the page no
+     longer lends it any contrast of its own. */
+  --mid-autumn-moon   : #E9C97E;
+  --mid-autumn-ink    : #2E2B27;
+  --mid-autumn-crater : rgba(46, 43, 39, 0.13);
+  --mid-autumn-rim    : rgba(46, 43, 39, 0.45);
+
+  /* 120% of the size it was first drawn at, at the owner's request. */
+  width: 2.22em;
+  height: 2.22em;
+  margin-left: 0.4em;
+  vertical-align: -0.68em;
+  flex: none;
+}
+
+html[data-theme="dark"] .mid-autumn {
+  --mid-autumn-moon   : #F2D286;
+  --mid-autumn-ink    : #241F19;
+  --mid-autumn-crater : rgba(36, 31, 25, 0.15);
+  --mid-autumn-rim    : rgba(36, 31, 25, 0.30);
+}
+
+.mid-autumn__moon {
+  fill: var(--mid-autumn-moon);
+}
+
+.mid-autumn__craters {
+  fill: var(--mid-autumn-crater);
+}
+
+.mid-autumn__rim {
+  fill: none;
+  stroke: var(--mid-autumn-rim);
+  stroke-width: 1;
+}
+
+.mid-autumn__change,
+.mid-autumn__rabbit {
+  fill: var(--mid-autumn-ink);
+}
+
+.mid-autumn__ribbon {
+  fill: none;
+  stroke: var(--mid-autumn-ink);
+  stroke-width: 0.55;
+  stroke-linecap: round;
+}
+
+.mid-autumn__paw {
+  fill: none;
+  stroke: var(--mid-autumn-ink);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.mid-autumn__eye {
+  fill: var(--mid-autumn-moon);
+}
+
+
+/* Animation
+   ========================================================================== */
+
+/* transform-box is set explicitly rather than left to the default, which browsers
+   disagreed about for SVG elements for a long time. */
+.mid-autumn__change {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: mid-autumn-fly 11s linear infinite;
+}
+
+/* She crosses the top of the disc, grazing the rabbit's ear tips. Opacity is 0
+   at both ends of the cycle, so the jump back to the start is never seen. */
+@keyframes mid-autumn-fly {
+  0%, 6% {
+    transform: translate(1px, 8px) rotate(-6deg);
+    opacity: 0;
+  }
+  16%, 40% {
+    opacity: 1;
+  }
+  50%, 100% {
+    transform: translate(31px, 6.5px) rotate(-6deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Without the animation she would sit at her untranslated origin, off the top
+     left of the disc. Park her mid-flight instead. */
+  .mid-autumn__change {
+    animation: none;
+    transform: translate(12px, 7.2px) rotate(-6deg);
+  }
+}
+
+/* Doodle strip
+   ========================================================================== */
+
+/* The strip itself.
+
+   Its right edge is pulled 20% of the strip's width back from .greedy-nav's
+   padding-left, which lands it on span(2 of 12 wide): prefix(2.5 of 12) is
+   3.125 columns and span(2 of 12 wide) is 2.5, exactly four fifths of it. That
+   is the same measure as $content-right-inset, and it is where the content
+   column .page begins, so the strip now stops on a real gridline rather than
+   running all the way to the menu. */
+.doodle-band {
+  position: absolute;
+  left: 0;
+
+  /* Vertically the strip is the bar's content box, not the link row.
+     #site-nav is only as tall as the menu links, 45px, because from $large up
+     the site title is lifted out of that row and stops contributing to it. The
+     moon is 58px, so a strip tied to the row clipped it top and bottom. Reach
+     back out over .masthead__inner-wrap's 1em of padding, which is the space the
+     bar already sets aside, and the strip becomes 81px with room to spare.
+
+     overflow: hidden stays. It is what guarantees the art can never paint over
+     the menu links, and the strip's right edge is exactly where the content
+     column starts. */
+  top: -1rem;
+  bottom: -1rem;
+
+  width: $content-right-inset;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.doodle-band__bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.doodle-band__obj { position: absolute; top: 50%; transform: translateY(-50%); line-height: 0; }
+.doodle-band__moon, .doodle-band__rabbit { display: block; margin: 0 !important; vertical-align: baseline !important; }
+
+/* the wordmark rides above the art */
+.masthead__menu-item--lg { z-index: 2; }
+.masthead__menu-item--lg a { position: relative; }
+
+.doodle-band {
+  --gold      : #E9C97E;
+  --gold-deep : #D8AF55;
+  --gold-soft : rgba(233, 201, 126, 0.40);
+  --halo      : var(--global-bg-color);
+}
+html[data-theme="dark"] .doodle-band {
+  --gold      : #F2D286;
+  --gold-deep : #E0B85C;
+  --gold-soft : rgba(242, 210, 134, 0.28);
+}
+
+
+@media (prefers-reduced-motion: reduce) { .doodle-band * { animation: none !important; } }
+
+.doodle-band .db-clouds ellipse { fill: var(--gold-soft); }
+.doodle-band .db-cloud { animation: db-drift 30s linear infinite; }
+.doodle-band .db-star { fill: var(--gold); animation: db-twinkle 4.4s ease-in-out infinite; }
+@keyframes db-drift {
+  0%   { transform: translateX(-26px); opacity: 0; }
+  16%, 80% { opacity: 1; }
+  100% { transform: translateX(30px); opacity: 0; }
+}
+@keyframes db-twinkle { 0%,100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+/* The strip and the compact mark are two sizes of the same idea, so only one
+   shows at a time. The strip needs the space beside the wordmark to be worth
+   using: below this the clear part is under about 70px and the moon starts
+   crowding the name, so the mark beside the title takes over instead. */
+@media screen and (max-width: 1279px) {
+  .doodle-band {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* The moon inside the strip carries .mid-autumn too, because that is where
+     its custom properties are declared. Exclude it, or hiding the compact mark
+     hides the strip's moon along with it. */
+  .mid-autumn:not(.doodle-band__moon) {
+    display: none;
+  }
+}

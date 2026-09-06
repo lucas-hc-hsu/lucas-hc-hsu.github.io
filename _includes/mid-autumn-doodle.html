@@ -1,0 +1,69 @@
+<!-- Mid-Autumn doodle: the strip between the site title and the first menu
+     link, filled rather than left empty.
+
+     That strip is .greedy-nav's padding-left, prefix(2.5 of 12), the space
+     reserved so the menu could begin at the content column. Its left end is the
+     wordmark and its right end is where Publications starts, so it is a canvas
+     the layout already had lying idle: 331px at 1600 and up, of which about
+     139px is clear of the name.
+
+     Two layers. The background stretches with the strip
+     (preserveAspectRatio="none"), which suits cloud banks and little else. The
+     moon keeps its aspect and is anchored to the strip's right end, in the part
+     that is clear of the wordmark.
+
+     Everything here is gold. Ink is reserved for inside the moon disc, where it
+     is read against the same ground under both colour schemes. See
+     _sass/_mid-autumn.scss. -->
+<svg class="doodle-band__bg" viewBox="0 0 340 50" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="db-fade" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.12" stop-color="#fff" stop-opacity="1"/><stop offset="0.9" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="db-fademask"><rect width="340" height="50" fill="url(#db-fade)"/></mask></defs><g mask="url(#db-fademask)"><g class="db-clouds"><g class="db-cloud" style="animation-delay:0s"><ellipse cx="60" cy="11" rx="20" ry="4.0"/><ellipse cx="72" cy="9.4" rx="12" ry="3"/><ellipse cx="48" cy="11.9" rx="10" ry="3"/></g><g class="db-cloud" style="animation-delay:-9s"><ellipse cx="200" cy="40" rx="26" ry="4.6"/><ellipse cx="216" cy="38.4" rx="16" ry="4"/><ellipse cx="185" cy="40.9" rx="14" ry="3"/></g><g class="db-cloud" style="animation-delay:-17s"><ellipse cx="300" cy="14" rx="18" ry="3.6"/><ellipse cx="311" cy="12.4" rx="11" ry="3"/><ellipse cx="290" cy="14.9" rx="9" ry="3"/></g></g><path class="db-star" style="animation-delay:0s" d="M236,10.6 L236.7,12.3 L238.4,13 L236.7,13.7 L236,15.4 L235.3,13.7 L233.6,13 L235.3,12.3 Z"/><path class="db-star" style="animation-delay:-1.4s" d="M256,30.6 L256.7,32.3 L258.4,33 L256.7,33.7 L256,35.4 L255.3,33.7 L253.6,33 L255.3,32.3 Z"/><path class="db-star" style="animation-delay:-2.6s" d="M300,33.6 L300.7,35.3 L302.4,36 L300.7,36.7 L300,38.4 L299.3,36.7 L297.6,36 L299.3,35.3 Z"/></g></svg>
+<span class="doodle-band__obj" style="right:8px"><svg class="mid-autumn doodle-band__moon" style="width:58px;height:58px;" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs>
+    <clipPath id="mid-autumn-disc">
+      <circle cx="16" cy="15.5" r="12"/>
+    </clipPath>
+  </defs>
+
+  <circle class="mid-autumn__moon" cx="16" cy="15.5" r="12"/>
+
+  <g class="mid-autumn__craters" clip-path="url(#mid-autumn-disc)">
+    <circle cx="7.6" cy="12.4" r="1.9"/>
+    <circle cx="25.6" cy="11.0" r="1.3"/>
+    <circle cx="24.4" cy="19.6" r="1.0"/>
+  </g>
+
+  <!-- Chang'e, clipped to the disc so she is only ever seen against the moon -->
+  <g clip-path="url(#mid-autumn-disc)">
+    <g class="mid-autumn__change">
+      <circle cx="0" cy="0" r="1.15"/>
+      <circle cx="-0.75" cy="-1.0" r="0.6"/>
+      <path d="M0.6,1.0 C1.5,1.9 1.5,3.2 0.4,3.9
+               C-1.1,4.8 -3.4,4.5 -5.4,3.5
+               C-3.7,3.5 -2.2,3.2 -1.2,2.5
+               C-0.4,1.9 -0.1,1.4 0.6,1.0 Z"/>
+      <path class="mid-autumn__ribbon" d="M-1.1,1.2 C-3.1,0.8 -5.4,1.4 -7.2,2.3"/>
+      <path class="mid-autumn__ribbon" d="M-0.8,2.6 C-2.8,2.7 -5.0,3.4 -6.6,4.5"/>
+    </g>
+  </g>
+
+  <!-- The rabbit is clipped to the disc too. He is drawn large enough to run
+       past the rim at the bottom left, and any ink that crosses the rim is ink
+       sitting on the page, which is the one thing this drawing must not do: on
+       the dark scheme it would disappear. -->
+  <g clip-path="url(#mid-autumn-disc)">
+  <g class="mid-autumn__rabbit">
+    <ellipse cx="12.5" cy="23.4" rx="4.6" ry="3.9"/>
+    <ellipse cx="16.5" cy="24.2" rx="2.4" ry="2.7"/>
+
+    <g class="mid-autumn__head">
+      <path d="M14.7,16.6 C13.8,14.2 13.8,12.7 14.75,12.55
+               C15.7,12.45 16.3,13.85 16.2,16.25 Z"/>
+      <path d="M17.3,16.4 C17.65,14.05 18.45,12.75 19.3,13.0
+               C20.15,13.25 19.85,14.8 18.9,16.8 Z"/>
+      <circle cx="16.4" cy="19.0" r="2.85"/>
+      <circle class="mid-autumn__eye" cx="17.5" cy="18.45" r="0.47"/>
+    </g>
+
+    <path class="mid-autumn__paw" d="M15.9,23.3 C17.0,22.9 18.0,22.8 18.7,23.0"/>
+  </g>
+  </g>
+
+  <circle class="mid-autumn__rim" cx="16" cy="15.5" r="12"/></svg></span>
