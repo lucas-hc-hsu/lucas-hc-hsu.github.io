@@ -103,7 +103,7 @@ Research Experience
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Research Assistant, CFDA Lab, CITI, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Present</span>
+      Research Assistant, CFDA Lab, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Present</span>
     </p>
     <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
       <li style="margin-bottom: 5px;">Leading the Information Retrieval (IR) research project in collaboration with NVIDIA Research (Taiwan and US) under the supervision of Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. Focused on conversational retrieval and Multimodal-LLMs.</li>
@@ -126,7 +126,7 @@ Research Experience
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Research Assistant, SNAC Lab, CITI, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Feb. 2024</span>
+      Research Assistant, SNAC Lab, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Feb. 2024</span>
     </p>
     <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
       <li style="margin-bottom: 5px;">Developed novel GAN-based data augmentation frameworks for heterogeneous graphs, addressing critical node class imbalance issues in graph neural networks.</li>
