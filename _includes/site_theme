@@ -1,0 +1,21 @@
+{% comment %}
+  Resolves the colour scheme a first-time visitor gets, into `site_theme`.
+
+  Two places need it and they must not disagree: _layouts/default.html writes it
+  on <html> so the server-rendered page is already the right scheme, and
+  head.html's early script rewrites it only when the visitor has chosen one
+  before. If those two ever gave different answers the page would flash the
+  wrong scheme before the script ran, which is the whole reason the attribute is
+  written server-side in the first place.
+
+  default_theme in _config.yml decides. The Christmas theme still falls back to
+  dark on its own, so the seasonal flag keeps working if default_theme is ever
+  cleared.
+{% endcomment %}
+{% if site.default_theme == 'dark' or site.default_theme == 'light' %}
+  {% assign site_theme = site.default_theme %}
+{% elsif site.christmas_theme %}
+  {% assign site_theme = 'dark' %}
+{% else %}
+  {% assign site_theme = 'light' %}
+{% endif %}

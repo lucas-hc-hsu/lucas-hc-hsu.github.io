@@ -22,7 +22,9 @@
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="msapplication-TileImage" content="{{ base_path }}/images/mstile-144x144.png?v=M44lzPylqQ">
 <meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml?v=M44lzPylqQ">
-<meta name="theme-color" content="#ffffff">
+<!-- The colour a mobile browser paints its own chrome with. It has to follow
+     the site's default scheme, or the bar above a dark page stays white. -->
+<meta name="theme-color" content="{% if site_theme == 'dark' %}#252525{% else %}#F4F1EC{% endif %}">
 <!-- relative_url, not base_path. base_path is site.url, and `jekyll serve`
      rewrites that to http://localhost:4000 whatever the config says, so
      previewing on http://127.0.0.1:4000 pulled this sheet cross-origin and the

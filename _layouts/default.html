@@ -3,9 +3,10 @@ layout: compress
 ---
 
 {% include base_path %}
+{% include site_theme %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-theme="{% if site.christmas_theme %}dark{% else %}light{% endif %}">
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-theme="{{ site_theme }}">
   <head>
     {% include head.html %}
     {% include head/custom.html %}

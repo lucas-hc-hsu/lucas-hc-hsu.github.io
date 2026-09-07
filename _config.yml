@@ -29,6 +29,14 @@ repository               : "lucas-hc-hsu/lucas-hc-hsu.github.io"
 # restart `jekyll serve` after changing it.
 christmas_theme          : false
 
+# Default colour scheme
+# Which scheme a visitor gets before they touch the sun/moon toggle: dark | light.
+# Anyone who has used the toggle keeps their own choice, which is remembered in
+# the browser, so this only decides the first visit. Leave it blank to fall back
+# to the seasonal behaviour (Christmas dark, otherwise light).
+# Restart `jekyll serve` after changing it.
+default_theme            : dark
+
 # Light palette
 # Blank uses the default, Limestone + Clay (_sass/theme/_default_light.scss).
 # Set it to one of the alternates in _sass/theme/light-candidates/ to swap:
