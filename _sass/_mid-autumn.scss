@@ -157,11 +157,15 @@ html[data-theme="dark"] .mid-autumn {
    pointer-opaque would claim its whole 58px square, including the four
    transparent corners, which sit over the strip beside the wordmark. Only the
    disc is painted, so only the disc answers; the craters, Chang'e and the rabbit
-   stay transparent and the hit falls through to the disc under them. cursor
-   stays on the <svg> because it inherits down to whatever is hit. */
+   stay transparent and the hit falls through to the disc under them.
+
+   The cursor is left alone. `help` was tried here and it is wrong twice over:
+   it puts a question mark beside the pointer, which is not what a greeting
+   should look like, and it advertises the moon as something to ask about when
+   the tooltip is the whole of what it has to say. The plain arrow is right for
+   a mark that is neither a link nor a control. */
 .doodle-band__moon {
   pointer-events: none;
-  cursor: help;
 
   .mid-autumn__moon {
     pointer-events: visiblePainted;
