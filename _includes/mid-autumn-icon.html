@@ -14,8 +14,21 @@
 
      Colours and motion come from _sass/_mid-autumn.scss. -->
 <svg class="mid-autumn" viewBox="0 0 32 32" width="34" height="34"
-     role="img" aria-label="Mid-Autumn Festival" focusable="false">
-  <title>Mid-Autumn Festival</title>
+     aria-hidden="true" focusable="false">
+  <!-- The hover tooltip is the title attribute on the site-title link in
+       _includes/masthead.html, so that the wordmark and the mark greet a
+       visitor as one block rather than only the 34px of moon.
+
+       That link is where the accessible description comes from too, which is
+       why the mark is aria-hidden here: labelling it as well made a screen
+       reader read the same sentence twice over one link.
+
+       This <title> is the include's own fallback, for anywhere the mark is used
+       outside that link. It is an SVG element, not a title attribute, because
+       SVG 1.1 ignores the attribute; and the tooltip has to be a native one
+       because the mark sits inside .visible-links, which is overflow-x: auto,
+       so anything drawn in CSS would be clipped by it. -->
+  <title>Celebrating the Chinese Lunar Festival</title>
 
   <defs>
     <clipPath id="mid-autumn-disc">

@@ -147,6 +147,27 @@ html[data-theme="dark"] .mid-autumn {
 .doodle-band__obj { position: absolute; top: 50%; transform: translateY(-50%); line-height: 0; }
 .doodle-band__moon, .doodle-band__rabbit { display: block; margin: 0 !important; vertical-align: baseline !important; }
 
+/* The strip as a whole stays pointer-transparent so the art can never swallow a
+   click meant for the menu, but the moon is the one piece a visitor is invited
+   to hover: from 1280px up it is the only mark on the page, and its <title> is
+   the greeting.
+
+   The hover is handed to the disc, not to the <svg>. An outermost <svg> is a
+   replaced element as far as hit testing goes, so making the element itself
+   pointer-opaque would claim its whole 58px square, including the four
+   transparent corners, which sit over the strip beside the wordmark. Only the
+   disc is painted, so only the disc answers; the craters, Chang'e and the rabbit
+   stay transparent and the hit falls through to the disc under them. cursor
+   stays on the <svg> because it inherits down to whatever is hit. */
+.doodle-band__moon {
+  pointer-events: none;
+  cursor: help;
+
+  .mid-autumn__moon {
+    pointer-events: visiblePainted;
+  }
+}
+
 /* the wordmark rides above the art */
 .masthead__menu-item--lg { z-index: 2; }
 .masthead__menu-item--lg a { position: relative; }
