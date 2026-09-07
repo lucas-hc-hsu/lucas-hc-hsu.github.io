@@ -8,7 +8,6 @@ date: 2024-11-23
 venue: 'arXiv preprint arXiv:2312.06519'
 authors: 'Hung-Chun Hsu, Bo-Jun Wu, Ming-Yi Hong, Che Lin, Chih-Yu Wang'
 image: 'pub-flashgan.png'
-# slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'https://arxiv.org/pdf/2312.06519'
 # citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---

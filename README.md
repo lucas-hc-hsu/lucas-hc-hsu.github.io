@@ -1,77 +1,42 @@
-# Academic Pages
-**Academic Pages is a Github Pages template for academic websites.**
+# lucas-hc-hsu.github.io
 
-![Academic Pages template example](images/homepage.png "Academic Pages template example")
+Personal academic site for Hung-Chun Hsu (Lucas), served by GitHub Pages from
+the `master` branch: <https://lucas-hc-hsu.github.io>
 
-# Getting Started
+Forked from [Academic Pages](https://github.com/academicpages/academicpages.github.io),
+itself a fork of the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
+Jekyll theme, and since diverged: the light palette, the masthead layout, the
+sidebar behaviour and the seasonal artwork are all local.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+## Content
 
-See more info at https://academicpages.github.io/
+| Where | What |
+|---|---|
+| `_pages/about.md` | the home page, including the News list |
+| `_publications/` | one file per paper; drives both `/publications/` and the CV page |
+| `_talks/` | one file per talk |
+| `_pages/cv.md` | the CV page (the downloadable PDF is `files/Lucas_Hsu_Resume.pdf` and is maintained separately) |
+| `_data/navigation.yml` | the masthead menu |
 
-## Running locally
+## Theme
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+`_config.yml` carries the switches:
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+- `default_theme` — the colour scheme a first-time visitor gets, `dark` or `light`.
+- `christmas_theme` — the seasonal palette and decorations. Everything it needs
+  stays in the repo either way, so this is the only line to flip.
+- `light_palette` — swaps in one of the alternates in `_sass/theme/light-candidates/`.
 
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
+`_sass/theme/README.md` has the twelve-month seasonal plan.
 
-## Using Docker
+**Jekyll does not reload `_config.yml`. Restart the server after changing it.**
 
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-Start by build the container:
+## Building locally
 
 ```bash
-docker build -t jekyll-site .
+bundle exec jekyll serve --host 127.0.0.1 --port 4000
 ```
 
-Next, run the container:
-```bash
-docker run -p 4000:4000 --rm -v $(pwd):/usr/src/app jekyll-site
-```
-
-# Maintenance
-
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
-
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
-
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+`assets/js/main.min.js` is committed. `package.json` can rebuild it, but it has
+been maintained by hand alongside `assets/js/_main.js` and
+`assets/js/plugins/jquery.greedy-navigation.js`; keep the two in step.

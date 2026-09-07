@@ -8,12 +8,6 @@ main:
   - title: "Publications"
     url: /publications/
 
-  # - title: "Teaching"
-  #   url: /teaching/    
-    
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
   - title: "Resume"
     url: /cv/
     
@@ -23,11 +17,6 @@ main:
   - title: "Latest Talks!"
     url: /talks/    
     
-  # - title: "Fresh Ideas"
-  #   url: /fresh-ideas/
-    
   - title: "Memorable Moments"
     url: /memorable-moments/
     
-  # - title: "Guide"
-  #   url: /markdown/
