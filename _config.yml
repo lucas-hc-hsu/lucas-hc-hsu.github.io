@@ -12,7 +12,7 @@ title                    : "Hung-Chun Hsu"
 title_separator          : "-"
 name                     : &name "Hung-Chun Hsu" #"Your Name"
 description              : &description "PhD applicant specializing in multimodal AI, conversational search, and graph neural networks." #"personal description"
-# description              : &description "Hung-Chun Hsu (Lucas Hsu, Hung Chun Hsu, 許鴻君), also known as Lucas (Hung-Chun) Hsu - Research Assistant at CFDA Lab, CITI, Academia Sinica, Taiwan. PhD applicant specializing in multimodal AI, conversational search, and graph neural networks." #"personal description"
+# description              : &description "Hung-Chun Hsu (Lucas Hsu, Hung Chun Hsu, 許鴻君), also known as Lucas (Hung-Chun) Hsu - Research Assistant at CFDA Lab, Academia Sinica, Taiwan. PhD applicant specializing in multimodal AI, conversational search, and graph neural networks." #"personal description"
 url                      : https://lucas-hc-hsu.github.io #https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "lucas-hc-hsu/lucas-hc-hsu.github.io"
@@ -61,7 +61,10 @@ author:
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?hl=en&user=dOcuZ20AAAAJ&view_op=list_works&authuser=1&gmla=AH8HC4xL4Oi3Mh4AfEfmrlEjl7-sfYM0n0EKuqRZocVETG3No3phMJza2tbpO2-6aXio3tadi49WdCzRLkqNpYB6"
+  # Canonical form. The URL the browser hands you after a signed-in visit also
+  # carries authuser and a gmla= token, both of which come from that session
+  # and neither of which belongs in a public config.
+  googlescholar    : "https://scholar.google.com/citations?user=dOcuZ20AAAAJ"
   impactstory      : # URL
   orcid            : # "http://orcid.org/yourorcidurl"
   semantic         : # URL
