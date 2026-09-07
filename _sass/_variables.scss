@@ -161,6 +161,14 @@ $susy: (
 $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $navicon-width              : 28px;
+/* The collapsed-menu button's own left/right padding. Named because the theme
+   toggle has to be parked clear of the whole button, padding included, and the
+   two must not drift apart. */
+$navicon-button-pad         : 0.5rem !default;
+/* Clear space between the theme toggle and the collapsed-menu button. This is
+   the visible gap between the two controls; the button's padding above is added
+   to it wherever the toggle is offset. */
+$navicon-gap                : 1.25rem !default;
 /* Width kept clear at the right end of the masthead for the theme toggle:
    its link box (1rem margin + the icon, ~2.1rem) plus breathing room. */
 $theme-toggle-reserve       : 3rem !default;

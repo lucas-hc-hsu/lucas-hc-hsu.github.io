@@ -105,11 +105,11 @@ $content-right-inset: span(2 of 12 wide);
      Below $large the toggle's furthest-right resting place is beside the menu
      button, so the reserve has to clear the button as well -- keep this in step
      with the collapsed offset at the bottom of this file. */
-  padding-right: calc(#{$navicon-width} + 1.75rem + #{$theme-toggle-reserve});
+  padding-right: calc(#{$navicon-width} + #{2 * $navicon-button-pad} + #{$navicon-gap} + #{$theme-toggle-reserve});
 
   @include breakpoint($large) {
     @include prefix(2.5 of 12);
-    padding-right: calc(#{$content-right-inset} + #{$navicon-width} + 1.75rem + #{$theme-toggle-reserve});
+    padding-right: calc(#{$content-right-inset} + #{$navicon-width} + #{2 * $navicon-button-pad} + #{$navicon-gap} + #{$theme-toggle-reserve});
   }
 
   /* Cancel the leading margin on the first link so its own left edge, not its
@@ -167,12 +167,13 @@ $content-right-inset: span(2 of 12 wide);
 }
 
 /* Collapsed menu: the toggle would otherwise land underneath the menu button,
-   so park it just to the button's left. The button is $navicon-width wide plus
-   0.5rem of padding on each side. */
+   so park it just to the button's left. Clear the button's whole box, which is
+   $navicon-width plus $navicon-button-pad on each side, and then $navicon-gap
+   again, which is the space actually seen between the two controls. */
 .greedy-nav button:not(.hidden) ~ .visible-links #theme-toggle {
-  right: calc(#{$navicon-width} + 1.75rem);
+  right: calc(#{$navicon-width} + #{2 * $navicon-button-pad} + #{$navicon-gap});
 
   @include breakpoint($large) {
-    right: calc(#{$content-right-inset} + #{$navicon-width} + 1.75rem);
+    right: calc(#{$content-right-inset} + #{$navicon-width} + #{2 * $navicon-button-pad} + #{$navicon-gap});
   }
 }

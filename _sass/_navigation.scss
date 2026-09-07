@@ -199,7 +199,23 @@
     position: absolute;
     height: 2.5rem;
     right: 0;
-    padding: 0 0.5rem;
+
+    /* Centred on the link row, the same way #theme-toggle is.
+
+       Without a `top` the button fell back to its static position, the very top
+       of .greedy-nav's content box. That reads as centred only while the nav is
+       exactly as tall as the button. Below $large the site title sits back in
+       the flow carrying the seasonal mark, which makes the nav 51.5px (and
+       57.9px once the root font-size steps up at $medium) against the button's
+       40/45px, so the button rode 5.8-6.5px high of the links beside it.
+
+       .visible-links is .greedy-nav's only in-flow child, and its cells are
+       vertical-align: middle, so the links' centre line is the nav's centre
+       line and 50% lands on it at every width. */
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding: 0 $navicon-button-pad;
     border: 0;
     outline: none;
     background-color: var(--pagination-bg-active);
