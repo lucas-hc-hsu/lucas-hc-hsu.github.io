@@ -11,6 +11,44 @@
 }
 
 /*
+   Layout measure
+   ========================================================================== */
+
+/* The horizontal measure shared by the three bands that have to line up: the
+   masthead's inner wrap, #main and the footer. Anything that sets its own
+   container width instead will drift out of alignment with the others, which is
+   what the whole grid is arranged around.
+
+   The container is narrowed so that the sidebar keeps $sidebar-frame of the
+   window clear on its left at every width. Solving for the border-box width W
+   with the container centred, W = window - 2 * (frame * window - padding), and
+   because border-box includes the padding the two paddings come back on top.
+   max-width then caps it: at 1728px the two agree exactly, so from there up
+   nothing changes and the window keeps opening up either side as before.
+
+   The floor is the other end of the same story. From $large up the site title
+   is lifted out of the link row and pinned left, and the links begin at
+   prefix(2.5 of 12) of the bar, so the room the wordmark and its seasonal mark
+   have is a share of the bar's width. Narrowing the bar narrows that room too,
+   and below about 982px the full frame leaves the moon sitting on the first
+   menu link. So the container never goes below $large: the frame fades in
+   across 925 to 982px rather than the mark colliding, and no width is left
+   worse off than it was before the frame existed.
+
+   min(100%, $large) rather than $large alone, because 100% is the container's
+   real room and already excludes a classic scrollbar, while a bare 925px would
+   overflow a 925px window that has one.
+
+   max() and min() have to be escaped: Ruby Sass, which is what the
+   github-pages gem builds this with, has its own max() and dies on a calc()
+   argument. */
+@mixin layout-measure {
+  $target: calc(100% - #{2 * $sidebar-frame} + #{2 * $layout-inline-padding});
+  width: unquote("max(#{$target}, min(100%, #{$large}))");
+  max-width: $x-large;
+}
+
+/*
    em function
    ========================================================================== */
 

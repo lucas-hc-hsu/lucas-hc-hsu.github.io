@@ -36,11 +36,14 @@ $content-right-inset: span(2 of 12 wide);
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1em 1em 1em;
+    padding: $layout-inline-padding;
     font-family: $sans-serif-narrow;
 
+    /* Same measure as #main. The menu links start at the content column and the
+       theme toggle ends at the article's right edge, so the bar has to be the
+       same width as the article or both of those alignments come apart. */
     @include breakpoint($large) {
-      max-width: $x-large;
+      @include layout-measure;
     }
 
     nav {

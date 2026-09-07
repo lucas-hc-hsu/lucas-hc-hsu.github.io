@@ -29,10 +29,14 @@
     margin-right: auto;
     margin-top: 1em;
     max-width: 100%;
-    padding: 0 1em 1em;
+    padding: 0 $layout-inline-padding $layout-inline-padding;
 
-    @include breakpoint($x-large) {
-      max-width: $x-large;
+    /* Same measure as #main, so the colophon starts under the sidebar rather
+       than out in the margin the sidebar has just been pulled in from. The
+       theme only capped this at $x-large, which was indistinguishable from
+       #main while #main ran the full width of the window. */
+    @include breakpoint($large) {
+      @include layout-measure;
     }
   }
 

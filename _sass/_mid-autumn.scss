@@ -204,14 +204,15 @@ html[data-theme="dark"] .doodle-band {
 /* The strip and the compact mark are two sizes of the same idea, so only one
    shows at a time. The strip needs the space beside the wordmark to be worth
    using: below this the clear part is under about 70px and the moon starts
-   crowding the name, so the mark beside the title takes over instead. */
-@media screen and (max-width: 1279px) {
+   crowding the name, so the mark beside the title takes over instead. See
+   $doodle-band-min-width for where that width comes from. */
+@media screen and (max-width: #{$doodle-band-min-width - 1px}) {
   .doodle-band {
     display: none;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: $doodle-band-min-width) {
   /* The moon inside the strip carries .mid-autumn too, because that is where
      its custom properties are declared. Exclude it, or hiding the compact mark
      hides the strip's moon along with it. */

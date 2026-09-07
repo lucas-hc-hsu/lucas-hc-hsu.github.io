@@ -178,5 +178,28 @@ $theme-toggle-reserve       : 3rem !default;
    the sidebar's sticky offset, which sets it once the sidebar pins. Keeping one
    value means the sidebar does not jump to a different gap as you scroll. */
 $content-top-gap            : 56px !default;
+
+/* The layout's own left and right padding, inside the centred container. */
+$layout-inline-padding      : 1em !default;
+
+/* Whitespace between the window edge and the sidebar column, as a share of the
+   window. Taken from 1728px, the width the owner picked: there the container
+   has just reached its 1600px cap, so the sidebar sits 82px from the window
+   edge against 93px to the start of the article, and the column reads as framed
+   rather than shoved against the edge. 82 / 1728 = 4.74537%.
+
+   Below 1728 the container used to run the full width of the window, which left
+   that gap at the padding alone, 18px, while the article's own right inset kept
+   about 18% of the window empty on the other side. The layout-measure mixin
+   holds this share at every width from $large up instead. */
+$sidebar-frame              : 4.74537% !default;
+
+/* The width from which the doodle strip takes over from the compact seasonal
+   mark. The strip is span(2 of 12 wide) of the bar, and it has to hold the
+   wordmark plus the 58px moon anchored 8px from its right end, so it needs
+   about 211px before the moon starts sitting on the name. The bar is now
+   $sidebar-frame narrower either side than the window, which pushed that point
+   out from 1280px: 211 / (16.949% of 90.5%) = 1375px. */
+$doodle-band-min-width      : 1375px !default;
 $navicon-height             : 4px;
 $global-transition          : all 0.2s ease-in-out;

@@ -18,13 +18,13 @@
      once the decorations were switched off. */
   margin-top: $content-top-gap;
 
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: $layout-inline-padding;
+  padding-right: $layout-inline-padding;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
   @include breakpoint($large) {
-    max-width: $x-large;
+    @include layout-measure;
   }
 }
 
