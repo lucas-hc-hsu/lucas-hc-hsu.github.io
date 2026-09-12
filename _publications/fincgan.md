@@ -10,6 +10,7 @@ authors: 'Hung-Chun Hsu*, Ting-Le Lin*, Bo-Jun Wu, Ming-Yi Hong, Che Lin, Chih-Y
 image: 'pub-fincgan.png'
 paperurl: 'https://ieeexplore.ieee.org/document/10448064'
 # citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+featured: true
 ---
 
 <!-- Image for individual page -->

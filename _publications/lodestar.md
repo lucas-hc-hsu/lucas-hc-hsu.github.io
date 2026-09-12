@@ -8,6 +8,7 @@ venue: 'arXiv preprint arXiv:2608.11922'
 authors: 'Hung-Chun Hsu, Po-Jen Ko, Che-Cheng Wu, Li-Yang Chang, Chuan-Ju Wang'
 image: 'pub-lodestar.png'
 paperurl: 'https://arxiv.org/abs/2608.11922'
+featured: true
 ---
 
 <!-- Image for individual page -->

@@ -8,6 +8,7 @@ venue: 'NIST Text REtrieval Conference (TREC)'
 authors: 'Yu-Cheng Chang, Guan-Wei Yeo, Quah Eugene, Fan-Jie Shih, Yuan-Ching Kuo, Tsung-En Yu, Hung-Chun Hsu, Ming-Feng Tsai, Chuan-Ju Wang'
 image: 'pub-ikat.png'
 paperurl: 'https://trec.nist.gov/pubs/trec34/papers/cfdalab.ikat.pdf'
+featured: true
 ---
 
 <!-- Image for individual page -->
