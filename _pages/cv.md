@@ -44,7 +44,7 @@ Education
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      B.S. in Engineering and System Science, National Tsing Hua University <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2017 - Jun. 2021</span>
+      B.S. in Engineering and System Science, National Tsing Hua University <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2017 - Jan. 2021</span>
     </p>
   </div>
 </div>
@@ -103,11 +103,11 @@ Research Experience
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Research Assistant, CFDA Lab, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Present</span>
+      Senior Research Assistant and Project Lead, CFDA Lab, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Present</span>
     </p>
     <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
       <li style="margin-bottom: 5px;">Leading the Information Retrieval (IR) research project in collaboration with NVIDIA Research (Taiwan and US) under the supervision of Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai. Focused on conversational retrieval and Multimodal-LLMs.</li>
-      <li style="margin-bottom: 5px;">Participated twice in NIST's Text Retrieval Conference (TREC) tracks starting from 2024: Product Recommendations and Interactive Knowledge Assistance (iKAT). Led and coordinated the competition teams with up to 6 direct reports.</li>
+      <li style="margin-bottom: 5px;">Participated in NIST's Text Retrieval Conference (TREC) tracks since 2024: Product Recommendations, Interactive Knowledge Assistance (iKAT), and User Simulation. Led and coordinated the competition teams of up to 7 members.</li>
     </ul>
   </div>
 </div>
@@ -126,7 +126,7 @@ Research Experience
 <div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
-      Research Assistant, SNAC Lab, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Feb. 2024</span>
+      Research Assistant, SNAC Lab, Academia Sinica <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Sep. 2021 - Feb. 2024</span><br><span style="font-size: 0.8em; font-style: italic; font-weight: normal;">Full-time (2023 - 2024) and Part-time (2021 - 2023)</span>
     </p>
     <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
       <li style="margin-bottom: 5px;">Developed novel GAN-based data augmentation frameworks for heterogeneous graphs, addressing critical node class imbalance issues in graph neural networks.</li>
@@ -155,6 +155,17 @@ Representative Project
     <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
       <li style="margin-bottom: 5px;">Led a team of 7 members to participate in the iKAT track, developing pipelines for traditional offline conversational search and exploring real-time conversational retrieval methods requiring low latency.</li>
       <li style="margin-bottom: 5px;">Achieved 2nd place in Offline Passage Ranking and 3rd place in Online Interactive Generation among participating teams, outperforming the competition median by 10 pts in nDCG@3 and 11 pts in average human evaluation score respectively.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
+      Multimodal Conversational Product Search with MLLMs, with NVIDIA Research Taiwan <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">Apr. 2024 - Jul. 2025</span>
+    </p>
+    <ul style="font-size: 0.85em; margin-bottom: 0; padding-left: 20px;">
+      <li style="margin-bottom: 5px;">Developed a product recommendation system supporting any-to-any multimodal data using a novel MLLM-based generative retrieval to predict consumer purchases, enhanced by our test-time reranking mechanism with average improvements of 14.5 points MRR and 10.6 points nDCG@1 across 3 benchmarks.</li>
     </ul>
   </div>
 </div>
