@@ -18,11 +18,21 @@ Hi, I'm Hung-Chun. My research interests lie in multimodal LLMs, information ret
 
 {% include base_path %}
 
+<style>
+/* Recent Research 的卡片連結與內文同色，只靠底線表示可點擊 */
+.research-card a,
+.research-card a:visited,
+.research-card a:hover,
+.research-card a:focus {
+  color: var(--global-text-color);
+}
+</style>
+
 {% comment %} Homepage selection is controlled by `featured: true` in each _publications file, not by date. {% endcomment %}
 {% assign recent_publications = site.publications | where_exp: "post", "post.featured" | sort: 'date' | reverse %}
 
 {% for post in recent_publications %}
-<div style="display: flex; align-items: stretch; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+<div class="research-card" style="display: flex; align-items: stretch; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 200px; min-width: 150px; display: flex; align-items: center; justify-content: center; background-color: #fff; border-radius: 5px; overflow: hidden;">
     {% if post.image %}
       <img src="/images/{{ post.image }}" alt="{{ post.title }}" style="width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block;">
