@@ -193,6 +193,55 @@ Representative Project
   </div>
 </div>
 
+<!-- Section Divider -->
+<div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
+  <div style="padding: 0 20px 0 0; font-weight: bold; color: var(--global-text-color); font-size: 24px; background-color: var(--global-bg-color);">
+    Honors and Awards
+  </div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
+</div>
+
+{% comment %}
+Honors and Awards
+======
+{% endcomment %}
+<div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-top: 0; margin-bottom: 3px; font-weight: 550;">
+      Scholastic Honor Membership <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">2023</span>
+    </p>
+    <p style="font-size: 0.85em; margin-bottom: 0;">awarded by The Phi-Tau-Phi Scholastic Honor Society of the R.O.C. (Taiwan)</p>
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-top: 0; margin-bottom: 3px; font-weight: 550;">
+      Graduation Ceremony Representative <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">2023</span>
+    </p>
+    <p style="font-size: 0.85em; margin-bottom: 0;">awarded by Data Science Master Program, National Taiwan University and Academia Sinica</p>
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-top: 0; margin-bottom: 3px; font-weight: 550;">
+      Academic Excellence Scholarship <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">2023</span>
+    </p>
+    <p style="font-size: 0.85em; margin-bottom: 0;">awarded by National Taiwan University and Academia Sinica</p>
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-top: 0; margin-bottom: 3px; font-weight: 550;">
+      2nd Place in National Data Competition, Carrefour Taiwan E-commerce Next Purchase Prediction <span style="float: right; font-style: italic; font-size: 0.8em; font-weight: normal;">2022</span>
+    </p>
+    <p style="font-size: 0.85em; margin-bottom: 0;">awarded by Institute for Information Industry, Ministry of Digital Affairs, Executive Yuan of the R.O.C. (Taiwan)</p>
+  </div>
+</div>
+
+
 {% comment %}
 <!-- Section Divider -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
