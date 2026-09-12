@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="news-section" markdown="1">
 
-- <span class="news-date">May 2026</span><span>I presented [VLM: From Late Fusion to Early Fusion](/talks/2026-vlm-late-to-early-fusion) at the CFDA, CLIP &amp; LKT Labs Joint Laboratory Seminar.</span>
-- <span class="news-date">Apr 2026</span><span>I presented [Dive into Qwen3.5 Key Techniques](/talks/2026-qwen35-key-techniques) across three sessions of the CFDA, CLIP &amp; LKT Labs Joint Laboratory Seminar.</span>
+- <span class="news-date">May 2026</span><span>I presented [VLM: From Late Fusion to Early Fusion](/talks/) at the CFDA, CLIP &amp; LKT Labs Joint Laboratory Seminar.</span>
+- <span class="news-date">Apr 2026</span><span>I presented [Dive into Qwen3.5 Key Techniques](/talks/) across three sessions of the CFDA, CLIP &amp; LKT Labs Joint Laboratory Seminar.</span>
 - <span class="news-date">Dec 2025</span><span>Our team achieved strong results in TREC iKAT 2025: 1st in Offline Generated Response (generation-only), 4th in Online Interactive Response Generation, and 5th in Offline Passage Ranking! [See the rankings](/memorable-moments/#trec-ikat-2025)</span>
 - <span class="news-date">Apr 2024</span><span>I was fortunate to join the CFDA Lab at Academia Sinica, Taiwan, as a research assistant, working with Prof. Chuan-Ju Wang and Prof. Ming-Feng Tsai.</span>
 - <span class="news-date">Aug 2023</span><span>I graduated top of my class from the National Taiwan University Data Science M.S. program, with a thesis on imbalanced node classification in heterogeneous graph neural networks! I was fortunate to work with Prof. Chiu-Yu Wang at Academia Sinica and Prof. Che Lin at NTU.</span>
