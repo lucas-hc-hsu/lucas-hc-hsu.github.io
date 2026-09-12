@@ -13,6 +13,27 @@ author_profile: true
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
   <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
   <div style="padding: 0 20px; font-weight: bold; color: var(--global-text-color); font-size: 14px; background-color: var(--global-bg-color);">
+    August 28, 2026
+  </div>
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
+</div>
+
+<!-- Event Content -->
+<div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+  <div style="flex: 0 0 300px; min-width: 250px;">
+    <img src="/images/moment-interns-2026.jpg" alt="Presenting internship certificates with my three interns at Academia Sinica" style="width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--image-border-color);">
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h3 style="margin-top: 0; color: var(--global-text-color);">Celebrating My Interns' Completion of Their Academia Sinica Internship</h3>
+    <p style="font-size: 0.8em;">They joined us from National Yang Ming Chiao Tung University (NYCU) and National Cheng Kung University (NCKU). All came in with excellent academic records, and they got up to speed on conversational search research remarkably quickly.</p>
+    <p style="font-size: 0.8em;">Together we developed a user simulator for the TREC 2026 User Simulation track. Guiding them from their first day to their completion certificates was one of the highlights of my year.</p>
+  </div>
+</div>
+
+<!-- Date Separator -->
+<div id="trec-ikat-2025" style="display: flex; align-items: center; margin: 30px 0 20px 0; scroll-margin-top: 100px;">
+  <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
+  <div style="padding: 0 20px; font-weight: bold; color: var(--global-text-color); font-size: 14px; background-color: var(--global-bg-color);">
     December 12, 2025
   </div>
   <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
@@ -82,6 +103,8 @@ author_profile: true
   </div>
 </div>
 
+{% comment %} Hidden from the site, kept for future use: Cathay Financial Holdings collaboration {% endcomment %}
+{% comment %}
 <!-- Date Separator -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
   <div style="flex: 1; height: 1px; background-color: var(--global-border-color);"></div>
@@ -107,6 +130,7 @@ author_profile: true
     </ol>
   </div>
 </div>
+{% endcomment %}
 
 <!-- Date Separator -->
 <div style="display: flex; align-items: center; margin: 30px 0 20px 0;">
