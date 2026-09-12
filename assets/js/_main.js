@@ -7,19 +7,36 @@
 const defaultTheme = 'dark';
 
 // Set the theme on page load or when explicitly called
+// localStorage throws rather than returning null when site data is blocked, and
+// setTheme runs inside document.ready ahead of every other binding, so an
+// unguarded read took the theme toggle and the rest of the handler down with it.
+let readStoredTheme = () => {
+  try { return localStorage.getItem("theme"); } catch (e) { return null; }
+};
+
+// The meta is server-rendered from the site default, so it has to be rewritten
+// whenever the scheme changes or a visitor who picked light keeps a dark
+// browser chrome above a light page.
+let setThemeColorMeta = (theme) => {
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute("content", theme === "dark" ? "#252525" : "#F4F1EC");
+};
+
 let setTheme = (theme) => {
   const use_theme =
     theme ||
-    localStorage.getItem("theme") ||
+    readStoredTheme() ||
     $("html").attr("data-theme") ||
     defaultTheme;
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
     $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+    setThemeColorMeta("dark");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
     $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+    setThemeColorMeta("light");
   }
 };
 
@@ -27,7 +44,8 @@ let setTheme = (theme) => {
 var toggleTheme = () => {
   const current_theme = $("html").attr("data-theme");
   const new_theme = current_theme === "dark" ? "light" : "dark";
-  localStorage.setItem("theme", new_theme);
+  // The choice not persisting is survivable; the toggle not working is not.
+  try { localStorage.setItem("theme", new_theme); } catch (e) {}
   setTheme(new_theme);
 };
 

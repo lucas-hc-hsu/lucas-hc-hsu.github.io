@@ -23,7 +23,11 @@
      leaving an explicit data-theme is what tells _main.js which scheme to use. -->
 <script>
   (function() {
-    var stored = localStorage.getItem('theme');
+    // localStorage throws, not returns null, when site data is blocked (private
+    // windows, cookies off, some webviews). Without the guard this threw before
+    // setting the attribute, and every later script in the same block was skipped.
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
     var theme = (stored === 'light' || stored === 'dark')
       ? stored
       : '{{ site_theme }}';
