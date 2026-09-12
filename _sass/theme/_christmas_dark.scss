@@ -37,6 +37,9 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Christmas Dark theme for the site */
 html[data-theme="dark"] {
+    /* Native UI (scrollbars, form controls) follows the page, not the OS. */
+    color-scheme: dark;
+
     --global-base-color                 : #{$background};
     --global-bg-color                   : #{$background};
     --global-footer-bg-color            : #141414;

@@ -35,6 +35,8 @@ $sidebar-screen-min-width   : 1024px;
 
 /* Christmas Light theme for the site */
 :root {
+    color-scheme: light;
+
     --global-base-color                 : #{$gray};
     --global-bg-color                   : #FDF8F5;
     --global-footer-bg-color            : #F5EDE8;

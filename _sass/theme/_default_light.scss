@@ -35,6 +35,8 @@ $sidebar-screen-min-width   : 1024px;
    Four alternates live in theme/light-candidates/, selectable from _config.yml
    with `light_palette:`. */
 :root {
+    color-scheme: light;
+
     --global-base-color                : #6E675E;
     --global-bg-color                  : #F4F1EC;
     --global-footer-bg-color           : #EAE6DF;
