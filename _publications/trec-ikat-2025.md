@@ -6,14 +6,14 @@ permalink: /publication/trec-ikat-2025
 date: 2025-09-01
 venue: 'NIST Text REtrieval Conference (TREC)'
 authors: 'Yu-Cheng Chang, Guan-Wei Yeo, Quah Eugene, Fan-Jie Shih, Yuan-Ching Kuo, Tsung-En Yu, Hung-Chun Hsu, Ming-Feng Tsai, Chuan-Ju Wang'
-image: 'pub-ikat.png'
+image: 'pub-ikat.gif'
 paperurl: 'https://trec.nist.gov/pubs/trec34/papers/cfdalab.ikat.pdf'
 featured: true
 ---
 
 <!-- Image for individual page -->
 <div style="text-align: center; margin-bottom: 20px;">
-  <img src="/images/pub-ikat.png" alt="CFDA & CLIP at TREC iKAT 2025" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
+  <img src="/images/pub-ikat.gif" alt="CFDA & CLIP at TREC iKAT 2025" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
 </div>
 
 <h2 style="text-align: left;">TL;DR</h2>
