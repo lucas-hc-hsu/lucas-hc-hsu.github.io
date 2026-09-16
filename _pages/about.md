@@ -33,7 +33,7 @@ Hi, I'm Hung-Chun. My research interests lie in multimodal LLMs, information ret
 
 {% for post in recent_publications %}
 <div class="research-card" style="display: flex; align-items: stretch; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
-  <div style="flex: 0 0 200px; min-width: 150px; display: flex; align-items: center; justify-content: center; background-color: #fff; border-radius: 5px; overflow: hidden;">
+  <div style="flex: 0 0 320px; max-width: 100%; min-width: 150px; display: flex; align-items: center; justify-content: center; background-color: #fff; border-radius: 5px; overflow: hidden;">
     {% if post.image %}
       <img src="/images/{{ post.image }}" alt="{{ post.title }}" style="width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block;">
     {% endif %}
