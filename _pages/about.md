@@ -10,7 +10,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I'm Hung-Chun. My research interests lie in multimodal LLMs, information retrieval, conversational search, and graph neural networks. <span style="font-weight: 600;">Currently, my research centers on developing multimodal LLMs to enable deeper human-AI interaction across diverse modalities and to generate personalized responses from multimodal feedback.</span>
+Hi, I'm Hung-Chun. My research focuses on conversational language models, information retrieval, and multimodal language models. <span style="font-weight: 600;">I am interested in language models that hold a conversation, ground their answers in retrieved information, and work across text and images.</span>
 
 🚀 <span style="color: #990000; font-weight: bold;">I am actively seeking Ph.D. opportunities in the United States!</span> <a href="/files/Lucas_Hsu_Resume.pdf" style="font-size: 0.6em; padding: 2px 6px; margin-left: 10px; background-color: var(--global-bg-color); color: var(--global-text-color); border: 1px solid var(--button-border-color); border-radius: 3px; text-decoration: none; display: inline-block;" target="_blank"><i class="fas fa-external-link-alt"></i> my resume</a>
 
