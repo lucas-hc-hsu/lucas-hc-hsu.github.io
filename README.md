@@ -23,8 +23,9 @@ sidebar behaviour and the seasonal artwork are all local.
 `_config.yml` carries the switches:
 
 - `default_theme` — the colour scheme a first-time visitor gets, `dark` or `light`.
-- `christmas_theme` — the seasonal palette and decorations. Everything it needs
-  stays in the repo either way, so this is the only line to flip.
+- `seasonal_theme` — the seasonal look by name: `halloween`, `mid-autumn`,
+  `christmas`, or blank for none. Every theme stays in the repo, so this is the
+  only line to change; `_data/seasonal.yml` lists what each one switches on.
 - `light_palette` — swaps in one of the alternates in `_sass/theme/light-candidates/`.
 
 `_sass/theme/README.md` has the twelve-month seasonal plan.

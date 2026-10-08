@@ -2,8 +2,9 @@
    Theme toggle functions
    ========================================================================== */
 
-// Last-resort fallback only: _includes/head.html always writes an explicit
-// data-theme on <html>, picked from the christmas_theme flag in _config.yml.
+// Last-resort fallback only: _layouts/default.html always writes an explicit
+// data-theme on <html>, picked by _includes/site_theme from default_theme (or
+// seasonal_theme) in _config.yml.
 const defaultTheme = 'dark';
 
 // Set the theme on page load or when explicitly called
@@ -16,10 +17,15 @@ let readStoredTheme = () => {
 
 // The meta is server-rendered from the site default, so it has to be rewritten
 // whenever the scheme changes or a visitor who picked light keeps a dark
-// browser chrome above a light page.
+// browser chrome above a light page. The colour is read from the palette that
+// is actually compiled in, since a seasonal theme brings its own; the two hex
+// values are only a fallback for a browser that cannot report it.
 let setThemeColorMeta = (theme) => {
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "dark" ? "#252525" : "#F4F1EC");
+  if (!meta) return;
+  const background = getComputedStyle(document.documentElement)
+    .getPropertyValue("--global-bg-color").trim();
+  meta.setAttribute("content", background || (theme === "dark" ? "#252525" : "#F4F1EC"));
 };
 
 let setTheme = (theme) => {

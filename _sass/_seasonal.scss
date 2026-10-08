@@ -1,0 +1,106 @@
+/* ==========================================================================
+   SEASONAL SLOTS
+   ========================================================================== */
+
+/* The places a seasonal theme can draw into, shared by every theme so that a
+   theme only has to bring its art. `seasonal_theme` in _config.yml names the
+   theme and _data/seasonal.yml lists which of these slots it fills:
+
+   - the doodle band between the site name and the first menu link, from
+     $doodle-band-min-width up (_includes/seasonal/<theme>/doodle-band.html);
+   - the compact mark beside the site name below that width
+     (title-mark.html, carrying .seasonal-mark);
+   - a drawn colour-scheme toggle icon (toggle-icon.html), which replaces the
+     Font Awesome sun and moon.
+
+   The band geometry was first written for the Mid-Autumn theme and moved here
+   unchanged when the October theme needed the same strip. */
+
+/* Doodle strip
+   ========================================================================== */
+
+/* The strip itself.
+
+   Its right edge is pulled 20% of the strip's width back from .greedy-nav's
+   padding-left, which lands it on span(2 of 12 wide): prefix(2.5 of 12) is
+   3.125 columns and span(2 of 12 wide) is 2.5, exactly four fifths of it. That
+   is the same measure as $content-right-inset, and it is where the content
+   column .page begins, so the strip now stops on a real gridline rather than
+   running all the way to the menu. */
+.doodle-band {
+  position: absolute;
+  left: 0;
+
+  /* Vertically the strip is the bar's content box, not the link row.
+     #site-nav is only as tall as the menu links, 45px, because from $large up
+     the site title is lifted out of that row and stops contributing to it. The
+     moon is 58px, so a strip tied to the row clipped it top and bottom. Reach
+     back out over .masthead__inner-wrap's 1em of padding, which is the space the
+     bar already sets aside, and the strip becomes 81px with room to spare.
+
+     overflow: hidden stays. It is what guarantees the art can never paint over
+     the menu links, and the strip's right edge is exactly where the content
+     column starts. */
+  top: -1rem;
+  bottom: -1rem;
+
+  width: $content-right-inset;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.doodle-band__bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.doodle-band__obj { position: absolute; top: 50%; transform: translateY(-50%); line-height: 0; }
+
+/* the wordmark rides above the art */
+.masthead__menu-item--lg { z-index: 2; }
+.masthead__menu-item--lg a { position: relative; }
+
+/* every band animation stops for visitors who asked for less motion */
+@media (prefers-reduced-motion: reduce) { .doodle-band * { animation: none !important; } }
+
+/* The strip and the compact mark are two sizes of the same idea, so only one
+   shows at a time. The strip needs the space beside the wordmark to be worth
+   using: below this the clear part is under about 70px and the moon starts
+   crowding the name, so the mark beside the title takes over instead. See
+   $doodle-band-min-width for where that width comes from. */
+@media screen and (max-width: #{$doodle-band-min-width - 1px}) {
+  .doodle-band {
+    display: none;
+  }
+}
+
+/* A theme without a title mark still keeps the mark's box. The masthead's
+   heights and the widths at which the greedy menu folds were all tuned with the
+   40px mark beside the name; taking it away shrinks the bar by up to 13px and
+   moves the menu row, so an empty box of the same size stands in for it. The
+   space before it in masthead.html is part of that measure too: the Mid-Autumn
+   include always rendered one between the name and the mark. */
+.seasonal-mark--empty {
+  display: inline-block;
+  width: 2.22em;
+  height: 2.22em;
+  margin-left: 0.4em;
+  vertical-align: -0.68em;
+  flex: none;
+}
+
+/* The compact mark and the band are two sizes of one idea, never both. */
+@media screen and (min-width: $doodle-band-min-width) {
+  .seasonal-mark {
+    display: none !important;
+  }
+}
+
+/* A theme that draws its own toggle icon puts it inside #theme-icon, which
+   _main.js still switches between fa-sun and fa-moon; the Font Awesome glyph
+   those classes paint is switched off so only the drawing shows. */
+#theme-icon.seasonal-toggle-host::before {
+  content: none !important;
+  display: none !important;
+}
+
+#theme-icon.seasonal-toggle-host {
+  display: inline-block;
+  line-height: 0;
+}

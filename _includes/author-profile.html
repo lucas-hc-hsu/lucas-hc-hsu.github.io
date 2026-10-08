@@ -12,6 +12,8 @@
     {% else %}
     	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}">
     {% endif %}
+    {% include seasonal_theme %}
+    {% if seasonal.profile_photo_frame %}{% include {{ seasonal_dir }}/profile-photo-frame.html %}{% endif %}
   </div>
 
   <div class="author__content">

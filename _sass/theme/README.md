@@ -7,14 +7,16 @@ masthead switches between them without a reload.
 
 | Files | Used when |
 |---|---|
-| `_default_light.scss`, `_default_dark.scss` | `christmas_theme: false`, the current state. The light half is Limestone + Clay. |
-| `_christmas_light.scss`, `_christmas_dark.scss` | `christmas_theme: true` |
+| `_default_light.scss`, `_default_dark.scss` | every `seasonal_theme` except `christmas`. The light half is Limestone + Clay. A seasonal theme with its own palette (`halloween`) compiles `_sass/seasonal/<name>/_palette.scss` on top of these. |
+| `_christmas_light.scss`, `_christmas_dark.scss` | `seasonal_theme: christmas` |
 | `light-candidates/*.scss` | picked by `light_palette:`. Alternate light grounds only, ignored while a seasonal theme is on. See [light-candidates/README.md](light-candidates/README.md). |
 
 Palettes are only half of a seasonal theme. The decorations live outside this
-folder: `_sass/_christmas.scss` holds the candy-cane borders, snowfall, sleighs
-and wreath, with their images in `images/christmas/`. What the flag covers is
-documented in
+folder. The newer themes keep theirs under `_sass/seasonal/<name>/` and
+`_includes/seasonal/<name>/` (see "Adding a month" below). Christmas predates
+that layout: `_sass/_christmas.scss` holds the candy-cane borders, snowfall,
+sleighs and wreath, with their images in `images/christmas/`, and what it covers
+is documented in
 [`_christmas_theme_backup/CHRISTMAS_THEME_GUIDE.md`](../../_christmas_theme_backup/CHRISTMAS_THEME_GUIDE.md).
 
 ## The seasonal plan
@@ -43,45 +45,52 @@ so their Gregorian dates move by weeks from year to year and can cross a month
 boundary. The months above are where they usually fall, not fixed dates. Check
 the actual date for the year before scheduling a switch.
 
-## Only one seasonal theme at a time
+## Switching themes
 
-Worth knowing before planning any of the above: `christmas_theme` in
-[`_config.yml`](../../_config.yml) is a boolean, not a name. Every gate reads
-`{% if site.christmas_theme %}` and chooses between Christmas and the default, so
-the repo can express exactly one seasonal theme, on or off. There is no theme
-registry and nothing switches by date. Flipping the look is manual: one line in
-`_config.yml`, plus a `jekyll serve` restart locally, because Jekyll does not
-reload `_config.yml` on its own.
+`seasonal_theme` in [`_config.yml`](../../_config.yml) names the theme:
+`halloween`, `mid-autumn`, `christmas`, or blank for none. Only one is on at a
+time, and nothing switches by date: changing the look is that one line, plus a
+`jekyll serve` restart locally, because Jekyll does not reload `_config.yml` on
+its own.
 
-Two ways forward, neither of them built yet:
+`assets/css/main.scss` carries YAML front matter, so Liquid runs before Sass and
+the name is interpolated straight into the import paths, the way
+`light_palette` already was. The templates read the theme's entry in
+[`_data/seasonal.yml`](../../_data/seasonal.yml), which lists the slots it fills
+(see `_includes/seasonal_theme`). Christmas still has its own `{% if
+site.seasonal_theme == 'christmas' %}` gates, because its files predate the
+slots.
 
-- **Reuse the flag.** Replace the Christmas palettes, decoration partial and
-  images with the new month's, keeping the same file names. Cheapest, but only
-  one seasonal theme survives in the repo at a time.
-- **Give the flag a name.** `light_palette` already does this:
-  `assets/css/main.scss` carries YAML front matter, so Liquid runs before Sass
-  and a config value can be interpolated straight into an import path
-  (`@import "theme/light-candidates/{{ site.light_palette }}";`). A
-  `seasonal_theme: qixi` could select `theme/qixi_light`, `theme/qixi_dark` and a
-  matching decorations partial the same way. The `{% if %}` gates in the layout
-  and includes below would each need to compare against a name instead of testing
-  a boolean. Larger change, and the one that makes a twelve-month rotation
-  practical.
+## Adding a month
 
-## What a month's theme has to supply
+A theme is a folder pair and an entry in `_data/seasonal.yml`:
 
-The Christmas theme is the worked example: five places read the flag, and a new
-theme has to answer for each of them.
+| Slot (`_data/seasonal.yml`) | File | Drawn where |
+|---|---|---|
+| `palette` | `_sass/seasonal/<name>/_palette.scss` | custom properties for `:root` and `html[data-theme="dark"]`, compiled after the default pair |
+| `decorations` | `_sass/seasonal/<name>/_decorations.scss` | every other rule of the theme, imported last in `main.scss` |
+| `title_mark` | `_includes/seasonal/<name>/title-mark.html` | beside the site name below `$doodle-band-min-width`; carries `.seasonal-mark` |
+| `doodle_band` | `_includes/seasonal/<name>/doodle-band.html` | the strip between the name and the first menu link from that width up |
+| `ambient` | `_includes/seasonal/<name>/ambient.html` | right after `<body>` |
+| `profile_photo_frame` | `_includes/seasonal/<name>/profile-photo-frame.html` | inside `.author__avatar`, after the photo |
+| `toggle_icon` | `_includes/seasonal/<name>/toggle-icon.html` | inside `#theme-icon`, replacing the sun and moon |
+| `greeting` | | tooltip on the site name |
+| `theme_color` | | the mobile browser bar on first paint; keep it equal to the palette's `--global-bg-color` |
 
-| Where | What it decides |
-|---|---|
-| `_sass/theme/` | the palette pair, `:root` and `html[data-theme="dark"]` |
-| `_sass/_christmas.scss` | decorations: borders, animations, `body` background |
-| `images/christmas/` | image assets the decorations reference |
-| `assets/css/main.scss` | which palette pair compiles, and whether the decorations partial is imported at all |
-| `_layouts/default.html` | the default `data-theme`, the decoration include, the footer border class |
-| `_includes/masthead.html` | the masthead border class and any masthead animation |
-| `_includes/head.html` | the first-visit fallback scheme and image preloads |
+The shared geometry of those slots (the band's box, hiding the compact mark from
+the band's width up, switching off the Font Awesome glyph under a drawn toggle)
+is in `_sass/_seasonal.scss`. A theme without a title mark still gets an empty
+box of the mark's size there, because the masthead's heights and the widths at
+which the menu folds were tuned with the mark in place.
+
+Two rules learned building `halloween`:
+
+- An include that lands inside the site-name link or the toggle icon must emit no
+  whitespace outside its markup. A newline there renders as a space and shifts
+  the whole menu by 4px. Put the header in a Liquid `{% comment %}` with nothing
+  after `{% endcomment %}` but the markup.
+- Prefix every class, keyframe and SVG id with the theme's name. The parts of
+  `halloween` came from different candidate designs and share one page.
 
 Two traps for whoever writes the next decorations partial:
 

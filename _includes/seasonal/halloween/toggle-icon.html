@@ -1,0 +1,80 @@
+{% comment %}
+  October (Halloween) theme, toggle-icon: picked from candidate 9 (Haunted Window) of the
+  October 2026 candidate gallery. Styles in _sass/seasonal/halloween/_toggle-icon.scss.
+
+  No whitespace outside the markup: inside the site-name link or the toggle
+  icon a newline renders as a space and shifts the menu.
+{% endcomment %}<svg class="halloween-haunted-window-toggle" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="halloween-haunted-window-glass"><path d="M7 19.6V8A5 5 0 0 1 17 8V19.6Z"/></clipPath>
+    <linearGradient id="halloween-haunted-window-sky" x1="0" y1="3" x2="0" y2="19.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6f5fd"/>
+      <stop offset="1" stop-color="#9ccdee"/>
+    </linearGradient>
+    <radialGradient id="halloween-haunted-window-lamp" cx="12" cy="13" r="9" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff3c2"/>
+      <stop offset=".55" stop-color="#ffd261"/>
+      <stop offset="1" stop-color="#f39a2e"/>
+    </radialGradient>
+    <radialGradient id="halloween-haunted-window-sunwarm" cx="12" cy="7.5" r="9" gradientUnits="userSpaceOnUse">
+      <stop offset=".3" stop-color="#ffcf5c" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#ffcf5c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halloween-haunted-window-halo" cx="12" cy="12.5" r="11.5" gradientUnits="userSpaceOnUse">
+      <stop offset=".35" stop-color="#ffb24a" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#ff9a2e" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="halloween-haunted-window-moon-cut" maskUnits="userSpaceOnUse" x="17" y="0" width="7" height="7">
+      <rect x="17" y="0" width="7" height="7" fill="#fff"/>
+      <circle cx="21.7" cy="2.6" r="1.95" fill="#000"/>
+    </mask>
+  </defs>
+
+  <!-- light scheme: shutters open on a sunny sky -->
+  <g class="halloween-haunted-window-toggle-light">
+    <circle class="halloween-haunted-window-sunwarm" cx="12" cy="7.5" r="9" fill="url(#halloween-haunted-window-sunwarm)"/>
+    <g class="halloween-haunted-window-shutters-day" fill="#5a9e82" stroke="currentColor" stroke-width=".95" stroke-linejoin="round">
+      <path d="M2.4 19.4V9.2Q4.3 7.9 6.5 8.4V19.4Z"/>
+      <path d="M21.6 19.4V9.2Q19.7 7.9 17.5 8.4V19.4Z"/>
+      <path d="M2.8 12.2H6.1M2.8 15.4H6.1M17.9 12.2H21.2M17.9 15.4H21.2" fill="none" stroke-width=".6" opacity=".7"/>
+    </g>
+    <g clip-path="url(#halloween-haunted-window-glass)">
+      <rect x="6" y="2" width="12" height="18" fill="url(#halloween-haunted-window-sky)"/>
+      <g class="halloween-haunted-window-sun">
+        <path d="M14.82 7.47L15.9 7.08M13.72 6.04L14.38 5.1M12 5.5V4.35M10.28 6.04L9.62 5.1M9.18 7.47L8.1 7.08" stroke="#e08e18" stroke-width="1" stroke-linecap="round"/>
+        <path d="M9.6 8.4A2.4 2.4 0 0 1 14.4 8.4Z" fill="#f7b733" stroke="#cf7a10" stroke-width=".55"/>
+      </g>
+      <path d="M7.6 17.4C7.7 16.2 8.7 15.7 9.6 16C10 15.1 11.4 15 11.9 15.9V17.4Z" fill="#fff"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d="M7 8.4H17M12 8.4V19.6" stroke-width=".9"/>
+      <path d="M7 19.6V8A5 5 0 0 1 17 8V19.6" stroke-width="1.15" stroke-linejoin="round"/>
+    </g>
+    <rect x="5.4" y="19.3" width="13.2" height="2" rx=".6" fill="#c9b9a0" stroke="currentColor" stroke-width=".95"/>
+  </g>
+
+  <!-- dark scheme: the window glows, one shutter hangs crooked, a ghost drifts past -->
+  <g class="halloween-haunted-window-toggle-dark">
+    <circle class="halloween-haunted-window-glow" cx="12" cy="12.5" r="11.5" fill="url(#halloween-haunted-window-halo)"/>
+    <g class="halloween-haunted-window-moon"><circle cx="20.3" cy="3.6" r="2.3" fill="#f5e8c4" mask="url(#halloween-haunted-window-moon-cut)"/></g>
+    <g class="halloween-haunted-window-night-ink" fill="#4b3563" stroke="currentColor" stroke-width=".85" stroke-linejoin="round">
+      <path d="M2.4 19.4V9.2Q4.3 7.9 6.5 8.4V19.4Z"/>
+      <path class="halloween-haunted-window-crooked" d="M21.6 19.4V9.2Q19.7 7.9 17.5 8.4V19.4Z"/>
+    </g>
+    <g clip-path="url(#halloween-haunted-window-glass)">
+      <rect x="6" y="2" width="12" height="18" fill="url(#halloween-haunted-window-lamp)"/>
+      <g class="halloween-haunted-window-ghost-track">
+        <g class="halloween-haunted-window-ghost">
+          <path d="M9.2 17.8V12.2A2.8 2.8 0 0 1 14.8 12.2V17.8L13.87 16.95L12.93 17.8L12 16.95L11.07 17.8L10.13 16.95Z" fill="#2a1838" opacity=".86"/>
+          <ellipse cx="10.95" cy="12.5" rx=".52" ry=".72" fill="#ffe7a0"/>
+          <ellipse cx="13.05" cy="12.5" rx=".52" ry=".72" fill="#ffe7a0"/>
+        </g>
+      </g>
+    </g>
+    <g fill="none" stroke="#3a210d" stroke-linecap="round">
+      <path d="M7 8.4H17M12 8.4V19.6" stroke-width=".9"/>
+      <path d="M7 19.6V8A5 5 0 0 1 17 8V19.6" stroke-width="1.15" stroke-linejoin="round"/>
+    </g>
+    <rect class="halloween-haunted-window-night-ink" x="5.4" y="19.3" width="13.2" height="2" rx=".6" fill="#5c4a6e" stroke="currentColor" stroke-width=".85"/>
+  </g>
+</svg>

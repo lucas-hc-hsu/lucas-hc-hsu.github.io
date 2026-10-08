@@ -1,0 +1,17 @@
+/* ==========================================================================
+   OCTOBER (HALLOWEEN) THEME
+   ========================================================================== */
+
+/* Imported last in assets/css/main.scss, after every other partial, which is
+   where these rules sat when they were compared in the candidate gallery. The
+   palette is _palette.scss and is imported with the other palettes instead.
+   Which slots the theme fills is listed under `halloween` in _data/seasonal.yml. */
+
+@import "seasonal/halloween/title-mark";
+@import "seasonal/halloween/doodle-band";
+@import "seasonal/halloween/borders";
+@import "seasonal/halloween/background";
+@import "seasonal/halloween/ambient";
+@import "seasonal/halloween/profile-photo-frame";
+@import "seasonal/halloween/toggle-icon";
+@import "seasonal/halloween/accents";

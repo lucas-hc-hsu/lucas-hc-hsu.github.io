@@ -1,0 +1,50 @@
+/* October (Halloween) theme: Masthead and footer borders.
+   Picked from candidate 3 (Pumpkin Lantern) of the October 2026 candidate
+   gallery, which is kept locally and not committed. */
+
+/* Candidate 3, Pumpkin Lantern: masthead and footer border.
+   The 1px border becomes a thin pumpkin vine: a gentle wave with a small leaf
+   every 70px (one in three turning orange) and a curling tendril. It is a
+   repeating 210 x 10 SVG tile drawn by a pseudo-element inside the bar's own
+   bottom padding, so nothing is added to the layout: the border keeps its 1px
+   width (only its colour goes transparent) and the masthead keeps its height.
+   The pseudo-element sits at z-index -1 inside the masthead's stacking context,
+   under the menu, the doodle band and the overflow dropdown. In the footer the
+   same tile is flipped, so the leaves hang down into the footer. */
+
+.masthead {
+  border-bottom-color: transparent;
+}
+.masthead::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='10' viewBox='0 0 210 10'%3E%3Cpath d='M0,7.6 C11.7,6.2 23.3,6.2 35,7.6 S58.3,9.0 70,7.6 S93.3,6.2 105,7.6 S128.3,9.0 140,7.6 S163.3,6.2 175,7.6 S198.3,9.0 210,7.6' fill='none' stroke='%23728838' stroke-width='1.1' stroke-linecap='round'/%3E%3Cpath transform='translate(24,6.9) rotate(-30) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%236E8A2E'/%3E%3Cpath transform='translate(96,6.9) rotate(28) scale(0.66)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%23C8702A'/%3E%3Cpath transform='translate(166,7.0) rotate(-18) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%238BA544'/%3E%3Cpath d='M128,8.3 C127.4,6.0 129.8,4.6 131.0,5.9 C131.9,6.9 130.8,8.0 130.0,7.3' fill='none' stroke='%23728838' stroke-width='0.8' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left bottom / 210px 10px;
+  pointer-events: none;
+  z-index: -1;
+}
+html[data-theme="dark"] .masthead::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='10' viewBox='0 0 210 10'%3E%3Cpath d='M0,7.6 C11.7,6.2 23.3,6.2 35,7.6 S58.3,9.0 70,7.6 S93.3,6.2 105,7.6 S128.3,9.0 140,7.6 S163.3,6.2 175,7.6 S198.3,9.0 210,7.6' fill='none' stroke='%237E9444' stroke-width='1.1' stroke-linecap='round'/%3E%3Cpath transform='translate(24,6.9) rotate(-30) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%237E9A3E'/%3E%3Cpath transform='translate(96,6.9) rotate(28) scale(0.66)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%23D98A3A'/%3E%3Cpath transform='translate(166,7.0) rotate(-18) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%239AB255'/%3E%3Cpath d='M128,8.3 C127.4,6.0 129.8,4.6 131.0,5.9 C131.9,6.9 130.8,8.0 130.0,7.3' fill='none' stroke='%237E9444' stroke-width='0.8' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.page__footer {
+  border-top-color: transparent;
+}
+.page__footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='10' viewBox='0 0 210 10'%3E%3Cpath d='M0,7.6 C11.7,6.2 23.3,6.2 35,7.6 S58.3,9.0 70,7.6 S93.3,6.2 105,7.6 S128.3,9.0 140,7.6 S163.3,6.2 175,7.6 S198.3,9.0 210,7.6' fill='none' stroke='%23728838' stroke-width='1.1' stroke-linecap='round'/%3E%3Cpath transform='translate(24,6.9) rotate(-30) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%236E8A2E'/%3E%3Cpath transform='translate(96,6.9) rotate(28) scale(0.66)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%23C8702A'/%3E%3Cpath transform='translate(166,7.0) rotate(-18) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%238BA544'/%3E%3Cpath d='M128,8.3 C127.4,6.0 129.8,4.6 131.0,5.9 C131.9,6.9 130.8,8.0 130.0,7.3' fill='none' stroke='%23728838' stroke-width='0.8' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left bottom / 210px 10px;
+  transform: scaleY(-1);
+  pointer-events: none;
+  z-index: 0;
+}
+html[data-theme="dark"] .page__footer::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='210' height='10' viewBox='0 0 210 10'%3E%3Cpath d='M0,7.6 C11.7,6.2 23.3,6.2 35,7.6 S58.3,9.0 70,7.6 S93.3,6.2 105,7.6 S128.3,9.0 140,7.6 S163.3,6.2 175,7.6 S198.3,9.0 210,7.6' fill='none' stroke='%237E9444' stroke-width='1.1' stroke-linecap='round'/%3E%3Cpath transform='translate(24,6.9) rotate(-30) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%237E9A3E'/%3E%3Cpath transform='translate(96,6.9) rotate(28) scale(0.66)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%23D98A3A'/%3E%3Cpath transform='translate(166,7.0) rotate(-18) scale(0.72)' d='M0,0 C-2.9,-1.4 -3.3,-5.0 -0.4,-8.0 C2.9,-5.6 2.9,-1.8 0,0 Z' fill='%239AB255'/%3E%3Cpath d='M128,8.3 C127.4,6.0 129.8,4.6 131.0,5.9 C131.9,6.9 130.8,8.0 130.0,7.3' fill='none' stroke='%237E9444' stroke-width='0.8' stroke-linecap='round'/%3E%3C/svg%3E");
+}

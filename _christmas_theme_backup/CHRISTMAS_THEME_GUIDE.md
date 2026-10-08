@@ -1,25 +1,24 @@
 # Christmas theme
 
 The Christmas theme is not removed from the site, only switched off. Everything
-it needs still lives in its normal place in the repo; one flag in `_config.yml`
-decides whether it is compiled and rendered.
+it needs still lives in its normal place in the repo; `seasonal_theme` in
+`_config.yml` decides whether it is compiled and rendered.
 
 It is also December in a twelve-month seasonal plan. See
 [`_sass/theme/README.md`](../_sass/theme/README.md) for the other eleven months,
-for what a new month's theme has to supply, and for why only one seasonal theme
-can be switched on at a time.
+and for what a new month's theme has to supply.
 
 ## Turning it on and off
 
 ```yaml
 # _config.yml
-christmas_theme          : true    # or false
+seasonal_theme           : christmas   # or another theme's name, or blank
 ```
 
 Jekyll does not reload `_config.yml` by itself, so restart `jekyll serve` after
 changing it.
 
-| | `true` | `false` |
+| | `christmas` | blank |
 |---|---|---|
 | Palette | `_sass/theme/_christmas_{light,dark}.scss` | `_sass/theme/_default_{light,dark}.scss` (Limestone + Clay) |
 | Default colour scheme | dark | light |

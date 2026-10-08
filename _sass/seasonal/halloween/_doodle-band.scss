@@ -1,0 +1,245 @@
+/* October (Halloween) theme: Doodle band between the site name and the menu.
+   Picked from candidate 6 (Bat Lantern) of the October 2026 candidate
+   gallery, which is kept locally and not committed; the class prefix was
+   renamed from oct6- on the way in. */
+
+/* Candidate 6, E03: the band. A jack-o'-lantern sits on a faint ground line in
+   the clear space right of the name, and three bats fly past it on different
+   paths and periods.
+
+   Two layers, both filling the band:
+   - .halloween-bat-lantern-band-ground stretches with the band (preserveAspectRatio none) and
+     carries only the ground line, faded out at both ends so it never meets the
+     band's edges with a seam. It runs under the name, faint, well below the text.
+   - .halloween-bat-lantern-band keeps its aspect: its 360 x 81 view box is drawn at 1px per unit
+     and pinned to the band's right edge (xMaxYMid slice), so the lantern always
+     sits in the clear space and a narrower band simply crops the left end.
+
+   Legibility: as in E02, a bat over the lit lantern is a dark silhouette in both
+   schemes. On the page, dark ink reads on the light scheme; on the dark scheme
+   the bat carries a thin warm rim, the candle lighting it from behind.
+
+   Keeping off the name: at 1375px the name reaches x = 278 in view-box units.
+   Bat paths stay above y = 26 whenever they are left of that line, and drop to
+   the lantern only once they are past it. */
+
+.halloween-bat-lantern-band-ground,
+.halloween-bat-lantern-band {
+  --halloween-bat-lantern-body      : #EE7F2D;
+  --halloween-bat-lantern-body-edge : #A9501A;
+  --halloween-bat-lantern-rib       : #C25A1C;
+  --halloween-bat-lantern-stem      : #6F7F2E;
+  --halloween-bat-lantern-face      : #FFB534;
+  --halloween-bat-lantern-face-edge : #8E3A10;
+  --halloween-bat-lantern-glow      : #FFF1A8;
+  --halloween-bat-lantern-halo      : 0.42;
+  --halloween-bat-lantern-bat       : #2B2132;
+  --halloween-bat-lantern-bat-rim   : transparent;
+  --halloween-bat-lantern-ground    : #8A5A33;
+  --halloween-bat-lantern-ground-op : 0.4;
+  --halloween-bat-lantern-leaf      : #C9692B;
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+html[data-theme="dark"] .halloween-bat-lantern-band-ground,
+html[data-theme="dark"] .halloween-bat-lantern-band {
+  --halloween-bat-lantern-body      : #E8742B;
+  --halloween-bat-lantern-body-edge : transparent;
+  --halloween-bat-lantern-rib       : #B8521A;
+  --halloween-bat-lantern-stem      : #8E9D3C;
+  --halloween-bat-lantern-face      : #FFB534;
+  --halloween-bat-lantern-face-edge : #7E3210;
+  --halloween-bat-lantern-glow      : #FFF1A8;
+  --halloween-bat-lantern-halo      : 1;
+  --halloween-bat-lantern-bat       : #45304F;
+  --halloween-bat-lantern-bat-rim   : #F4C886;
+  --halloween-bat-lantern-ground    : #D9A06A;
+  --halloween-bat-lantern-ground-op : 0.3;
+  --halloween-bat-lantern-leaf      : #E08A45;
+}
+
+.halloween-bat-lantern-band * { pointer-events: none; }
+
+/* The lantern's body is the one shape that answers the hover, for its
+   <title> greeting. The face, ribs and bats stay transparent to the pointer, so
+   a hover anywhere on the pumpkin falls through to the body. */
+.halloween-bat-lantern-band .halloween-bat-lantern-body { pointer-events: visiblePainted; }
+
+/* Ground */
+.halloween-bat-lantern-band-ground .halloween-bat-lantern-gs { stop-color: var(--halloween-bat-lantern-ground); }
+.halloween-bat-lantern-band-ground .halloween-bat-lantern-ground {
+  fill: none;
+  stroke: url(#halloween-bat-lantern-band-groundfade);
+  stroke-width: 1.2px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: var(--halloween-bat-lantern-ground-op);
+}
+.halloween-bat-lantern-band .halloween-bat-lantern-leaf { fill: var(--halloween-bat-lantern-leaf); opacity: 0.55; }
+.halloween-bat-lantern-band .halloween-bat-lantern-leaf-far { opacity: 0.3; }
+
+/* Lantern */
+.halloween-bat-lantern-band .halloween-bat-lantern-halo-scheme { opacity: var(--halloween-bat-lantern-halo); }
+.halloween-bat-lantern-band .halloween-bat-lantern-stem { fill: var(--halloween-bat-lantern-stem); }
+.halloween-bat-lantern-band .halloween-bat-lantern-body {
+  fill: var(--halloween-bat-lantern-body);
+  stroke: var(--halloween-bat-lantern-body-edge);
+  stroke-width: 0.45;
+}
+.halloween-bat-lantern-band .halloween-bat-lantern-ribs {
+  fill: none;
+  stroke: var(--halloween-bat-lantern-rib);
+  stroke-width: 0.55;
+  stroke-linecap: round;
+}
+.halloween-bat-lantern-band .halloween-bat-lantern-face {
+  fill: var(--halloween-bat-lantern-face);
+  stroke: var(--halloween-bat-lantern-face-edge);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+}
+.halloween-bat-lantern-band .halloween-bat-lantern-face-glow { fill: var(--halloween-bat-lantern-glow); opacity: 0.85; }
+.halloween-bat-lantern-band .halloween-bat-lantern-shine { fill: #FFFFFF; opacity: 0.16; }
+
+/* Bats */
+.halloween-bat-lantern-band .halloween-bat-lantern-bat-ink { fill: var(--halloween-bat-lantern-bat); }
+.halloween-bat-lantern-band .halloween-bat-lantern-bat-rim {
+  fill: var(--halloween-bat-lantern-bat-rim);
+  stroke: var(--halloween-bat-lantern-bat-rim);
+  stroke-width: 1.8px;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Animation
+   ========================================================================== */
+
+.halloween-bat-lantern-band g {
+  transform-box: view-box;
+  transform-origin: 0 0;
+}
+
+/* The still frame (also what reduced motion shows): the face lit, the big bat
+   across the eyes, the middle one by the stem, the small one out of sight. */
+.halloween-bat-lantern-band .halloween-bat-lantern-b1-x { transform: translateX(316px); }
+.halloween-bat-lantern-band .halloween-bat-lantern-b1-y { transform: translateY(37px); }
+.halloween-bat-lantern-band .halloween-bat-lantern-b2-x { transform: translateX(347px); }
+.halloween-bat-lantern-band .halloween-bat-lantern-b2-y { transform: translateY(21px); }
+.halloween-bat-lantern-band .halloween-bat-lantern-b3-x { transform: translateX(352px); }
+.halloween-bat-lantern-band .halloween-bat-lantern-b3-y { transform: translateY(-12px); }
+
+/* Candle flicker, the same slow and irregular pair as E02. */
+.halloween-bat-lantern-band .halloween-bat-lantern-face-glow { animation: halloween-bat-lantern-b-flicker 9.2s ease-in-out infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-halo { animation: halloween-bat-lantern-b-halo 6.7s ease-in-out infinite; }
+
+@keyframes halloween-bat-lantern-b-flicker {
+  0%   { opacity: 0.88; }
+  11%  { opacity: 0.6; }
+  21%  { opacity: 0.96; }
+  33%  { opacity: 0.72; }
+  41%  { opacity: 0.9; }
+  54%  { opacity: 0.55; }
+  66%  { opacity: 0.92; }
+  77%  { opacity: 0.7; }
+  88%  { opacity: 1; }
+  100% { opacity: 0.88; }
+}
+@keyframes halloween-bat-lantern-b-halo {
+  0%   { opacity: 0.82; }
+  17%  { opacity: 1; }
+  29%  { opacity: 0.7; }
+  46%  { opacity: 0.92; }
+  61%  { opacity: 0.66; }
+  78%  { opacity: 0.96; }
+  100% { opacity: 0.82; }
+}
+
+/* Wing beats, as in E02: each wing turns at the shoulder. A little slower for
+   the bigger bat; the body lifts on each downstroke. */
+.halloween-bat-lantern-band .halloween-bat-lantern-wing-r { animation: halloween-bat-lantern-b-wing-r 0.56s ease-in-out infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-wing-l { animation: halloween-bat-lantern-b-wing-l 0.56s ease-in-out infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-bob    { animation: halloween-bat-lantern-b-bob 0.56s ease-in-out infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-bat2 .halloween-bat-lantern-wing-r, .halloween-bat-lantern-band .halloween-bat-lantern-bat2 .halloween-bat-lantern-wing-l, .halloween-bat-lantern-band .halloween-bat-lantern-bob.halloween-bat-lantern-bat2 { animation-duration: 0.46s; animation-delay: -0.15s; }
+.halloween-bat-lantern-band .halloween-bat-lantern-bat3 .halloween-bat-lantern-wing-r, .halloween-bat-lantern-band .halloween-bat-lantern-bat3 .halloween-bat-lantern-wing-l, .halloween-bat-lantern-band .halloween-bat-lantern-bob.halloween-bat-lantern-bat3 { animation-duration: 0.38s; animation-delay: -0.3s; }
+
+@keyframes halloween-bat-lantern-b-wing-r {
+  0%, 100% { transform: rotate(-10deg); }
+  50%      { transform: rotate(34deg); }
+}
+@keyframes halloween-bat-lantern-b-wing-l {
+  0%, 100% { transform: rotate(10deg); }
+  50%      { transform: rotate(-34deg); }
+}
+@keyframes halloween-bat-lantern-b-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-1px); }
+}
+
+/* No bat ever leaves through the band's left or right edge: those are invisible
+   lines in the middle of the masthead, and a bat cut off by one looks sliced.
+   Bats come and go through the top edge, which is the top of the window, or
+   fade. Each bat has its own period and its own part of the band, so when two
+   happen to fly at once they do not bunch up.
+
+   Bat 1, the big one (13.6s): fades in above the name, glides right, dives
+   across the lantern's left eye, then climbs over the stem and out the top. */
+.halloween-bat-lantern-band .halloween-bat-lantern-b1-x { animation: halloween-bat-lantern-b1-x 13.6s linear infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-b1-y { animation: halloween-bat-lantern-b1-y 13.6s ease-in-out infinite; }
+@keyframes halloween-bat-lantern-b1-x {
+  0%          { transform: translateX(175px); opacity: 0; }
+  5.5%        { opacity: 1; }
+  34.7%, 100% { transform: translateX(350px); opacity: 1; }
+}
+@keyframes halloween-bat-lantern-b1-y {
+  0%          { transform: translateY(15px); }
+  10.9%       { transform: translateY(10px); }
+  20.1%       { transform: translateY(18px); }
+  26.5%       { transform: translateY(40px); }
+  34.7%, 100% { transform: translateY(-14px); }
+}
+
+/* Bat 2 (17.2s): drops in from the top right, skims the grin going left, then
+   climbs steeply and leaves through the top, above the end of the name. */
+.halloween-bat-lantern-band .halloween-bat-lantern-b2-x { animation: halloween-bat-lantern-b2-x 17.2s linear -11s infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-b2-y { animation: halloween-bat-lantern-b2-y 17.2s ease-in-out -11s infinite; }
+@keyframes halloween-bat-lantern-b2-x {
+  0%          { transform: translateX(352px); }
+  8.3%        { transform: translateX(326px); }
+  14.7%       { transform: translateX(282px); }
+  20.2%, 100% { transform: translateX(262px); }
+}
+@keyframes halloween-bat-lantern-b2-y {
+  0%          { transform: translateY(-10px); }
+  8.3%        { transform: translateY(54px); }
+  14.7%       { transform: translateY(22px); }
+  20.2%, 100% { transform: translateY(-12px); }
+}
+
+/* Bat 3, the small one (21.8s): drops in on the right, loops once round the
+   face (down the right, under the grin, up the left, over the eyes) and leaves
+   through the top. The two axes peak at different moments, which turns the
+   eased keyframes into a round loop. It never leaves the clear space. */
+.halloween-bat-lantern-band .halloween-bat-lantern-b3-x { animation: halloween-bat-lantern-b3-x 21.8s ease-in-out -11.3s infinite; }
+.halloween-bat-lantern-band .halloween-bat-lantern-b3-y { animation: halloween-bat-lantern-b3-y 21.8s ease-in-out -11.3s infinite; }
+@keyframes halloween-bat-lantern-b3-x {
+  0%, 6.3%    { transform: translateX(341px); }
+  12.6%       { transform: translateX(300px); }
+  21.6%, 100% { transform: translateX(352px); }
+}
+@keyframes halloween-bat-lantern-b3-y {
+  0%          { transform: translateY(-10px); }
+  9.4%        { transform: translateY(58px); }
+  15.7%       { transform: translateY(26px); }
+  21.6%, 100% { transform: translateY(-12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halloween-bat-lantern-band * { animation: none !important; }
+}

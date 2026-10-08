@@ -1,0 +1,106 @@
+/* October (Halloween) theme: Card, button and heading accents.
+   Picked from candidate 3 (Pumpkin Lantern) of the October 2026 candidate
+   gallery, which is kept locally and not committed; the class prefix was
+   renamed from oct3- on the way in. */
+
+/* Candidate 3, Pumpkin Lantern: card, button and heading accents.
+   Pumpkin orange and charcoal, as accents only: colours, borders, shadows and
+   underline colour, never a size or a space. Text recoloured here keeps 4.5:1
+   (news dates 7.3:1 in dark, 5.5:1 in light; button labels 5.8:1 or more). */
+
+:root {
+  --halloween-pumpkin-lantern-accent        : #C4561A;   /* decoration: rules, glows, underlines */
+  --halloween-pumpkin-lantern-accent-text   : #9C4310;   /* text set in the accent */
+  --halloween-pumpkin-lantern-date-text     : #8F4E26;   /* news dates: the accent, muted so they do not read as links */
+  --halloween-pumpkin-lantern-accent-glow   : rgba(196, 86, 26, 0.28);
+  --halloween-pumpkin-lantern-button-fill   : #9C4310;
+  --halloween-pumpkin-lantern-button-label  : #FFFFFF;
+  --halloween-pumpkin-lantern-charcoal      : #3A302A;
+  --halloween-pumpkin-lantern-charcoal-hover: #2A221D;
+}
+html[data-theme="dark"] {
+  --halloween-pumpkin-lantern-accent        : #E8782A;
+  --halloween-pumpkin-lantern-accent-text   : #F09A48;
+  --halloween-pumpkin-lantern-date-text     : #D8A06E;
+  --halloween-pumpkin-lantern-accent-glow   : rgba(240, 140, 50, 0.32);
+  --halloween-pumpkin-lantern-button-fill   : #E8782A;
+  --halloween-pumpkin-lantern-button-label  : #1C1612;
+  --halloween-pumpkin-lantern-charcoal      : #4A3D34;
+  --halloween-pumpkin-lantern-charcoal-hover: #5A4A3F;
+}
+
+/* Headings: the page title carries a faint candle glow in the dark scheme;
+   section headings get a two-tone rule, a short pumpkin stroke leading into
+   the usual hairline. */
+html[data-theme="dark"] .page__title {
+  text-shadow: 0 0 22px rgba(240, 140, 50, 0.28);
+}
+.page__content h2 {
+  border-image: linear-gradient(to right,
+      var(--halloween-pumpkin-lantern-accent) 0, var(--halloween-pumpkin-lantern-accent) 3.2em,
+      var(--global-border-color) 3.2em) 1;
+}
+
+/* Homepage research cards and publication list: the figure picks up a warm
+   rim on hover, and the title underline is drawn in pumpkin. */
+.research-card > div:first-child,
+.publication-item .publication-image img {
+  transition: box-shadow 0.25s ease;
+}
+.research-card:hover > div:first-child,
+.publication-item:hover .publication-image img {
+  box-shadow: 0 0 0 1px var(--halloween-pumpkin-lantern-accent), 0 6px 20px -6px var(--halloween-pumpkin-lantern-accent-glow);
+}
+.research-card a,
+.publication-item .publication-content h3 a {
+  text-decoration-color: var(--halloween-pumpkin-lantern-accent);
+}
+.publication-item .publication-link:hover {
+  border-color: var(--halloween-pumpkin-lantern-accent) !important;
+  color: var(--halloween-pumpkin-lantern-accent-text) !important;
+}
+
+/* News dates in the accent. The homepage sets their colour in a <style> in
+   the page body, which comes after this sheet, so this selector needs the
+   extra weight. */
+html .news-section .news-date,
+html body .news-date {
+  color: var(--halloween-pumpkin-lantern-date-text);
+}
+
+/* Buttons: inverse fills with pumpkin on hover, info becomes burnt orange,
+   dark becomes charcoal. */
+.btn--inverse:hover {
+  color: var(--halloween-pumpkin-lantern-button-label) !important;
+  background-color: var(--halloween-pumpkin-lantern-button-fill);
+  border-color: var(--halloween-pumpkin-lantern-button-fill) !important;
+}
+.btn--info {
+  background-color: #A84A12;
+}
+.btn--info:hover {
+  background-color: #8A3B0D;
+}
+.btn--dark {
+  background-color: var(--halloween-pumpkin-lantern-charcoal);
+}
+.btn--dark:hover {
+  background-color: var(--halloween-pumpkin-lantern-charcoal-hover);
+}
+
+/* Sidebar links and link hover. */
+.author__urls a:hover {
+  color: var(--halloween-pumpkin-lantern-accent-text);
+  text-decoration-color: var(--halloween-pumpkin-lantern-accent);
+}
+.page__content a:hover {
+  text-decoration-color: var(--halloween-pumpkin-lantern-accent);
+}
+.greedy-nav .visible-links a:before {
+  background: var(--halloween-pumpkin-lantern-accent);
+}
+
+::-moz-selection { color: #fff; background: #9C4310; }
+::selection      { color: #fff; background: #9C4310; }
+html[data-theme="dark"] ::-moz-selection { color: #1C1612; background: #E8782A; }
+html[data-theme="dark"] ::selection      { color: #1C1612; background: #E8782A; }

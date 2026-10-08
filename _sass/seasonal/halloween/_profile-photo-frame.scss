@@ -1,0 +1,76 @@
+/* October (Halloween) theme: Profile photo frame.
+   Picked from candidate 3 (Pumpkin Lantern) of the October 2026 candidate
+   gallery, which is kept locally and not committed; the class prefix was
+   renamed from oct3- on the way in. */
+
+/* Candidate 3, Pumpkin Lantern: profile photo frame.
+   A short pumpkin vine curls around the lower rim of the photo, from about
+   eight o'clock to four o'clock, with three autumn leaves (rust, green, ochre)
+   and a tiny uncarved pumpkin at the lower right. The overlay is sized with the
+   photo's own rule (97% of the column, at most 194px) and reaches at most 10%
+   past the circle. Nothing comes inside 90% of the radius, so the art stays on
+   the rim and never reaches the face (the centre 60%). Hidden at the 35px
+   mobile size. */
+
+.author__avatar {
+  position: relative;
+}
+
+.halloween-pumpkin-lantern-frame {
+  display: none;
+}
+
+@media (min-width: 57.8125em) {
+  .halloween-pumpkin-lantern-frame {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 97%;
+    max-width: 194px;
+    aspect-ratio: 1 / 1;
+    pointer-events: none;
+
+    --halloween-pumpkin-lantern-frame-vine   : #5E7124;
+    --halloween-pumpkin-lantern-frame-rust   : #B8481A;
+    --halloween-pumpkin-lantern-frame-green  : #6E8A2E;
+    --halloween-pumpkin-lantern-frame-ochre  : #C8891F;
+    --halloween-pumpkin-lantern-frame-vein   : rgba(60, 30, 10, 0.35);
+    --halloween-pumpkin-lantern-frame-shell  : #C4561A;
+    --halloween-pumpkin-lantern-frame-lobe   : #DE6E22;
+    --halloween-pumpkin-lantern-frame-core   : #F08532;
+    --halloween-pumpkin-lantern-frame-edge   : #8C3B0E;
+    --halloween-pumpkin-lantern-frame-stem   : #5E7124;
+  }
+  html[data-theme="dark"] .halloween-pumpkin-lantern-frame {
+    --halloween-pumpkin-lantern-frame-vine   : #8AA04A;
+    --halloween-pumpkin-lantern-frame-rust   : #D9622A;
+    --halloween-pumpkin-lantern-frame-green  : #86A243;
+    --halloween-pumpkin-lantern-frame-ochre  : #E3A43C;
+    --halloween-pumpkin-lantern-frame-vein   : rgba(40, 20, 8, 0.35);
+    --halloween-pumpkin-lantern-frame-shell  : #C9581A;
+    --halloween-pumpkin-lantern-frame-lobe   : #E2712A;
+    --halloween-pumpkin-lantern-frame-core   : #F28A38;
+    --halloween-pumpkin-lantern-frame-edge   : transparent;
+    --halloween-pumpkin-lantern-frame-stem   : #9AAA4E;
+  }
+  .halloween-pumpkin-lantern-frame-art {
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    width: 120%;
+    height: 120%;
+    overflow: visible;
+  }
+}
+
+.halloween-pumpkin-lantern-frame-vine  { fill: none; stroke: var(--halloween-pumpkin-lantern-frame-vine); stroke-width: 1.1; stroke-linecap: round; }
+.halloween-pumpkin-lantern-frame-curl  { fill: none; stroke: var(--halloween-pumpkin-lantern-frame-vine); stroke-width: 0.7; stroke-linecap: round; }
+.halloween-pumpkin-lantern-frame-leaf--rust  { fill: var(--halloween-pumpkin-lantern-frame-rust); }
+.halloween-pumpkin-lantern-frame-leaf--green { fill: var(--halloween-pumpkin-lantern-frame-green); }
+.halloween-pumpkin-lantern-frame-leaf--ochre { fill: var(--halloween-pumpkin-lantern-frame-ochre); }
+.halloween-pumpkin-lantern-frame-vein  { fill: none; stroke: var(--halloween-pumpkin-lantern-frame-vein); stroke-width: 0.5; stroke-linecap: round; }
+.halloween-pumpkin-lantern-frame-pk-shell { fill: var(--halloween-pumpkin-lantern-frame-shell); stroke: var(--halloween-pumpkin-lantern-frame-edge); stroke-width: 0.5; }
+.halloween-pumpkin-lantern-frame-pk-lobe  { fill: var(--halloween-pumpkin-lantern-frame-lobe); }
+.halloween-pumpkin-lantern-frame-pk-core  { fill: var(--halloween-pumpkin-lantern-frame-core); }
+.halloween-pumpkin-lantern-frame-pk-stem  { fill: var(--halloween-pumpkin-lantern-frame-stem); }

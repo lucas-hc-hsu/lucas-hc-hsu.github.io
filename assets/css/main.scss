@@ -10,15 +10,19 @@
  *
 */
 
+{% comment %} the seasonal theme named in _config.yml; its slots are listed in _data/seasonal.yml {% endcomment %}
+{% assign seasonal = site.data.seasonal[site.seasonal_theme] %}
 @import "vendor/breakpoint/breakpoint"; // media query mixins
 @import "variables";
-{% if site.christmas_theme %}
+{% if site.seasonal_theme == 'christmas' %}
 @import "theme/christmas_light";  // Christmas Light Theme
 @import "theme/christmas_dark";   // Christmas Dark Theme
 {% else %}
 @import "theme/default_light";    // Default Light Theme (Limestone + Clay)
 @import "theme/default_dark";     // Default Dark Theme
-{% if site.light_palette %}
+{% if seasonal.palette %}
+@import "seasonal/{{ site.seasonal_theme }}/palette";  // seasonal palette, both schemes
+{% elsif site.light_palette %}
 @import "theme/light-candidates/{{ site.light_palette }}";  // alternate light palette
 {% endif %}
 {% endif %}
@@ -30,13 +34,13 @@
 
 @import "utilities";
 @import "animations";
-{% if site.christmas_theme %}@import "christmas";{% endif %}  // Christmas decorations (borders, snowflakes)
+{% if site.seasonal_theme == 'christmas' %}@import "christmas";{% endif %}  // Christmas decorations (borders, snowflakes)
 @import "tables";
 @import "buttons";
 @import "notices";
 @import "masthead";
 @import "navigation";
-@import "mid-autumn";  // Mid-Autumn mark and doodle strip
+@import "seasonal";  // slots every seasonal theme draws into: doodle band, compact mark, toggle icon
 @import "footer";
 @import "syntax";
 
@@ -51,3 +55,8 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+{% if seasonal.decorations %}
+// last, so a seasonal theme's rules win ties against everything above
+@import "seasonal/{{ site.seasonal_theme }}/decorations";
+{% endif %}

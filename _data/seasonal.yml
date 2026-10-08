@@ -1,0 +1,44 @@
+# The seasonal themes, keyed by the name `seasonal_theme` takes in _config.yml.
+#
+# Each entry says which slots the theme fills. A slot that is true has its file
+# under _sass/seasonal/<name>/ or _includes/seasonal/<name>/:
+#
+#   palette              _sass/seasonal/<name>/_palette.scss      custom properties, both schemes
+#   decorations          _sass/seasonal/<name>/_decorations.scss  every other rule of the theme
+#   title_mark           _includes/seasonal/<name>/title-mark.html          beside the site name
+#   doodle_band          _includes/seasonal/<name>/doodle-band.html         between the name and the menu
+#   ambient              _includes/seasonal/<name>/ambient.html             right after <body>
+#   profile_photo_frame  _includes/seasonal/<name>/profile-photo-frame.html over the sidebar photo
+#   toggle_icon          _includes/seasonal/<name>/toggle-icon.html         replaces the sun and moon
+#
+# greeting is the tooltip on the site name. theme_color is the colour a mobile
+# browser paints its own bar with on the first paint; keep it equal to the
+# palette's --global-bg-color for each scheme.
+#
+# Christmas predates this file: its pieces still live in _sass/_christmas.scss,
+# _sass/theme/_christmas_*.scss and christmas-snow.html, and are switched on by
+# `seasonal_theme: christmas` directly in the templates.
+
+halloween:
+  greeting: "Wishing you a warm and happy Halloween"
+  palette: true
+  decorations: true
+  title_mark: true
+  doodle_band: true
+  ambient: true
+  profile_photo_frame: true
+  toggle_icon: true
+  theme_color:
+    light: "#F5EDDF"
+    dark: "#231D19"
+
+mid-autumn:
+  greeting: "Celebrating the Chinese Lunar Festival"
+  decorations: true
+  title_mark: true
+  doodle_band: true
+
+christmas:
+  theme_color:
+    light: "#FDF8F5"
+    dark: "#1A1A1A"

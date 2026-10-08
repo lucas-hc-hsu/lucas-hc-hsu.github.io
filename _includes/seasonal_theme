@@ -1,0 +1,20 @@
+{% comment %}
+  Resolves `seasonal_theme` in _config.yml into three variables:
+
+    seasonal           the theme's entry in _data/seasonal.yml (nil when no theme is set)
+    seasonal_dir       where its includes live (seasonal/<name>), to build include paths from
+    seasonal_greeting  the tooltip on the site name, blank when the theme has none
+
+  Included by every template that draws a seasonal slot. It cannot be resolved
+  once in the default layout and inherited: the sidebar (author-profile.html) is
+  rendered inside the page's own layout, which runs before default.html does.
+{% endcomment %}
+{% if site.seasonal_theme and site.seasonal_theme != '' %}
+  {% assign seasonal = site.data.seasonal[site.seasonal_theme] %}
+  {% assign seasonal_dir = 'seasonal/' | append: site.seasonal_theme %}
+  {% assign seasonal_greeting = seasonal.greeting %}
+{% else %}
+  {% assign seasonal = nil %}
+  {% assign seasonal_dir = nil %}
+  {% assign seasonal_greeting = nil %}
+{% endif %}

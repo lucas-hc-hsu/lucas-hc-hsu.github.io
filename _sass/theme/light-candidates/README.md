@@ -16,9 +16,9 @@ Valid values: `flexoki`, `vitesse`, `radix-sand`, `rose-pine-dawn`,
 `warm-cream`. Blank (or absent) keeps the default. Jekyll does not reload
 `_config.yml` on its own, so restart `jekyll serve` afterwards.
 
-The dark theme is untouched by this setting, and so is the Christmas theme —
-with `christmas_theme: true` the Christmas palette wins and `light_palette` is
-ignored.
+The dark theme is untouched by this setting, and so is any seasonal theme that
+brings its own palette: with `seasonal_theme: christmas` or `halloween` the
+seasonal palette wins and `light_palette` is ignored.
 
 ## The candidates
 

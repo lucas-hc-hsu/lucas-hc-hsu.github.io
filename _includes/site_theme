@@ -9,12 +9,12 @@
   written server-side in the first place.
 
   default_theme in _config.yml decides. The Christmas theme still falls back to
-  dark on its own, so the seasonal flag keeps working if default_theme is ever
-  cleared.
+  dark on its own, so `seasonal_theme: christmas` keeps its dark default if
+  default_theme is ever cleared.
 {% endcomment %}
 {% if site.default_theme == 'dark' or site.default_theme == 'light' %}
   {% assign site_theme = site.default_theme %}
-{% elsif site.christmas_theme %}
+{% elsif site.seasonal_theme == 'christmas' %}
   {% assign site_theme = 'dark' %}
 {% else %}
   {% assign site_theme = 'light' %}

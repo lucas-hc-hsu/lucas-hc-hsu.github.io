@@ -2,7 +2,7 @@
    MID-AUTUMN MARK
    ========================================================================== */
 
-/* Styles for _includes/mid-autumn-icon.html, the moon rabbit sitting beside the
+/* Styles for _includes/seasonal/mid-autumn/title-mark.html, the moon rabbit sitting beside the
    site title with Chang'e crossing the moon behind him.
 
    The brief was that Chang'e has to be dark and that the mark has to stay
@@ -110,41 +110,6 @@ html[data-theme="dark"] .mid-autumn {
   }
 }
 
-/* Doodle strip
-   ========================================================================== */
-
-/* The strip itself.
-
-   Its right edge is pulled 20% of the strip's width back from .greedy-nav's
-   padding-left, which lands it on span(2 of 12 wide): prefix(2.5 of 12) is
-   3.125 columns and span(2 of 12 wide) is 2.5, exactly four fifths of it. That
-   is the same measure as $content-right-inset, and it is where the content
-   column .page begins, so the strip now stops on a real gridline rather than
-   running all the way to the menu. */
-.doodle-band {
-  position: absolute;
-  left: 0;
-
-  /* Vertically the strip is the bar's content box, not the link row.
-     #site-nav is only as tall as the menu links, 45px, because from $large up
-     the site title is lifted out of that row and stops contributing to it. The
-     moon is 58px, so a strip tied to the row clipped it top and bottom. Reach
-     back out over .masthead__inner-wrap's 1em of padding, which is the space the
-     bar already sets aside, and the strip becomes 81px with room to spare.
-
-     overflow: hidden stays. It is what guarantees the art can never paint over
-     the menu links, and the strip's right edge is exactly where the content
-     column starts. */
-  top: -1rem;
-  bottom: -1rem;
-
-  width: $content-right-inset;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-.doodle-band__bg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.doodle-band__obj { position: absolute; top: 50%; transform: translateY(-50%); line-height: 0; }
 .doodle-band__moon, .doodle-band__rabbit { display: block; margin: 0 !important; vertical-align: baseline !important; }
 
 /* The strip as a whole stays pointer-transparent so the art can never swallow a
@@ -172,10 +137,6 @@ html[data-theme="dark"] .mid-autumn {
   }
 }
 
-/* the wordmark rides above the art */
-.masthead__menu-item--lg { z-index: 2; }
-.masthead__menu-item--lg a { position: relative; }
-
 .doodle-band {
   --gold      : #E9C97E;
   --gold-deep : #D8AF55;
@@ -188,9 +149,6 @@ html[data-theme="dark"] .doodle-band {
   --gold-soft : rgba(242, 210, 134, 0.28);
 }
 
-
-@media (prefers-reduced-motion: reduce) { .doodle-band * { animation: none !important; } }
-
 .doodle-band .db-clouds ellipse { fill: var(--gold-soft); }
 .doodle-band .db-cloud { animation: db-drift 30s linear infinite; }
 .doodle-band .db-star { fill: var(--gold); animation: db-twinkle 4.4s ease-in-out infinite; }
@@ -200,17 +158,6 @@ html[data-theme="dark"] .doodle-band {
   100% { transform: translateX(30px); opacity: 0; }
 }
 @keyframes db-twinkle { 0%,100% { opacity: 0.35; } 50% { opacity: 1; } }
-
-/* The strip and the compact mark are two sizes of the same idea, so only one
-   shows at a time. The strip needs the space beside the wordmark to be worth
-   using: below this the clear part is under about 70px and the moon starts
-   crowding the name, so the mark beside the title takes over instead. See
-   $doodle-band-min-width for where that width comes from. */
-@media screen and (max-width: #{$doodle-band-min-width - 1px}) {
-  .doodle-band {
-    display: none;
-  }
-}
 
 @media screen and (min-width: $doodle-band-min-width) {
   /* The moon inside the strip carries .mid-autumn too, because that is where

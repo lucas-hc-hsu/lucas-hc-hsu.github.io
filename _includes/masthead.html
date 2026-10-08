@@ -2,7 +2,8 @@
 
 {% comment %}
   The seasonal greeting. It is a tooltip on both the title item and the link
-  inside it, so declare it once here: the two must not drift apart.
+  inside it, so it is read once, from the theme's entry in _data/seasonal.yml
+  (via the seasonal_theme include): the two must not drift apart.
 
   Both are needed. The link does not fill the item -- it carries a 1rem right
   margin, and below $large the item adds 2em of padding on top of that -- so a
@@ -11,10 +12,10 @@
   block. The item covers that; the link keeps its own copy because that is what
   gives the link its accessible description.
 {% endcomment %}
-{% assign seasonal_greeting = "Celebrating the Chinese Lunar Festival" %}
+{% include seasonal_theme %}
 
-<div class="masthead{% if site.christmas_theme %} christmas-border-top{% endif %}">
-  {% if site.christmas_theme %}
+<div class="masthead{% if site.seasonal_theme == 'christmas' %} christmas-border-top{% endif %}">
+  {% if site.seasonal_theme == 'christmas' %}
   <!-- Santa Sleigh Animation -->
   <div class="santa-sleigh" aria-hidden="true"></div>
   <div class="santa-sleigh-reverse" aria-hidden="true"></div>
@@ -22,10 +23,10 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <span class="doodle-band" aria-hidden="true">{% include mid-autumn-doodle.html %}</span>
+        {% if seasonal.doodle_band %}<span class="doodle-band" aria-hidden="true">{% include {{ seasonal_dir }}/doodle-band.html greeting=seasonal_greeting %}</span>{% endif %}
         <button class="hidden"><span class="navicon"></span></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist" title="{{ seasonal_greeting }}"><a href="{{ base_path }}/" title="{{ seasonal_greeting }}">{{ site.title }}{% include mid-autumn-icon.html %}</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg persist"{% if seasonal_greeting %} title="{{ seasonal_greeting }}"{% endif %}><a href="{{ base_path }}/"{% if seasonal_greeting %} title="{{ seasonal_greeting }}"{% endif %}>{{ site.title }}{% if seasonal.title_mark %}{% include {{ seasonal_dir }}/title-mark.html %}{% else %} <span class="seasonal-mark seasonal-mark--empty" aria-hidden="true"></span>{% endif %}</a></li>
           {% for link in site.data.navigation.main %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
@@ -35,7 +36,7 @@
             <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
           {% endfor %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="Toggle dark/light mode"></i></a>
+            <a role="button" aria-label="Toggle dark/light mode"><i id="theme-icon" class="fa-solid fa-sun{% if seasonal.toggle_icon %} seasonal-toggle-host{% endif %}" aria-hidden="true" title="Toggle dark/light mode">{% if seasonal.toggle_icon %}{% include {{ seasonal_dir }}/toggle-icon.html %}{% endif %}</i></a>
           </li>
         </ul>
         <script>

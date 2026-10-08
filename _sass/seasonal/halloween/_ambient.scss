@@ -1,0 +1,89 @@
+/* October (Halloween) theme: Ambient animation.
+   Picked from candidate 3 (Pumpkin Lantern) of the October 2026 candidate
+   gallery, which is kept locally and not committed; the class prefix was
+   renamed from oct3- on the way in. */
+
+/* Candidate 3, Pumpkin Lantern: ambient animation.
+   Seven embers rising from the lanterns, slowly, in the side margins only:
+   two in the narrow left margin, five in the wide right one (all at 80% of the
+   window or more, which is past the end of the text from 1024px up). Each one
+   takes 18 to 28 seconds to climb half the window while drifting a few pixels
+   left and right, fades in and out, and is never more than 4px across. Below
+   1024px only the two at the very edges stay, inside the page gutter. Under
+   reduced motion they are hidden. */
+
+.halloween-pumpkin-lantern-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 15;
+  overflow: hidden;
+
+  --halloween-pumpkin-lantern-amb-core : #D9731C;
+  --halloween-pumpkin-lantern-amb-glow : rgba(217, 115, 28, 0.32);
+  --halloween-pumpkin-lantern-amb-peak : 0.6;
+}
+html[data-theme="dark"] .halloween-pumpkin-lantern-ambient {
+  --halloween-pumpkin-lantern-amb-core : #FFD08A;
+  --halloween-pumpkin-lantern-amb-glow : rgba(245, 140, 50, 0.55);
+  --halloween-pumpkin-lantern-amb-peak : 0.85;
+}
+
+.halloween-pumpkin-lantern-amb-ember {
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  opacity: 0;
+  animation: halloween-pumpkin-lantern-amb-rise 22s linear infinite;
+}
+.halloween-pumpkin-lantern-amb-ember i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--halloween-pumpkin-lantern-amb-core);
+  box-shadow: 0 0 5px 2px var(--halloween-pumpkin-lantern-amb-glow);
+  animation: halloween-pumpkin-lantern-amb-sway 6s ease-in-out infinite alternate;
+}
+
+.halloween-pumpkin-lantern-amb-e1 { left: 1.6%;  top: 88%; animation-duration: 19s; animation-delay: -3s; }
+.halloween-pumpkin-lantern-amb-e2 { left: 3.4%;  top: 72%; animation-duration: 24s; animation-delay: -14s; width: 3px; height: 3px; }
+.halloween-pumpkin-lantern-amb-e3 { left: 86%;   top: 92%; animation-duration: 21s; animation-delay: -7s; }
+.halloween-pumpkin-lantern-amb-e4 { left: 90.5%; top: 80%; animation-duration: 26s; animation-delay: -18s; width: 3px; height: 3px; }
+.halloween-pumpkin-lantern-amb-e5 { left: 94%;   top: 96%; animation-duration: 18s; animation-delay: -10s; }
+.halloween-pumpkin-lantern-amb-e6 { left: 97.6%; top: 76%; animation-duration: 23s; animation-delay: -1s; width: 3px; height: 3px; }
+.halloween-pumpkin-lantern-amb-e7 { left: 83%;   top: 62%; animation-duration: 28s; animation-delay: -22s; width: 3px; height: 3px; }
+
+.halloween-pumpkin-lantern-amb-e2 i, .halloween-pumpkin-lantern-amb-e5 i { animation-duration: 7.5s; animation-delay: -2s; }
+.halloween-pumpkin-lantern-amb-e3 i, .halloween-pumpkin-lantern-amb-e7 i { animation-duration: 5.2s; animation-delay: -4s; }
+
+@keyframes halloween-pumpkin-lantern-amb-rise {
+  0%   { transform: translateY(0);     opacity: 0; }
+  12%  { opacity: var(--halloween-pumpkin-lantern-amb-peak); }
+  65%  { opacity: calc(var(--halloween-pumpkin-lantern-amb-peak) * 0.7); }
+  100% { transform: translateY(-50vh); opacity: 0; }
+}
+@keyframes halloween-pumpkin-lantern-amb-sway {
+  from { transform: translateX(-5px); }
+  to   { transform: translateX(5px); }
+}
+
+/* No side margins below 1024px: keep only the two embers that live in the
+   gutter, and make them fainter. */
+@media (max-width: 1023px) {
+  .halloween-pumpkin-lantern-amb-e2, .halloween-pumpkin-lantern-amb-e3, .halloween-pumpkin-lantern-amb-e4, .halloween-pumpkin-lantern-amb-e5, .halloween-pumpkin-lantern-amb-e7 { display: none; }
+  .halloween-pumpkin-lantern-amb-e1 { left: 4px; }
+  .halloween-pumpkin-lantern-amb-e6 { left: auto; right: 4px; }
+  .halloween-pumpkin-lantern-ambient { --halloween-pumpkin-lantern-amb-peak: 0.45; }
+  .halloween-pumpkin-lantern-amb-ember i { animation-name: halloween-pumpkin-lantern-amb-sway-small; }
+}
+@keyframes halloween-pumpkin-lantern-amb-sway-small {
+  from { transform: translateX(-2px); }
+  to   { transform: translateX(2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .halloween-pumpkin-lantern-ambient { display: none; }
+  .halloween-pumpkin-lantern-amb-ember, .halloween-pumpkin-lantern-amb-ember i { animation: none; }
+}

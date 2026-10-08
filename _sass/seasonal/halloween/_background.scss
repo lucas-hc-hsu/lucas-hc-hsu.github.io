@@ -1,0 +1,26 @@
+/* October (Halloween) theme: Page background.
+   Picked from candidate 4 (Witch's Brew) of the October 2026 candidate
+   gallery, which is kept locally and not committed. */
+
+/* Candidate 4, Witch's Brew: E05 page background.
+
+   A faint purple mist: three wide, fixed radial washes on body only (never on
+   <html>), each within about 2% of the ground's lightness. Lilac pools in the
+   bottom-left and top-right corners, and a trace of potion green rising from
+   the bottom-right, where the ambient bubbles start. */
+
+body {
+  background-color: var(--global-bg-color);
+  background-image:
+    radial-gradient(ellipse 60% 45% at 0% 100%, rgba(170, 140, 205, 0.16), rgba(170, 140, 205, 0) 70%),
+    radial-gradient(ellipse 55% 40% at 100% 0%, rgba(170, 140, 205, 0.12), rgba(170, 140, 205, 0) 70%),
+    radial-gradient(ellipse 45% 35% at 100% 100%, rgba(120, 190, 105, 0.07), rgba(120, 190, 105, 0) 70%);
+  background-attachment: fixed;
+}
+
+html[data-theme="dark"] body {
+  background-image:
+    radial-gradient(ellipse 60% 45% at 0% 100%, rgba(120, 82, 165, 0.17), rgba(120, 82, 165, 0) 70%),
+    radial-gradient(ellipse 55% 40% at 100% 0%, rgba(120, 82, 165, 0.12), rgba(120, 82, 165, 0) 70%),
+    radial-gradient(ellipse 45% 35% at 100% 100%, rgba(110, 200, 95, 0.05), rgba(110, 200, 95, 0) 70%);
+}

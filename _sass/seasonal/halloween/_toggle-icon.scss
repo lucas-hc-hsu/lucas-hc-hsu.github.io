@@ -1,0 +1,71 @@
+/* October (Halloween) theme: Colour-scheme toggle icon.
+   Picked from candidate 9 (Haunted Window) of the October 2026 candidate
+   gallery, which is kept locally and not committed; the class prefix was
+   renamed from oct9- on the way in. */
+
+/* Candidate 9, E09: haunted window.
+   A small arched window with a fanlight, two shutters and a sill.
+   Light scheme: shutters open on a pale sky, a sunburst rising in the fanlight;
+   frame, mullions and shutter edges in the toggle's own ink
+   (--global-text-color), so the window holds on any light ground.
+   Dark scheme: the glass glows amber (a light shape that carries the contrast),
+   one shutter hangs crooked, a crescent moon rises over it, and a small dark
+   ghost drifts past behind the glass now and then. */
+
+.halloween-haunted-window-toggle {
+  /* 1.75em at the owner's request to enlarge it (2026-10-08; first drawn at 1.15em).
+     The toggle is absolutely positioned and centred, so the masthead height does not move;
+     the narrowest clearance to the menu is 47px at 900px wide. */
+  width: 1.75em;
+  height: 1.75em;
+  vertical-align: -0.2em;
+  overflow: visible;            /* the night glow may spill a little past the box */
+  pointer-events: none;         /* the click lands on the toggle link */
+  color: var(--global-text-color, currentColor);  /* fixed ink: no blue frame on hover */
+  transform-origin: 50% 60%;
+  transition: transform .25s ease, color .45s ease;
+}
+
+/* one state per scheme; the incoming state appears first */
+.halloween-haunted-window-toggle-light { opacity: 1; transition: opacity .35s ease; }
+.halloween-haunted-window-toggle-dark  { opacity: 0; transition: opacity .5s ease; }
+html[data-theme="dark"] .halloween-haunted-window-toggle-light { opacity: 0; transition: opacity .35s ease .3s; }
+html[data-theme="dark"] .halloween-haunted-window-toggle-dark  { opacity: 1; }
+
+/* switching to dark: the sun sinks, the moon rises, the right shutter sags on its lower hinge */
+.halloween-haunted-window-sun  { transition: transform .6s ease; }
+.halloween-haunted-window-moon { transform: translate(-1px, 4px); transition: transform .65s ease; }
+.halloween-haunted-window-crooked { transform-origin: 17.5px 19.4px; transition: transform .25s ease; }
+html[data-theme="dark"] .halloween-haunted-window-sun  { transform: translateY(3px); }
+html[data-theme="dark"] .halloween-haunted-window-moon { transform: none; }
+html[data-theme="dark"] .halloween-haunted-window-crooked { transform: rotate(8deg); transition: transform .8s cubic-bezier(.5, 1.6, .5, 1) .25s; }
+
+/* the ghost: parked in the left pane (the still frame), drifting across the
+   glass in dark scheme; it is out of sight about half of each 11 s cycle */
+.halloween-haunted-window-ghost-track { transform: translateX(-1.6px); }
+html[data-theme="dark"] .halloween-haunted-window-ghost-track { animation: halloween-haunted-window-pass 11s ease-in-out infinite; }
+html[data-theme="dark"] .halloween-haunted-window-ghost { animation: halloween-haunted-window-bob 2.8s ease-in-out infinite; }
+@keyframes halloween-haunted-window-pass {
+  0% { transform: translateX(-8px); }
+  55%, 100% { transform: translateX(8px); }
+}
+@keyframes halloween-haunted-window-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-.6px); }
+}
+
+/* hover: the window leans in a little; the night glow swells, the day sun warms */
+.halloween-haunted-window-night-ink { stroke-opacity: .85; }
+.halloween-haunted-window-glow { opacity: .7; transition: opacity .25s ease; }
+.halloween-haunted-window-sunwarm { opacity: 0; transition: opacity .25s ease; }
+#theme-toggle a:hover .halloween-haunted-window-toggle { transform: scale(1.08); }
+#theme-toggle a:hover .halloween-haunted-window-glow,
+#theme-toggle a:hover .halloween-haunted-window-sunwarm { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .halloween-haunted-window-toggle, .halloween-haunted-window-toggle * { animation: none !important; }
+  .halloween-haunted-window-sun, .halloween-haunted-window-moon { transform: none !important; }
+  .halloween-haunted-window-toggle { transition: color .45s ease; }
+  html[data-theme="dark"] .halloween-haunted-window-crooked { transition: none; }
+  #theme-toggle a:hover .halloween-haunted-window-toggle { transform: none; }
+}

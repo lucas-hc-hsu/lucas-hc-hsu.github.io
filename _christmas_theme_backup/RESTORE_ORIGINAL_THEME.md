@@ -4,8 +4,8 @@ Superseded. Switching themes no longer means editing several files by hand:
 
 ```yaml
 # _config.yml
-christmas_theme          : false   # Limestone + Clay, light by default
-christmas_theme          : true    # Christmas, dark by default
+seasonal_theme           :             # Limestone + Clay, no seasonal decorations
+seasonal_theme           : christmas   # Christmas, dark by default if default_theme is blank
 ```
 
 Restart `jekyll serve` afterwards, because Jekyll does not reload `_config.yml`

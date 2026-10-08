@@ -18,22 +18,29 @@ baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "lucas-hc-hsu/lucas-hc-hsu.github.io"
 
 # Seasonal Theme
-# christmas_theme: true  -> Christmas palette, candy-cane borders, snowfall,
-#                           Santa sleighs, the wreath around the profile photo,
-#                           and dark as the default colour scheme.
-# christmas_theme: false -> the default light palette (see light_palette below)
-#                           with light as the default colour scheme, and no
-#                           decorations.
-# Everything the Christmas theme needs stays in the repo either way, so this is
-# the only line to flip. Jekyll does not reload _config.yml on its own, so
-# restart `jekyll serve` after changing it.
-christmas_theme          : false
+# Names the seasonal look, or leave it blank for none:
+#   halloween   -> October: pumpkin-lantern palette, a jack-o'-lantern with bats
+#                  beside the name and in the strip before the menu, a vine
+#                  border, drifting embers, a vine around the profile photo and
+#                  a haunted-window toggle icon.
+#   mid-autumn  -> September: the moon rabbit beside the name and the moonlit
+#                  strip before the menu, on the default palette.
+#   christmas   -> December: Christmas palette, candy-cane borders, snowfall,
+#                  Santa sleighs, the wreath around the profile photo, and dark
+#                  as the default colour scheme if default_theme is blank.
+#   (blank)     -> the default palette (see light_palette below), no decorations.
+# What each name switches on is listed in _data/seasonal.yml, and the files are
+# under _sass/seasonal/<name>/ and _includes/seasonal/<name>/ (Christmas keeps
+# its older layout; see _sass/theme/README.md). Every theme stays in the repo,
+# so this is the only line to change. Jekyll does not reload _config.yml on its
+# own, so restart `jekyll serve` after changing it.
+seasonal_theme           : halloween
 
 # Default colour scheme
 # Which scheme a visitor gets before they touch the sun/moon toggle: dark | light.
 # Anyone who has used the toggle keeps their own choice, which is remembered in
 # the browser, so this only decides the first visit. Leave it blank to fall back
-# to the seasonal behaviour (Christmas dark, otherwise light).
+# to the seasonal behaviour (seasonal_theme: christmas dark, otherwise light).
 # Restart `jekyll serve` after changing it.
 default_theme            : dark
 
@@ -41,7 +48,8 @@ default_theme            : dark
 # Blank uses the default, Limestone + Clay (_sass/theme/_default_light.scss).
 # Set it to one of the alternates in _sass/theme/light-candidates/ to swap:
 #   flexoki | vitesse | radix-sand | rose-pine-dawn | warm-cream
-# Only affects the light theme; the dark theme is unchanged either way.
+# Only affects the light theme; the dark theme is unchanged either way. Ignored
+# while the seasonal theme brings its own palette (halloween, christmas).
 # Restart `jekyll serve` after changing it.
 light_palette            : 
 

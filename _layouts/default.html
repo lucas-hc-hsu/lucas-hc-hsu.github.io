@@ -4,6 +4,7 @@ layout: compress
 
 {% include base_path %}
 {% include site_theme %}
+{% include seasonal_theme %}
 
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js" data-theme="{{ site_theme }}">
@@ -13,14 +14,14 @@ layout: compress
   </head>
 
   <body>
-
-    {% if site.christmas_theme %}{% include christmas-snow.html %}{% endif %}
+    {% if seasonal.ambient %}{% include {{ seasonal_dir }}/ambient.html %}{% endif %}
+    {% if site.seasonal_theme == 'christmas' %}{% include christmas-snow.html %}{% endif %}
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
     {{ content }}
 
-    <div class="page__footer{% if site.christmas_theme %} christmas-border-bottom{% endif %}">
+    <div class="page__footer{% if site.seasonal_theme == 'christmas' %} christmas-border-bottom{% endif %}">
       <footer>
         {% include footer/custom.html %}
         {% include footer.html %}

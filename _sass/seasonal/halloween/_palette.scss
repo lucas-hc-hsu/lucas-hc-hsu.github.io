@@ -1,0 +1,71 @@
+/* October (Halloween) theme: Colour palette, both schemes.
+   Picked from candidate 3 (Pumpkin Lantern) of the October 2026 candidate
+   gallery, which is kept locally and not committed. */
+
+/* Candidate 3, Pumpkin Lantern: palette.
+   Dark (the site default) is a warm charcoal, the colour of a room lit by one
+   candle; light is an unbleached parchment. Pumpkin orange carries the links in
+   dark; in light the same hue is deepened to a burnt orange so it clears 4.5:1
+   on the paper and on the cards. */
+
+:root {
+    color-scheme: light;
+
+    --global-base-color                : #6B5B4C;
+    --global-bg-color                  : #F5EDDF;
+    --global-footer-bg-color           : #ECE1CF;
+    --global-border-color              : #E0D2BC;
+    --global-dark-border-color         : #CDBA9E;
+    --global-code-background-color     : #ECE1CF;
+    --global-code-text-color           : #2C241E;
+    --global-fig-caption-color         : #6B5B4C;
+    --global-link-color                : #9C4310;
+    --global-link-color-hover          : #74300A;
+    --global-link-color-visited        : #6A4A35;
+    --global-masthead-link-color       : #2C241E;
+    --global-masthead-link-color-hover : #9C4310;
+    --global-text-color                : #2C241E;
+    --global-text-color-light          : #A89580;
+    --global-text-color-medium         : #6B5B4C;
+    --global-thead-color               : #ECE1CF;
+    --card-bg-color                    : #FBF6EC;
+    --selection-bg-color               : #9C4310;
+    --selection-text-color             : #fff;
+    --notice-bg-color                  : #ECE1CF;
+    --navicon-color                    : #FBF6EC;
+    --pagination-text-color            : #2C241E;
+    --pagination-bg-active             : #6B5B4C;
+    --image-border-color               : #A89580;
+    --button-border-color              : #CDBA9E;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --global-base-color                 : #231D19;
+    --global-bg-color                   : #231D19;
+    --global-footer-bg-color            : #1E1915;
+    --global-border-color               : #8C7A6B;
+    --global-dark-border-color          : #D6C9BA;
+    --global-code-background-color      : #181411;
+    --global-code-text-color            : #EDE2D4;
+    --global-fig-caption-color          : #C6B6A5;
+    --global-link-color                 : #F09A48;
+    --global-link-color-hover           : #F8BC80;
+    --global-link-color-visited         : #E7AE7C;
+    --global-masthead-link-color        : #F3EADF;
+    --global-masthead-link-color-hover  : #F4A55C;
+    --global-text-color                 : #F1E8DC;
+    --global-text-color-light           : #D9CDBF;
+    --global-text-color-medium          : #BFB0A0;
+    --global-thead-color                : #3A3029;
+    --card-bg-color                     : #2E2621;
+    --selection-bg-color                : #E8782A;
+    --selection-text-color              : #1C1612;
+    --notice-bg-color                   : #362D26;
+    --navicon-color                     : #F1E8DC;
+    --pagination-text-color             : #F1E8DC;
+    --pagination-bg-active              : #B4521A;
+    --image-border-color                : transparent;
+    --button-border-color               : #8C7A6B;
+}
