@@ -112,6 +112,33 @@ if (screen.orientation) {
   });
 }
 
+// The listeners above can fire too early. iOS Safari sends resize and the
+// orientation change while a rotation is still animating, with the old layout in
+// place: measured then, the nav kept every link that fits a landscape bar, and
+// nothing fired again once the page was upright, so links sat under the theme
+// toggle and ran off the right edge. A ResizeObserver reports after layout, with
+// the width the nav really has, and settles it whatever the events did. Only a
+// change of width counts; moving links in and out changes the nav's height.
+var lastNavWidth = $nav.width();
+
+if (window.ResizeObserver) {
+  new ResizeObserver(function () {
+    var width = $nav.width();
+    if (width === lastNavWidth) return;
+    lastNavWidth = width;
+    resetNav();
+    updateNav();
+  }).observe($nav[0]);
+} else {
+  // Without it, measure once more after the rotation has had time to finish.
+  $(window).on('orientationchange', function () {
+    setTimeout(function () {
+      resetNav();
+      updateNav();
+    }, 400);
+  });
+}
+
 $btn.on('click', function () {
   $hlinks.toggleClass('hidden');
   $(this).toggleClass('close');
