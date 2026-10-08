@@ -40,7 +40,8 @@
           </li>
         </ul>
         <script>
-          // Immediately update icon based on current theme (before main.js loads)
+          /* Immediately update icon based on current theme (before main.js loads).
+             A block comment: compress_html puts the page on one line in production. */
           (function() {
             var icon = document.getElementById('theme-icon');
             if (icon && document.documentElement.getAttribute('data-theme') === 'dark') {

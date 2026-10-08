@@ -96,7 +96,8 @@ Hi, I'm Hung-Chun. My research focuses on conversational language models, inform
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Open external news links in a new tab; links to this site stay in place
+  /* Open external news links in a new tab; links to this site stay in place.
+     A block comment: compress_html puts the page on one line in production. */
   var newsLinks = document.querySelectorAll('.news-section a');
   newsLinks.forEach(function(link) {
     if (link.hostname && link.hostname !== window.location.hostname) {
