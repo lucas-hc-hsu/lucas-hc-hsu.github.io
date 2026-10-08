@@ -29,7 +29,7 @@ Education
 {% endcomment %}
 <div style="display: flex; align-items: center; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 140px; min-width: 140px; height: 50px; background-color: white; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center;">
-    <img src="/images/logo-ntu-removebg-preview.png" alt="National Taiwan University" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    <img src="/images/logo-ntu-removebg-preview.webp" alt="National Taiwan University" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
@@ -40,7 +40,7 @@ Education
 
 <div style="display: flex; align-items: center; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 140px; min-width: 140px; height: 50px; background-color: white; border-radius: 5px; padding: 5px; display: flex; align-items: center; justify-content: center;">
-    <img src="/images/logo-nthu.gif" alt="National Tsing Hua University" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    <img src="/images/logo-nthu.webp" alt="National Tsing Hua University" style="max-width: 100%; max-height: 100%; object-fit: contain;">
   </div>
   <div style="flex: 1; min-width: 250px;">
     <p style="margin-top: 0; margin-bottom: 5px; font-weight: 550;">
@@ -71,7 +71,7 @@ Publications
   {% comment %}
   <div style="flex: 0 0 140px; min-width: 140px;">
     {% if post.image %}
-      <img src="/images/{{ post.image }}" alt="{{ post.title }}" style="width: 100%; height: auto; border-radius: 5px;">
+      <img src="/images/{{ post.image }}" alt="{{ post.title }}" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: 5px;">
     {% endif %}
   </div>
   {% endcomment %}

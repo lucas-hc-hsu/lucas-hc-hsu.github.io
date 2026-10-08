@@ -14,7 +14,7 @@ layout: compress
   </head>
 
   <body>
-    {% if seasonal.ambient %}{% include {{ seasonal_dir }}/ambient.html %}{% endif %}
+    {% if seasonal.ambient %}<div class="seasonal-ambient">{% include {{ seasonal_dir }}/ambient.html %}</div>{% endif %}
     {% if site.seasonal_theme == 'christmas' %}{% include christmas-snow.html %}{% endif %}
     {% include browser-upgrade.html %}
     {% include masthead.html %}

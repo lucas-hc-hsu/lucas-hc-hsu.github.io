@@ -10,7 +10,11 @@
     font-weight: 400;
     font-display: block;
     src:url('../fonts/academicons.eot');
-    src:url('../fonts/academicons.eot') format('embedded-opentype'),
+    /* woff2 first: a subset holding only the icons the site uses, under 1 KB
+       (_icon_fonts_full/subset_icon_fonts.py). The full fonts below it are only
+       for browsers without woff2. */
+    src:url('../fonts/academicons.woff2') format('woff2'),
+        url('../fonts/academicons.eot') format('embedded-opentype'),
         url('../fonts/academicons.ttf') format('truetype'),
         url('../fonts/academicons.woff') format('woff'),
         url('../fonts/academicons.svg') format('svg');

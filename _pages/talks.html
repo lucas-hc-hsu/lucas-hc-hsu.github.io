@@ -47,7 +47,22 @@ author_profile: true
 
     {% if post.slides_embed %}
       <div style="margin: 20px 0;">
-        <iframe src="{{ post.slides_embed }}" frameborder="0" width="100%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+        {% comment %}
+          The embedded deck loads only when asked for. Four live Google Slides
+          embeds, two of them auto-advancing every 3 s, pulled about 96 MB of
+          2048px slide images into this one page. The cover is the deck's first
+          slide (slides_cover in the talk's front matter); clicking it swaps in the
+          same iframe (slidesFacades in assets/js/_main.js). Without JavaScript the
+          link opens the deck in a new tab.
+        {% endcomment %}
+        {% if post.slides_cover %}
+        <a class="slides-facade" href="{{ post.slides_embed }}" target="_blank" rel="noopener" data-embed="{{ post.slides_embed }}" data-title="{{ post.title | escape }}">
+          <img src="/images/{{ post.slides_cover }}" alt="First slide of {{ post.title | escape }}" loading="lazy" decoding="async">
+          <span class="slides-facade__label"><i class="fas fa-play" aria-hidden="true"></i> View slides</span>
+        </a>
+        {% else %}
+        <iframe src="{{ post.slides_embed }}" loading="lazy" frameborder="0" width="100%" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border-radius: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+        {% endif %}
       </div>
     {% endif %}
 

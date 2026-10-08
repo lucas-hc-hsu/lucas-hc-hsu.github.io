@@ -56,6 +56,68 @@ var toggleTheme = () => {
 };
 
 /* ==========================================================================
+   Deferred media
+   ========================================================================== */
+
+// The data-saver switch, set early in _includes/head.html from navigator.connection.
+let savingData = () => document.documentElement.classList.contains("save-data");
+
+// Paper animations (_includes/paper-figure.html). The video has no src until it
+// is near the screen, so a reader who never scrolls to it downloads only the
+// poster; it plays while visible and pauses when scrolled away. On a data-saver
+// connection, under reduced motion, or when the browser refuses to autoplay, it
+// stays a still with the browser's own controls, and preload="none" keeps even
+// that from downloading anything until the reader presses play.
+let paperAnimations = () => {
+  const videos = document.querySelectorAll("video.paper-animation[data-src]");
+  if (!videos.length) return;
+  let reduceMotion = false;
+  try { reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  const attach = (video) => { if (!video.getAttribute("src")) video.src = video.dataset.src; };
+  const asStill = (video) => { attach(video); video.controls = true; };
+  if (savingData() || reduceMotion || !("IntersectionObserver" in window)) {
+    videos.forEach(asStill);
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (video.controls) return;  // already handed to the reader as a still
+      if (entry.isIntersecting) {
+        attach(video);
+        const playing = video.play();
+        if (playing && playing.catch) playing.catch(() => asStill(video));
+      } else if (!video.paused) {
+        video.pause();
+      }
+    });
+  }, { rootMargin: "200px 0px" });
+  videos.forEach((video) => observer.observe(video));
+};
+
+// Slide decks on the talks page (_pages/talks.html). The cover is a link to the
+// deck; a plain click turns it into the embedded deck in place, while a click
+// that asks for a new tab is left alone.
+let slidesFacades = () => {
+  document.querySelectorAll("a.slides-facade[data-embed]").forEach((facade) => {
+    facade.addEventListener("click", (event) => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const frame = document.createElement("iframe");
+      frame.src = facade.dataset.embed;
+      frame.title = facade.dataset.title || "Slides";
+      frame.width = "100%";
+      frame.height = "400";
+      frame.setAttribute("frameborder", "0");
+      frame.setAttribute("allowfullscreen", "true");
+      frame.style.borderRadius = "5px";
+      frame.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+      facade.replaceWith(frame);
+    });
+  });
+};
+
+/* ==========================================================================
    jQuery plugin settings and other scripts
    ========================================================================== */
 
@@ -95,6 +157,10 @@ $(document).ready(function(){
 
   // FitVids init
   fitvids();
+
+  // Media that loads on demand
+  paperAnimations();
+  slidesFacades();
 
   // Follow menu drop down
   $(".author__urls-wrapper button").on("click", function() {

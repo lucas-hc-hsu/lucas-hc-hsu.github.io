@@ -85,6 +85,22 @@
   flex: none;
 }
 
+/* Data saver (html.save-data, set in _includes/head.html when the browser
+   reports Save-Data or a 2G connection): the decorations stop where they are and
+   the full-page ambient layer is not drawn. They cost no bandwidth, being inline
+   SVG and CSS, but a visitor who asked to save data is usually on a device that
+   is saving battery too. */
+html.save-data .doodle-band *,
+html.save-data .seasonal-mark *,
+html.save-data .seasonal-toggle-host *,
+html.save-data .author__avatar * {
+  animation-play-state: paused !important;
+}
+
+html.save-data .seasonal-ambient {
+  display: none !important;
+}
+
 /* The compact mark and the band are two sizes of one idea, never both. */
 @media screen and (min-width: $doodle-band-min-width) {
   .seasonal-mark {

@@ -29,9 +29,14 @@
 <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}"/>
 
 
-<!-- Support for MatJax -->
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+{% comment %}
+  MathJax only where a page asks for it with `mathjax: true` in its front matter.
+  No page used math, yet every page downloaded the 260 KB script, plus an ES6
+  polyfill that no browser able to run MathJax 3 needs.
+{% endcomment %}
+{% if page.mathjax %}
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
 
 
 <!-- end custom head snippets -->

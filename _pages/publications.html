@@ -20,12 +20,14 @@ author_profile: true
     flex: 0 0 360px;
     min-width: 360px;
   }
-  .publication-image img {
+  .publication-image img,
+  .publication-image video {
     width: 100%;
     height: auto;
     border-radius: 5px;
   }
-  .publication-image img.narrow {
+  .publication-image img.narrow,
+  .publication-image video.narrow {
     width: 83.33%;
     margin: 0 auto;
     display: block;
@@ -83,9 +85,9 @@ author_profile: true
     <div class="publication-image">
       {% if post.image %}
         {% if post.title contains "Test-Time Scaling Strategies" %}
-          <img src="/images/{{ post.image }}" alt="{{ post.title }}" loading="lazy" class="narrow">
+          {% include paper-figure.html image=post.image video=post.image_video width=post.image_width height=post.image_height alt=post.title lazy=true class="narrow" %}
         {% else %}
-          <img src="/images/{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+          {% include paper-figure.html image=post.image video=post.image_video width=post.image_width height=post.image_height alt=post.title lazy=true %}
         {% endif %}
       {% endif %}
     </div>

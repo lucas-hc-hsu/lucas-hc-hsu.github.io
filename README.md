@@ -32,6 +32,33 @@ sidebar behaviour and the seasonal artwork are all local.
 
 **Jekyll does not reload `_config.yml`. Restart the server after changing it.**
 
+## Keeping it light on slow connections
+
+The site is meant to read well on a slow mobile connection, so heavy media loads
+only when a reader reaches it or asks for it.
+
+- **Paper figures.** A publication's front matter gives `image`, a still in
+  `images/` (WebP, about twice the size it is shown at). An animated figure adds
+  `image_video` (an MP4) plus `image_width` and `image_height`; `image` is then
+  the video's poster, normally its last frame. `_includes/paper-figure.html`
+  renders it, and the video downloads only when it scrolls into view, and never
+  on its own under Save-Data, a 2G connection or reduced motion, where it waits
+  for the play button. Encode from the source animation, not from a GIF:
+
+  ```bash
+  ffmpeg -i source.mp4 -an -vf "scale=1280:-2:flags=lanczos,fps=30" \
+    -c:v libx264 -preset veryslow -tune animation -crf 26 -pix_fmt yuv420p \
+    -movflags +faststart images/pub-name.mp4
+  ```
+
+- **Talk slides.** A talk with `slides_embed` shows the image in `slides_cover`
+  (its first slide, WebP) and loads the embedded deck only on click.
+- **Icons.** The Font Awesome and Academicons fonts, and Font Awesome's CSS, are
+  cut down to the icons in use. After adding an icon anywhere, build, then run
+  `python3 _icon_fonts_full/subset_icon_fonts.py` and build again, or the new
+  icon renders as nothing.
+- **Math.** MathJax loads only on a page with `mathjax: true` in its front matter.
+
 ## Building locally
 
 ```bash

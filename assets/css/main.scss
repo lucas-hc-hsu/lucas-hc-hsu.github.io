@@ -40,7 +40,8 @@
 @import "notices";
 @import "masthead";
 @import "navigation";
-@import "seasonal";  // slots every seasonal theme draws into: doodle band, compact mark, toggle icon
+@import "seasonal";
+@import "deferred-media";  // slide covers and paper animations that load on demand  // slots every seasonal theme draws into: doodle band, compact mark, toggle icon
 @import "footer";
 @import "syntax";
 
@@ -50,9 +51,25 @@
 @import "archive";
 @import "sidebar";
 
-@import "vendor/font-awesome/fontawesome";
+// Font Awesome is vendor/font-awesome/fontawesome.scss taken apart, so that its
+// one bulky part, `icons` (a ::before rule for each of 2,477 icons, 86 KB of
+// CSS), can be swapped for the handful the site uses. That list is written by
+// _icon_fonts_full/subset_icon_fonts.py, which also cuts the fonts to match.
+@import "vendor/font-awesome/functions";
+@import "vendor/font-awesome/variables";
+@import "vendor/font-awesome/mixins";
+@import "vendor/font-awesome/core";
+@import "vendor/font-awesome/sizing";
+@import "vendor/font-awesome/fixed-width";
+@import "vendor/font-awesome/list";
+@import "vendor/font-awesome/bordered-pulled";
+@import "vendor/font-awesome/animated";
+@import "vendor/font-awesome/rotated-flipped";
+@import "vendor/font-awesome/stacked";
+@import "font-awesome-icons-in-use";
+@import "vendor/font-awesome/screen-reader";
 @import "vendor/font-awesome/solid";
-@import "vendor/font-awesome/brands";
+@import "font-awesome-brands";  // brands.scss less its per-icon loop
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 

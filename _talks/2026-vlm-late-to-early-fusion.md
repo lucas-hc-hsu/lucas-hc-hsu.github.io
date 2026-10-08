@@ -6,6 +6,7 @@ permalink: /talks/2026-vlm-late-to-early-fusion
 venue: "CFDA, CLIP & LKT Labs Joint Laboratory Seminar"
 date: 2026-05-22
 date_display: "May 22, 2026"
+slides_cover: "talk-cover-2026-vlm-late-to-early-fusion.webp"
 slides_embed: "https://docs.google.com/presentation/d/12XPXNJ_f0rVYm-kgRcCHv4KAqKAmaPIS/embed?start=true&loop=true&delayms=3000"
 slides_url: "/files/talk-vlm-late-to-early-fusion.pdf"
 excerpt: ""

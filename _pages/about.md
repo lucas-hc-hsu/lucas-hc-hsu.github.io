@@ -35,7 +35,8 @@ Hi, I'm Hung-Chun. My research focuses on conversational language models, inform
 <div class="research-card" style="display: flex; align-items: stretch; gap: 15px; margin: 15px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 320px; max-width: 100%; min-width: 150px; display: flex; align-items: center; justify-content: center; background-color: #fff; border-radius: 5px; overflow: hidden;">
     {% if post.image %}
-      <img src="/images/{{ post.image }}" alt="{{ post.title }}" style="width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block;">
+      {% if forloop.index > 1 %}{% assign figure_lazy = true %}{% else %}{% assign figure_lazy = false %}{% endif %}
+      {% include paper-figure.html image=post.image video=post.image_video width=post.image_width height=post.image_height alt=post.title lazy=figure_lazy style="width: 100%; height: auto; max-height: 100%; object-fit: contain; display: block;" %}
     {% endif %}
   </div>
   <div style="flex: 1; min-width: 250px;">

@@ -7,14 +7,14 @@ permalink: /publication/flashgan
 date: 2024-11-23
 venue: 'arXiv preprint arXiv:2312.06519'
 authors: 'Hung-Chun Hsu, Bo-Jun Wu, Ming-Yi Hong, Che Lin, Chih-Yu Wang'
-image: 'pub-flashgan.png'
+image: 'pub-flashgan.webp'
 paperurl: 'https://arxiv.org/pdf/2312.06519'
 # citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
 <!-- Image for individual page -->
 <div style="text-align: center; margin-bottom: 20px;">
-  <img src="/images/pub-flashgan.png" alt="FlashGAN Framework Illustration" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
+  <img src="/images/pub-flashgan.webp" decoding="async" alt="FlashGAN Framework Illustration" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
 </div>
 
 <h2 style="text-align: left;">TL;DR</h2>

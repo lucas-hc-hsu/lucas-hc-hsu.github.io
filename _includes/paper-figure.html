@@ -1,0 +1,19 @@
+{% comment %}
+  A publication's figure. A publication whose front matter has `image_video`
+  gets a muted, looping video that downloads nothing until it is on screen
+  (paperAnimations in assets/js/_main.js decides when, and keeps it a still on
+  a data-saver or 2G connection); `image` is then its poster, the still shown
+  before and instead of playback. Without `image_video` this is a plain image.
+
+  The two paper animations used to be GIFs of 2.6 MB and 1.8 MB, which on a
+  slow connection held the homepage's main image back for 27 seconds.
+
+  Parameters: image, video, alt, width, height (the figure's pixel size, so the
+  box is reserved before anything loads), style, class, lazy (true for figures
+  below the fold). Emits no whitespace outside the element.
+{% endcomment %}
+{%- if include.video -%}
+<video class="paper-animation{% if include.class %} {{ include.class }}{% endif %}" muted loop playsinline preload="none" poster="/images/{{ include.image }}" data-src="/images/{{ include.video }}"{% if include.width %} width="{{ include.width }}" height="{{ include.height }}"{% endif %} aria-label="{{ include.alt | escape }}"{% if include.style %} style="{{ include.style }}"{% endif %}></video>
+{%- else -%}
+<img src="/images/{{ include.image }}" alt="{{ include.alt | escape }}"{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.lazy %} loading="lazy"{% endif %} decoding="async"{% if include.style %} style="{{ include.style }}"{% endif %}>
+{%- endif -%}

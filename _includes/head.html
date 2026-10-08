@@ -35,6 +35,21 @@
   })();
 </script>
 
+<!-- Data saver. A browser that reports Save-Data or a 2G connection gets the
+     paper animations as stills and the seasonal decorations paused (see
+     _sass/_deferred-media.scss and _sass/_seasonal.scss). Only Chromium-based
+     browsers report either; everywhere else nothing changes. -->
+<script>
+  (function() {
+    try {
+      var connection = navigator.connection;
+      if (connection && (connection.saveData || /(^|-)2g$/.test(connection.effectiveType || ''))) {
+        document.documentElement.classList.add('save-data');
+      }
+    } catch (e) {}
+  })();
+</script>
+
 {% if site.seasonal_theme == 'christmas' %}
 <!-- Preload Christmas wreath image for faster display -->
 <link rel="preload" href="/images/christmas/wreath-centered.png" as="image">

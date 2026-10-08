@@ -6,14 +6,17 @@ permalink: /publication/lodestar
 date: 2026-08-12
 venue: 'arXiv preprint arXiv:2608.11922'
 authors: 'Hung-Chun Hsu, Po-Jen Ko, Che-Cheng Wu, Li-Yang Chang, Chuan-Ju Wang'
-image: 'pub-lodestar.gif'
+image: 'pub-lodestar-poster.webp'
+image_video: 'pub-lodestar.mp4'
+image_width: 1280
+image_height: 720
 paperurl: 'https://arxiv.org/abs/2608.11922'
 featured: true
 ---
 
 <!-- Image for individual page -->
 <div style="text-align: center; margin-bottom: 20px;">
-  <img src="/images/pub-lodestar.gif" alt="LODESTAR: directed entropy vs. naive minimum-entropy answer selection" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;">
+  {% include paper-figure.html image=page.image video=page.image_video width=page.image_width height=page.image_height alt="LODESTAR: directed entropy vs. naive minimum-entropy answer selection" style="width: 70%; height: auto; margin-bottom: 15px; border-radius: 5px;" %}
 </div>
 
 <h2 style="text-align: left;">TL;DR</h2>

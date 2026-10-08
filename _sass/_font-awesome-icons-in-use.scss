@@ -1,0 +1,20 @@
+/* Written by _icon_fonts_full/subset_icon_fonts.py; do not edit by hand.
+   The ::before rule of each Font Awesome icon the site uses, in place of
+   the vendor's rule for every icon (_sass/vendor/font-awesome/_icons.scss). */
+
+$site-fa-icons: (
+  "building-columns": $fa-var-building-columns,
+  "envelope": $fa-var-envelope,
+  "external-link-alt": $fa-var-external-link-alt,
+  "github": $fa-var-github,
+  "linkedin": $fa-var-linkedin,
+  "location-dot": $fa-var-location-dot,
+  "moon": $fa-var-moon,
+  "play": $fa-var-play,
+  "rss-square": $fa-var-rss-square,
+  "sun": $fa-var-sun,
+);
+
+@each $name, $icon in $site-fa-icons {
+  .#{$fa-css-prefix}-#{$name}::before { content: unquote("\"#{ $icon }\""); }
+}

@@ -6,6 +6,7 @@ permalink: /talks/2026-qwen35-key-techniques
 venue: "CFDA, CLIP & LKT Labs Joint Laboratory Seminar"
 date: 2026-04-10
 date_display: "April 10, May 8 & May 15, 2026"
+slides_cover: "talk-cover-2026-qwen35-key-techniques.webp"
 slides_embed: "https://docs.google.com/presentation/d/1Lh9-0gkzcn1S-1B85WbWGMnj_GezF1i6/embed?start=true&loop=true&delayms=3000"
 slides_url: "/files/talk-qwen35-key-techniques.pdf"
 excerpt: ""

@@ -50,7 +50,7 @@
           {% comment %}
           {% if post.image %}
             <div class="archive__item-image" style="text-align: center; margin: 1em 0;">
-              <img src="/images/{{ post.image }}" alt="{{ post.title }}" style="height: auto; border-radius: 5px;">
+              <img src="/images/{{ post.image }}" alt="{{ post.title }}" loading="lazy" decoding="async" style="height: auto; border-radius: 5px;">
             </div>
           {% endif %}
           {% endcomment %}

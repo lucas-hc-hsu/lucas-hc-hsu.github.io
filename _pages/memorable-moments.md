@@ -21,7 +21,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/moment-interns-2026.jpg" alt="Presenting internship certificates with my three interns at Academia Sinica" style="width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--image-border-color);">
+    <img src="/images/moment-interns-2026.webp" width="800" height="631" decoding="async" alt="Presenting internship certificates with my three interns at Academia Sinica" style="width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--image-border-color);">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: var(--global-text-color);">Celebrating My Interns' Completion of Their Academia Sinica Internship</h3>
@@ -42,7 +42,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/ikat_automatic_passage_ranking_results.png" alt="TREC iKAT 2025 Results" style="width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--image-border-color);">
+    <img src="/images/ikat_automatic_passage_ranking_results.webp" width="1200" height="726" loading="lazy" decoding="async" alt="TREC iKAT 2025 Results" style="width: 100%; height: auto; border-radius: 5px; border: 1px solid var(--image-border-color);">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: var(--global-text-color);">Top Rankings at TREC iKAT 2025 Competition</h3>
@@ -69,7 +69,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/moment-icassp-2024.jpg" alt="ICASSP Poster" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-icassp-2024.webp" width="800" height="535" loading="lazy" decoding="async" alt="ICASSP Poster" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: var(--global-text-color);">Presenting our FincGAN paper at ICASSP 2024</h3>
@@ -91,7 +91,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/moment-graduation-2023.jpg" alt="Master's Graduation Ceremony" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-graduation-2023.webp" width="800" height="800" loading="lazy" decoding="async" alt="Master's Graduation Ceremony" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: var(--global-text-color);">My Master's Graduation Ceremony – Top of the Class</h3>
@@ -117,7 +117,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/moment-cathay-2023.jpg" alt="Cathay Project Final Report" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-cathay-2023.webp" width="800" height="680" loading="lazy" decoding="async" alt="Cathay Project Final Report" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: var(--global-text-color);">From Thesis to Impact: Collaboration with Cathay Financial Holdings</h3>
@@ -144,7 +144,7 @@ author_profile: true
 <!-- Event Content -->
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
   <div style="flex: 0 0 300px; min-width: 250px;">
-    <img src="/images/moment-competition-2022.jpg" alt="Data Competition" style="width: 100%; height: auto; border-radius: 5px;">
+    <img src="/images/moment-competition-2022.webp" width="800" height="584" loading="lazy" decoding="async" alt="Data Competition" style="width: 100%; height: auto; border-radius: 5px;">
   </div>
   <div style="flex: 1; min-width: 300px;">
     <h3 style="margin-top: 0; color: var(--global-text-color);">Carrefour Online Marketplace Next Purchase Prediction – 2nd Place</h3>
