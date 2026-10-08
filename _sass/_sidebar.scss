@@ -124,10 +124,13 @@
 
 .author__avatar {
   display: table-cell;
-  vertical-align: top;
-  width: 36px;
+  /* Below $large the photo sits beside the name and the contact buttons. It was
+     36px there, small enough that the face did not read on a phone; at 72px it is
+     a little taller than the name and button rows, so both cells are centred on
+     each other. */
+  vertical-align: middle;
+  width: 72px;
   // set width only, for non-square avatars
-  // height: 36px;
 
   @include breakpoint($large) {
     display: block;
@@ -150,6 +153,11 @@
     max-width: 194px;
     border-radius: 50%;
 
+    // beside the name, the photo fills its 72px cell
+    @include breakpoint(max-width ($large - 1px)) {
+      width: 100%;
+    }
+
     @include breakpoint($large) {
       padding: 5px;
       border: 1px solid var(--global-border-color);
@@ -159,7 +167,7 @@
 
 .author__content {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   padding-left: 15px;
   padding-right: 25px;
   line-height: 1;
