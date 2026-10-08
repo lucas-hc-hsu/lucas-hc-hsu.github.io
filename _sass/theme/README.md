@@ -89,6 +89,11 @@ Two rules learned building `halloween`:
   whitespace outside its markup. A newline there renders as a space and shifts
   the whole menu by 4px. Put the header in a Liquid `{% comment %}` with nothing
   after `{% endcomment %}` but the markup.
+- Give every outermost `<svg>` in an include `width` and `height` attributes, and
+  size it in CSS wherever it shows. CSS wins over the attributes, so they only
+  matter when the stylesheet is missing; `0` for decoration, a small real size
+  for anything a visitor has to click. Without them an unstyled SVG renders as
+  a large black shape.
 - Prefix every class, keyframe and SVG id with the theme's name. The parts of
   `halloween` came from different candidate designs and share one page.
 

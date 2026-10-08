@@ -56,6 +56,10 @@
 {% endif %}
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<!-- ?v= is the build time, so every deploy gets new stylesheet and script URLs.
+     GitHub Pages lets browsers keep each file for 10 minutes, and without it a
+     reload right after a deploy paired the new HTML with the cached old CSS:
+     the seasonal SVGs, unsized and unfilled, showed as large black shapes. -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <meta http-equiv="cleartype" content="on">
