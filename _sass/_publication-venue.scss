@@ -1,0 +1,32 @@
+/* ==========================================================================
+   PUBLICATION VENUE
+   The venue badge of each paper on /publications/ and in the homepage's
+   Recent Research cards (_includes/publication-venue.html): al-folio's venue
+   badge, filled for a paper at a conference or in a journal, outlined for a
+   preprint. The fill is the colour of the paper links below it
+   (_publication-buttons.scss).
+   ========================================================================== */
+
+.publication-venue {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.publication-venue--conference,
+.publication-venue--journal {
+  background: var(--publication-link-color, var(--global-link-color));
+  color: var(--global-bg-color);
+}
+
+.publication-venue--preprint {
+  border-color: currentColor;
+  color: var(--global-text-color);
+}

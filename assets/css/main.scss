@@ -50,6 +50,7 @@
 @import "page";
 @import "archive";
 @import "publication-buttons";  // paper and TL;DR links on /publications/ and the homepage cards
+@import "publication-venue";    // the venue badge above those links
 @import "sidebar";
 
 // Font Awesome is vendor/font-awesome/fontawesome.scss taken apart, so that its

@@ -89,7 +89,7 @@ author_profile: true
         <p style="font-size: 0.9em;"><strong>Authors:</strong> {{ authors_with_underline }}</p>
       {% endif %}
       <div class="publication-meta">
-        <span><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+        <span>{% include publication-venue.html post=post %}</span>
       </div>
       {% include publication-buttons.html post=post %}
     </div>

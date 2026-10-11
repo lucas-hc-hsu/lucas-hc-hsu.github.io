@@ -4,6 +4,9 @@
    Research cards (_includes/publication-buttons.html): the paper and its page
    on this site. The "attachment links" of the Hugo Blox academic-cv template:
    no frame, a line icon and a bold uppercase label in the link colour.
+   A seasonal palette may give these links their own colour with
+   --publication-link-color and --publication-link-color-hover; without them
+   they take the ordinary link colours.
    ========================================================================== */
 
 .publication-buttons {
@@ -31,7 +34,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   text-decoration: none;
-  color: var(--global-link-color);
+  color: var(--publication-link-color, var(--global-link-color));
 }
 
 .publication-button__icon {
@@ -41,7 +44,7 @@
 }
 
 .publication-buttons a.publication-button:hover {
-  color: var(--global-link-color-hover);
+  color: var(--publication-link-color-hover, var(--global-link-color-hover));
 }
 
 .publication-buttons a.publication-button:hover span {
@@ -50,7 +53,7 @@
 }
 
 .publication-buttons a.publication-button:focus-visible {
-  outline: 2px solid var(--global-link-color);
+  outline: 2px solid var(--publication-link-color, var(--global-link-color));
   outline-offset: 2px;
   border-radius: 2px;
 }

@@ -1,0 +1,27 @@
+{% comment %}
+  A paper's venue as a small badge, "ICASSP 2024", on /publications/ and in
+  the homepage's Recent Research cards; the CV and the paper's own page keep
+  the full venue name. The look is al-folio's venue badge, picked from the
+  publication venue gallery of October 2026: filled for a paper at a
+  conference or in a journal, outlined for a preprint.
+
+    {% include publication-venue.html post=post %}
+
+  The short name comes from `venue`: arXiv for an arXiv preprint, otherwise
+  the word in its last parentheses ("... Signal Processing (ICASSP)" gives
+  ICASSP), otherwise the whole venue. `venue_short` in a paper's front matter
+  overrides that. Whether it is filled follows `category`.
+{% endcomment %}
+{%- assign venue_short = include.post.venue_short -%}
+{%- unless venue_short -%}
+  {%- if include.post.venue contains 'arXiv' -%}{%- assign venue_short = 'arXiv' -%}
+  {%- elsif include.post.venue contains '(' -%}{%- assign venue_short = include.post.venue | split: '(' | last | split: ')' | first -%}
+  {%- else -%}{%- assign venue_short = include.post.venue -%}
+  {%- endif -%}
+{%- endunless -%}
+{%- case include.post.category -%}
+  {%- when 'preprints' -%}{%- assign venue_kind = 'preprint' -%}
+  {%- when 'journals' -%}{%- assign venue_kind = 'journal' -%}
+  {%- else -%}{%- assign venue_kind = 'conference' -%}
+{%- endcase -%}
+<span class="publication-venue publication-venue--{{ venue_kind }}">{{ venue_short }} {{ include.post.date | default: "1900-01-01" | date: "%Y" }}</span>
