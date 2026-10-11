@@ -2,45 +2,55 @@
    PUBLICATION BUTTONS
    The row under each paper on /publications/ and in the homepage's Recent
    Research cards (_includes/publication-buttons.html): the paper and its page
-   on this site. al-folio's arXiv button (MDB's .btn-sm .z-depth-0, as on
-   wormyu.github.io), sized by the same ratio to the body text: 0.64rem is
-   10.2px on phones and 11.5px from 768px up.
+   on this site. The "attachment links" of the Hugo Blox academic-cv template:
+   no frame, a line icon and a bold uppercase label in the link colour.
    ========================================================================== */
 
 .publication-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.375rem;
-  margin: 0.6em 0 0;
+  column-gap: 1.1em;
+  margin: 0.3em 0 0;
 }
 
-/* .archive a underlines every link on /publications/ and the homepage cards
-   colour theirs in a <style> later in the page, so these selectors carry the
-   element and a pseudo-class to outrank both. */
+/* .archive a underlines every link on /publications/, and the homepage cards
+   set their links, :visited and :focus included, to the text colour in a
+   <style> later in the page; these selectors carry the element and a
+   pseudo-class to outrank both. min-height pads the hit area to 24px without
+   changing how the link looks. */
 .publication-buttons a.publication-button,
-.publication-buttons a.publication-button:visited {
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  font-size: 0.64rem;
-  font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+.publication-buttons a.publication-button:visited,
+.publication-buttons a.publication-button:focus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 24px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   white-space: nowrap;
   text-decoration: none;
-  color: var(--global-text-color);
-  background: transparent;
-  border: 1px solid var(--global-text-color);
-  border-radius: 2px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  color: var(--global-link-color);
+}
+
+.publication-button__icon {
+  width: 1.2em;
+  height: 1.2em;
+  flex: none;
 }
 
 .publication-buttons a.publication-button:hover {
-  color: var(--global-link-color);
-  border-color: var(--global-link-color);
+  color: var(--global-link-color-hover);
+}
+
+.publication-buttons a.publication-button:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .publication-buttons a.publication-button:focus-visible {
   outline: 2px solid var(--global-link-color);
   outline-offset: 2px;
+  border-radius: 2px;
 }
