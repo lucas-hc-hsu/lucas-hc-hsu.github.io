@@ -47,7 +47,10 @@ Hi, I'm Hung-Chun. My research focuses on conversational language models, inform
       {% assign authors_with_underline = post.authors | replace: "Hung Chun Hsu", "<u>Hung Chun Hsu</u>" | replace: "Hung-Chun Hsu", "<u>Hung-Chun Hsu</u>" %}
       <p style="font-size: 0.85em; margin-bottom: 3px;">{{ authors_with_underline }}</p>
     {% endif %}
-    <p style="font-size: 0.85em; margin-bottom: 0;">{% include publication-venue.html post=post %}</p>
+    <p style="font-size: 0.85em; margin-bottom: 0;">
+      {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</a>
+      {% else %}<i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
+    </p>
     {% include publication-buttons.html post=post %}
   </div>
 </div>

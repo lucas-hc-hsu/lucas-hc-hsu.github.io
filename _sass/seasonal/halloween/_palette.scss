@@ -37,12 +37,6 @@
     --pagination-bg-active             : #6B5B4C;
     --image-border-color               : #A89580;
     --button-border-color              : #CDBA9E;
-
-    /* The paper and TL;DR links under each publication and the venue badge
-       beside them: small bold capitals, so a shade deeper than the other links
-       (7.67:1 on the paper). Hovering turns them the text colour. */
-    --publication-link-color           : #822F00;
-    --publication-link-color-hover     : #2C241E;
 }
 
 html[data-theme="dark"] {
@@ -74,9 +68,4 @@ html[data-theme="dark"] {
     --pagination-bg-active              : #B4521A;
     --image-border-color                : transparent;
     --button-border-color               : #8C7A6B;
-
-    /* On the charcoal a deeper orange means less contrast, so this is as deep
-       as it goes while keeping 5:1 (5.08:1). */
-    --publication-link-color            : #D97300;
-    --publication-link-color-hover      : #F8BC80;
 }
