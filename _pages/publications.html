@@ -48,17 +48,6 @@ author_profile: true
     flex-wrap: wrap;
     gap: 10px;
   }
-  .publication-link {
-    font-size: 0.7em;
-    padding: 2px 6px;
-    background-color: var(--global-bg-color);
-    color: var(--global-text-color);
-    border: 1px solid var(--button-border-color);
-    border-radius: 3px;
-    text-decoration: none;
-    display: inline-block;
-  }
-
   /* Mobile responsive styles */
   @media (max-width: 768px) {
     .publication-item {
@@ -101,12 +90,8 @@ author_profile: true
       {% endif %}
       <div class="publication-meta">
         <span><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
-        {% if post.paperurl %}
-          <a href="{{ post.paperurl }}" class="publication-link" target="_blank">
-            <i class="fas fa-external-link-alt"></i> paper link
-          </a>
-        {% endif %}
       </div>
+      {% include publication-buttons.html post=post %}
     </div>
   </div>
   {% unless forloop.last %}

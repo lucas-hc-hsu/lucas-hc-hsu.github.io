@@ -13,7 +13,7 @@ sidebar behaviour and the seasonal artwork are all local.
 | Where | What |
 |---|---|
 | `_pages/about.md` | the home page, including the News list |
-| `_publications/` | one file per paper; drives both `/publications/` and the CV page |
+| `_publications/` | one file per paper; drives both `/publications/` and the CV page. Under each paper there, and on its homepage card, `_includes/publication-buttons.html` puts a button to `paperurl` (labelled arXiv, IEEE, PDF or Paper from the URL; `paper_label` overrides) and a TL;DR button to the paper's own page |
 | `_talks/` | one file per talk |
 | `_pages/cv.md` | the CV page (the downloadable PDF is `files/Lucas_Hsu_Resume.pdf` and is maintained separately) |
 | `_data/navigation.yml` | the masthead menu |

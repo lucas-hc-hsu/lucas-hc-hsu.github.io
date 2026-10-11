@@ -51,6 +51,7 @@ Hi, I'm Hung-Chun. My research focuses on conversational language models, inform
       {% if post.paperurl %}<a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</a>
       {% else %}<i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}
     </p>
+    {% include publication-buttons.html post=post %}
   </div>
 </div>
 {% endfor %}

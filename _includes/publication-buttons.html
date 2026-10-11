@@ -1,0 +1,29 @@
+{% comment %}
+  The button row under a paper on /publications/ and in the homepage's Recent
+  Research cards: one button to the paper itself, one to its page on this site.
+  The look follows al-folio's arXiv button (wormyu.github.io), picked from the
+  publication button gallery of October 2026.
+
+    {% include publication-buttons.html post=post %}
+
+  The paper button is labelled from `paperurl`: arXiv, IEEE, PDF for a link
+  ending in .pdf, otherwise Paper. `paper_label` in a paper's front matter
+  overrides that. The page button says TL;DR, because every paper page opens
+  with its figure and a TL;DR.
+{% endcomment %}
+{%- assign paper_url = include.post.paperurl -%}
+{%- assign paper_label = include.post.paper_label -%}
+{%- unless paper_label -%}
+  {%- assign paper_url_tail = paper_url | slice: -4, 4 | downcase -%}
+  {%- if paper_url contains 'arxiv.org' -%}{%- assign paper_label = 'arXiv' -%}
+  {%- elsif paper_url contains 'ieeexplore.ieee.org' -%}{%- assign paper_label = 'IEEE' -%}
+  {%- elsif paper_url_tail == '.pdf' -%}{%- assign paper_label = 'PDF' -%}
+  {%- else -%}{%- assign paper_label = 'Paper' -%}
+  {%- endif -%}
+{%- endunless -%}
+<div class="publication-buttons">
+  {%- if paper_url %}
+  <a class="publication-button" href="{{ paper_url }}" target="_blank" rel="noopener noreferrer">{{ paper_label }}</a>
+  {%- endif %}
+  <a class="publication-button" href="{{ include.post.url | relative_url }}">TL;DR</a>
+</div>

@@ -1,0 +1,46 @@
+/* ==========================================================================
+   PUBLICATION BUTTONS
+   The row under each paper on /publications/ and in the homepage's Recent
+   Research cards (_includes/publication-buttons.html): the paper and its page
+   on this site. al-folio's arXiv button (MDB's .btn-sm .z-depth-0, as on
+   wormyu.github.io), sized by the same ratio to the body text: 0.64rem is
+   10.2px on phones and 11.5px from 768px up.
+   ========================================================================== */
+
+.publication-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0.6em 0 0;
+}
+
+/* .archive a underlines every link on /publications/ and the homepage cards
+   colour theirs in a <style> later in the page, so these selectors carry the
+   element and a pseudo-class to outrank both. */
+.publication-buttons a.publication-button,
+.publication-buttons a.publication-button:visited {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  font-size: 0.64rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--global-text-color);
+  background: transparent;
+  border: 1px solid var(--global-text-color);
+  border-radius: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.publication-buttons a.publication-button:hover {
+  color: var(--global-link-color);
+  border-color: var(--global-link-color);
+}
+
+.publication-buttons a.publication-button:focus-visible {
+  outline: 2px solid var(--global-link-color);
+  outline-offset: 2px;
+}

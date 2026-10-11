@@ -55,10 +55,6 @@ html[data-theme="dark"] .page__title {
 .publication-item .publication-content h3 a {
   text-decoration-color: var(--halloween-pumpkin-lantern-accent);
 }
-.publication-item .publication-link:hover {
-  border-color: var(--halloween-pumpkin-lantern-accent) !important;
-  color: var(--halloween-pumpkin-lantern-accent-text) !important;
-}
 
 /* News dates in the accent. The homepage sets their colour in a <style> in
    the page body, which comes after this sheet, so this selector needs the

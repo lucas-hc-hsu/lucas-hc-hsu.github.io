@@ -40,8 +40,8 @@
 @import "notices";
 @import "masthead";
 @import "navigation";
-@import "seasonal";
-@import "deferred-media";  // slide covers and paper animations that load on demand  // slots every seasonal theme draws into: doodle band, compact mark, toggle icon
+@import "seasonal";        // slots every seasonal theme draws into: doodle band, compact mark, toggle icon
+@import "deferred-media";  // slide covers and paper animations that load on demand
 @import "footer";
 @import "syntax";
 
@@ -49,6 +49,7 @@
 
 @import "page";
 @import "archive";
+@import "publication-buttons";  // paper and TL;DR buttons on /publications/ and the homepage cards
 @import "sidebar";
 
 // Font Awesome is vendor/font-awesome/fontawesome.scss taken apart, so that its
